@@ -2,3 +2,38 @@
 1333917712 source:d:\my\git_repository\db\db\main.cpp
 	<iostream>
 
+1369853674 source:d:\my\git_repository\db\main.cpp
+	<iostream>
+	"src/Connection/DBConnection.h"
+
+1369853674 source:d:\my\git_repository\db\src\connection\dbbase.cpp
+	"DBBase.h"
+
+1369853674 d:\my\git_repository\db\src\connection\dbbase.h
+
+1369855883 source:d:\my\git_repository\db\src\connection\dbconnection.cpp
+	"DBConnection.h"
+
+1369855727 d:\my\git_repository\db\src\connection\dbconnection.h
+	"DefDB.h"
+	"../utils/utils.h"
+	"sqllite/DBSqllite.h"
+	"mysql/DBMySql.h"
+
+1369855688 source:d:\my\git_repository\db\src\connection\sqllite\dbsqllite.cpp
+	"DBSqllite.h"
+
+1369855688 d:\my\git_repository\db\src\connection\sqllite\dbsqllite.h
+	"../DBBase.h"
+
+1369855629 source:d:\my\git_repository\db\src\connection\mysql\dbmysql.cpp
+	"DBMySql.h"
+
+1369855645 d:\my\git_repository\db\src\connection\mysql\dbmysql.h
+	"../DBBase.h"
+
+1369854036 d:\my\git_repository\db\src\connection\defdb.h
+
+1369855814 d:\my\git_repository\db\src\utils\utils.h
+	<exception>
+

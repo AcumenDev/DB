@@ -33,11 +33,28 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Connection/DBBase.cpp" />
+		<Unit filename="src/Connection/DBBase.h" />
+		<Unit filename="src/Connection/DBConnection.cpp" />
+		<Unit filename="src/Connection/DBConnection.h" />
+		<Unit filename="src/Connection/mysql/DBMySql.cpp" />
+		<Unit filename="src/Connection/mysql/DBMySql.h" />
+		<Unit filename="src/Connection/sqllite/DBSqllite.cpp" />
+		<Unit filename="src/Connection/sqllite/DBSqllite.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1" />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
