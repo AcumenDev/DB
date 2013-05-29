@@ -11,3 +11,8 @@
 *.lai
 *.la
 *.a
+
+# Code::Bloks
+*.layout
+obj/
+bin/
