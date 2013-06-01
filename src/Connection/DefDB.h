@@ -7,6 +7,14 @@ enum DBType {
     Mysql,
     Postgres
 };
+
+enum DataType
+{
+    Number,
+    String
+};
+
+
 }
 
 

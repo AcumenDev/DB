@@ -2,7 +2,7 @@
 1333917712 source:d:\my\git_repository\db\db\main.cpp
 	<iostream>
 
-1370099214 source:d:\my\git_repository\db\main.cpp
+1370115309 source:d:\my\git_repository\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
@@ -10,10 +10,12 @@
 1369853674 source:d:\my\git_repository\db\src\connection\dbbase.cpp
 	"DBBase.h"
 
-1370098473 d:\my\git_repository\db\src\connection\dbbase.h
+1370116678 d:\my\git_repository\db\src\connection\dbbase.h
 	<iostream>
 	<vector>
 	"../tools/Log/LoggingSystem.h"
+	"TableInfo.h"
+	"../tools/tools.h"
 
 1370091409 source:d:\my\git_repository\db\src\connection\dbconnection.cpp
 	"DBConnection.h"
@@ -24,20 +26,20 @@
 	"sqllite/DBSqllite.h"
 	"mysql/DBMySql.h"
 
-1370102204 source:d:\my\git_repository\db\src\connection\sqllite\dbsqllite.cpp
+1370116667 source:d:\my\git_repository\db\src\connection\sqllite\dbsqllite.cpp
 	"DBSqllite.h"
 
-1370098162 d:\my\git_repository\db\src\connection\sqllite\dbsqllite.h
+1370116637 d:\my\git_repository\db\src\connection\sqllite\dbsqllite.h
 	"../DBBase.h"
 	"sqlite3.h"
 
-1370097505 source:d:\my\git_repository\db\src\connection\mysql\dbmysql.cpp
+1370116730 source:d:\my\git_repository\db\src\connection\mysql\dbmysql.cpp
 	"DBMySql.h"
 
-1370097508 d:\my\git_repository\db\src\connection\mysql\dbmysql.h
+1370116637 d:\my\git_repository\db\src\connection\mysql\dbmysql.h
 	"../DBBase.h"
 
-1369854036 d:\my\git_repository\db\src\connection\defdb.h
+1370115865 d:\my\git_repository\db\src\connection\defdb.h
 
 1369855814 d:\my\git_repository\db\src\utils\utils.h
 	<exception>
@@ -150,4 +152,26 @@
 
 1370113842 source:c:\users\grey\work\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
+
+1370114704 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
+	"DBModel.h"
+
+1370114704 d:\my\git_repository\db\src\dbmodel\dbmodel.h
+	"DBTable.h"
+
+1370114704 d:\my\git_repository\db\src\dbmodel\dbtable.h
+	<vector>
+	"DBTableColumn.h"
+
+1370114704 d:\my\git_repository\db\src\dbmodel\dbtablecolumn.h
+	<iostream>
+
+1370114704 source:d:\my\git_repository\db\src\dbmodel\dbtable.cpp
+	"DBTable.h"
+
+1370114704 source:d:\my\git_repository\db\src\dbmodel\dbtablecolumn.cpp
+	"DBTableColumn.h"
+
+1370116242 d:\my\git_repository\db\src\connection\tableinfo.h
+	"DefDB.h"
 

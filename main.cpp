@@ -14,6 +14,9 @@ int main() {
 DB::DBBase * dbSqlLite =  var.GetConnection(DB::DBType::Sqllite);
 
 dbSqlLite->Connect("122.db","","");
-dbSqlLite->GetTables();
+for(auto i : dbSqlLite->GetTables())
+    std::cout<<i<<" ";
+
+
     return 0;
 }
