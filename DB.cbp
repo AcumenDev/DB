@@ -47,6 +47,8 @@
 		<Unit filename="src/Connection/mysql/DBMySql.h" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.cpp" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.h" />
+		<Unit filename="src/DBModel/DBModel.cpp" />
+		<Unit filename="src/DBModel/DBModel.h" />
 		<Unit filename="src/tools/Log/ILog.h" />
 		<Unit filename="src/tools/Log/LogStdConsole.cpp" />
 		<Unit filename="src/tools/Log/LogStdConsole.h" />
