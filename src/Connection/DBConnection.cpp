@@ -22,7 +22,7 @@ DB::DBBase * DBConnection::GetConnection(DB::DBType dbType) {
             break;
         }
     case DBType::Postgres :{
-            throw  Utils::NotImplementedException();
+            throw  Tools::NotImplementedException();
             break;
         }
     }
