@@ -13,7 +13,7 @@ void DBMySql::Close()
 
 }
 
-void DBMySql::Connect()
+void DBMySql::Connect(std::string patch, std::string login, std::string password)
 {
 
 }

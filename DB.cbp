@@ -31,7 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="extern_lib/sqlite3/include" />
 		</Compiler>
+		<Linker>
+			<Add option="-lsqlite3" />
+			<Add directory="extern_lib/sqlite3/lib" />
+		</Linker>
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Connection/DBBase.cpp" />
 		<Unit filename="src/Connection/DBBase.h" />

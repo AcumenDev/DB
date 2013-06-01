@@ -10,5 +10,10 @@ int main() {
 
     Log->Write("Hello world!");
 //    cout <<  << endl;
+
+DB::DBBase * dbSqlLite =  var.GetConnection(DB::DBType::Sqllite);
+
+dbSqlLite->Connect("122.db","","");
+dbSqlLite->GetTables();
     return 0;
 }
