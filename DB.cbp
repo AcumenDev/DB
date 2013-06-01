@@ -42,7 +42,12 @@
 		<Unit filename="src/Connection/mysql/DBMySql.h" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.cpp" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.h" />
-		<Unit filename="src/utils/utils.h" />
+		<Unit filename="src/tools/Log/ILog.h" />
+		<Unit filename="src/tools/Log/LogStdConsole.cpp" />
+		<Unit filename="src/tools/Log/LogStdConsole.h" />
+		<Unit filename="src/tools/Log/LoggingSystem.cpp" />
+		<Unit filename="src/tools/Log/LoggingSystem.h" />
+		<Unit filename="src/tools/tools.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
