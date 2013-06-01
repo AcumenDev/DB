@@ -49,6 +49,10 @@
 		<Unit filename="src/Connection/sqllite/DBSqllite.h" />
 		<Unit filename="src/DBModel/DBModel.cpp" />
 		<Unit filename="src/DBModel/DBModel.h" />
+		<Unit filename="src/DBModel/DBTable.cpp" />
+		<Unit filename="src/DBModel/DBTable.h" />
+		<Unit filename="src/DBModel/DBTableColumn.cpp" />
+		<Unit filename="src/DBModel/DBTableColumn.h" />
 		<Unit filename="src/tools/Log/ILog.h" />
 		<Unit filename="src/tools/Log/LogStdConsole.cpp" />
 		<Unit filename="src/tools/Log/LogStdConsole.h" />
