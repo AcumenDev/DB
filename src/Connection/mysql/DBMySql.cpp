@@ -26,7 +26,7 @@ std::vector<std::string> DBMySql::GetTables()
     std::vector<std::string> vectorResult;
     return vectorResult;
 }
-std::vector<TableInfo> DBMySql::GetTableInfo(std::string tableName)
+std::vector<TableInfo *> DBMySql::GetTableInfo(std::string tableName)
 {
   throw  Tools::NotImplementedException();
 }

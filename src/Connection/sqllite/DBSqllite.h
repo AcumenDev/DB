@@ -13,7 +13,7 @@ public:
     void Connect(std::string patch, std::string login, std::string password);
     std::string GetDBName();
     std::vector<std::string> GetTables();
-    std::vector<TableInfo> GetTableInfo(std::string tableName);
+    std::vector<TableInfo *> GetTableInfo(std::string tableName);
     virtual ~DBSqllite();
 protected:
 private:

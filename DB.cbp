@@ -5,7 +5,6 @@
 		<Option title="DB" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="src\Connection\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/DB" prefix_auto="1" extension_auto="1" />
@@ -44,6 +43,8 @@
 		<Unit filename="src/Connection/DBConnection.cpp" />
 		<Unit filename="src/Connection/DBConnection.h" />
 		<Unit filename="src/Connection/DefDB.h" />
+		<Unit filename="src/Connection/TableInfo.cpp" />
+		<Unit filename="src/Connection/TableInfo.h" />
 		<Unit filename="src/Connection/mysql/DBMySql.cpp" />
 		<Unit filename="src/Connection/mysql/DBMySql.h" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.cpp" />

@@ -18,7 +18,7 @@ public:
       std::string GetDBName();
     void Connect(std::string patch, std::string login, std::string password) override;
     std::vector<std::string> GetTables();
-    std::vector<TableInfo> GetTableInfo(std::string tableName);
+    std::vector<TableInfo *> GetTableInfo(std::string tableName);
 protected:
 private:
 };

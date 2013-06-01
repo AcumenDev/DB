@@ -2,7 +2,7 @@
 1333917712 source:d:\my\git_repository\db\db\main.cpp
 	<iostream>
 
-1370115309 source:d:\my\git_repository\db\main.cpp
+1370119472 source:d:\my\git_repository\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
@@ -10,7 +10,7 @@
 1369853674 source:d:\my\git_repository\db\src\connection\dbbase.cpp
 	"DBBase.h"
 
-1370116678 d:\my\git_repository\db\src\connection\dbbase.h
+1370117575 d:\my\git_repository\db\src\connection\dbbase.h
 	<iostream>
 	<vector>
 	"../tools/Log/LoggingSystem.h"
@@ -26,20 +26,21 @@
 	"sqllite/DBSqllite.h"
 	"mysql/DBMySql.h"
 
-1370116667 source:d:\my\git_repository\db\src\connection\sqllite\dbsqllite.cpp
+1370119876 source:d:\my\git_repository\db\src\connection\sqllite\dbsqllite.cpp
 	"DBSqllite.h"
 
-1370116637 d:\my\git_repository\db\src\connection\sqllite\dbsqllite.h
+1370117575 d:\my\git_repository\db\src\connection\sqllite\dbsqllite.h
 	"../DBBase.h"
 	"sqlite3.h"
 
-1370116730 source:d:\my\git_repository\db\src\connection\mysql\dbmysql.cpp
+1370117575 source:d:\my\git_repository\db\src\connection\mysql\dbmysql.cpp
 	"DBMySql.h"
 
-1370116637 d:\my\git_repository\db\src\connection\mysql\dbmysql.h
+1370117575 d:\my\git_repository\db\src\connection\mysql\dbmysql.h
 	"../DBBase.h"
 
-1370115865 d:\my\git_repository\db\src\connection\defdb.h
+1370119217 d:\my\git_repository\db\src\connection\defdb.h
+	<iostream>
 
 1369855814 d:\my\git_repository\db\src\utils\utils.h
 	<exception>
@@ -172,6 +173,9 @@
 1370114704 source:d:\my\git_repository\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
 
-1370116242 d:\my\git_repository\db\src\connection\tableinfo.h
+1370119538 d:\my\git_repository\db\src\connection\tableinfo.h
 	"DefDB.h"
+
+1370119538 source:d:\my\git_repository\db\src\connection\tableinfo.cpp
+	"TableInfo.h"
 

@@ -15,7 +15,7 @@ public:
     virtual  void  Close()=0;
     virtual std::string GetDBName()=0;
     virtual std::vector<std::string> GetTables() = 0;
-    virtual std::vector<TableInfo> GetTableInfo(std::string tableName) = 0;
+    virtual std::vector<TableInfo *> GetTableInfo(std::string tableName) = 0;
     /** Default destructor */
     virtual ~DBBase();
 protected:

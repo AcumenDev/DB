@@ -1,13 +1,21 @@
-#ifndef TABLEINFO_H_INCLUDED
-#define TABLEINFO_H_INCLUDED
+#ifndef TABLEINFO_H
+#define TABLEINFO_H
+
 #include "DefDB.h"
-
 namespace DB {
-struct TableInfo {
-
-std::string Name;
-DataType Type;
-
+class TableInfo {
+public:
+    TableInfo();
+    virtual ~TableInfo();
+    void SetName(std::string name);
+    void SetType(DataType type);
+    std::string GetTypeStr();
+    DataType GetType();
+    std::string GetName();
+protected:
+private:
+    std::string Name;
+    DataType Type;
 };
 }
-#endif // TABLEINFO_H_INCLUDED
+#endif // TABLEINFO_H
