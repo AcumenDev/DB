@@ -1,5 +1,5 @@
 #include "DBModel.h"
-
+namespace DBModel {
 DBModel::DBModel()
 {
     //ctor
@@ -8,4 +8,5 @@ DBModel::DBModel()
 DBModel::~DBModel()
 {
     //dtor
+}
 }
