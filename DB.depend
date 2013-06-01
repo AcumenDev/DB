@@ -14,9 +14,9 @@
 1369855883 source:d:\my\git_repository\db\src\connection\dbconnection.cpp
 	"DBConnection.h"
 
-1369855727 d:\my\git_repository\db\src\connection\dbconnection.h
+1370089342 d:\my\git_repository\db\src\connection\dbconnection.h
 	"DefDB.h"
-	"../utils/utils.h"
+	"../tools/tools.h"
 	"sqllite/DBSqllite.h"
 	"mysql/DBMySql.h"
 
@@ -35,5 +35,8 @@
 1369854036 d:\my\git_repository\db\src\connection\defdb.h
 
 1369855814 d:\my\git_repository\db\src\utils\utils.h
+	<exception>
+
+1370089291 d:\my\git_repository\db\src\tools\tools.h
 	<exception>
 
