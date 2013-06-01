@@ -1,5 +1,8 @@
 #ifndef DBBASE_H
 #define DBBASE_H
+#include <iostream>
+#include <vector>
+
 namespace DB {
 ///Базовый класс для подключения к бд
 class DBBase {
@@ -8,7 +11,8 @@ public:
     DBBase() ;
     virtual  void Connect() =0;
     virtual  void  Close()=0;
-
+    virtual std::vector<std::string> GetTables() = 0;
+//virtual std::vector<> GetTableInfo(std:string tableName) = 0;
     /** Default destructor */
     virtual ~DBBase();
 protected:

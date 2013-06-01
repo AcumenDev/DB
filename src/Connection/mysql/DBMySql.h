@@ -16,7 +16,7 @@ public:
       * (documentation goes here)
       */
     void Connect() override;
-
+std::vector<std::string> GetTables();
 protected:
 private:
 };

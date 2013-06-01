@@ -9,7 +9,7 @@ public:
     void Close();
 
     void Connect();
-
+    std::vector<std::string> GetTables();
     virtual ~DBSqllite();
 protected:
 private:

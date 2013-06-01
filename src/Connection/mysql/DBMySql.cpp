@@ -17,5 +17,9 @@ void DBMySql::Connect()
 {
 
 }
-
+std::vector<std::string> DBMySql::GetTables()
+{
+    std::vector<std::string> vectorResult;
+    return vectorResult;
+}
 }

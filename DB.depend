@@ -2,7 +2,7 @@
 1333917712 source:d:\my\git_repository\db\db\main.cpp
 	<iostream>
 
-1370091041 source:d:\my\git_repository\db\main.cpp
+1370091409 source:d:\my\git_repository\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
@@ -10,27 +10,29 @@
 1369853674 source:d:\my\git_repository\db\src\connection\dbbase.cpp
 	"DBBase.h"
 
-1369853674 d:\my\git_repository\db\src\connection\dbbase.h
+1370094137 d:\my\git_repository\db\src\connection\dbbase.h
+	<iostream>
+	<vector>
 
-1370089349 source:d:\my\git_repository\db\src\connection\dbconnection.cpp
+1370091409 source:d:\my\git_repository\db\src\connection\dbconnection.cpp
 	"DBConnection.h"
 
-1370089342 d:\my\git_repository\db\src\connection\dbconnection.h
+1370091409 d:\my\git_repository\db\src\connection\dbconnection.h
 	"DefDB.h"
 	"../tools/tools.h"
 	"sqllite/DBSqllite.h"
 	"mysql/DBMySql.h"
 
-1369855688 source:d:\my\git_repository\db\src\connection\sqllite\dbsqllite.cpp
+1370094292 source:d:\my\git_repository\db\src\connection\sqllite\dbsqllite.cpp
 	"DBSqllite.h"
 
-1369855688 d:\my\git_repository\db\src\connection\sqllite\dbsqllite.h
+1370094221 d:\my\git_repository\db\src\connection\sqllite\dbsqllite.h
 	"../DBBase.h"
 
 1369855629 source:d:\my\git_repository\db\src\connection\mysql\dbmysql.cpp
 	"DBMySql.h"
 
-1370090627 d:\my\git_repository\db\src\connection\mysql\dbmysql.h
+1370094237 d:\my\git_repository\db\src\connection\mysql\dbmysql.h
 	"../DBBase.h"
 
 1369854036 d:\my\git_repository\db\src\connection\defdb.h
@@ -38,22 +40,22 @@
 1369855814 d:\my\git_repository\db\src\utils\utils.h
 	<exception>
 
-1370089291 d:\my\git_repository\db\src\tools\tools.h
+1370091409 d:\my\git_repository\db\src\tools\tools.h
 	<exception>
 
-1370090930 source:d:\my\git_repository\db\src\tools\log\logstdconsole.cpp
+1370091409 source:d:\my\git_repository\db\src\tools\log\logstdconsole.cpp
 	"LogStdConsole.h"
 
-1370090930 d:\my\git_repository\db\src\tools\log\logstdconsole.h
+1370091409 d:\my\git_repository\db\src\tools\log\logstdconsole.h
 	"ILog.h"
 
-1370090627 d:\my\git_repository\db\src\tools\log\ilog.h
+1370091409 d:\my\git_repository\db\src\tools\log\ilog.h
 	<iostream>
 
-1370090930 source:d:\my\git_repository\db\src\tools\log\loggingsystem.cpp
+1370091409 source:d:\my\git_repository\db\src\tools\log\loggingsystem.cpp
 	"LoggingSystem.h"
 
-1370090930 d:\my\git_repository\db\src\tools\log\loggingsystem.h
+1370091409 d:\my\git_repository\db\src\tools\log\loggingsystem.h
 	<iostream>
 	"LogStdConsole.h"
 
