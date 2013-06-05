@@ -38,14 +38,14 @@ void TableInfo::SetType(DataType type) {
     Type = type;
 }
 
-std::string TableInfo::GetTypeStr() {
+std::string TableInfo::GetTypeStr() const {
     return DataTypeEnumToString(Type);
 }
-DataType TableInfo::GetType() {
+DataType TableInfo::GetType() const {
     return Type;
 }
 
-std::string TableInfo::GetName() {
+std::string TableInfo::GetName() const {
     return Name;
 }
 

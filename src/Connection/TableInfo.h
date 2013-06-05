@@ -9,9 +9,9 @@ public:
     virtual ~TableInfo();
     void SetName(std::string name);
     void SetType(DataType type);
-    std::string GetTypeStr();
-    DataType GetType();
-    std::string GetName();
+    std::string GetTypeStr() const;
+    DataType GetType() const;
+    std::string GetName() const;
 protected:
 private:
     std::string Name;

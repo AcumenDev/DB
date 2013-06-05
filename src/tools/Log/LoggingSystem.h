@@ -2,8 +2,7 @@
 #define LOGGINGSYSTEM_H
 #include <iostream>
 #include "LogStdConsole.h"
-class LoggingSystem
-{
+class LoggingSystem {
 public:
     virtual ~LoggingSystem() {}
 
@@ -12,8 +11,7 @@ public:
 private:
     ILog * _LogOutSystem ;
     static     LoggingSystem * _LoggingSystem;
-    LoggingSystem()
-    {
+    LoggingSystem() {
         //по умолчанию создаеться лог для вывода на стандартную консоль
         _LogOutSystem = new LogStdConsole();
     }

@@ -1,5 +1,6 @@
 #ifndef DBSQLLITE_H
 #define DBSQLLITE_H
+#include <memory>
 #include "../DBBase.h"
 #include "sqlite3.h"
 
@@ -10,20 +11,21 @@ public:
 
     void Close();
 
-    void Connect(std::string patch, std::string login, std::string password);
-    std::string GetDBName();
-    std::vector<std::string> GetTables();
-    std::vector<TableInfo *> GetTableInfo(std::string tableName);
+    void Connect(std::string patch, std::string login, std::string password) override;
+    std::string GetDBName()const override;
+    std::vector<std::string> GetTables() const override;
+    std::vector<std::shared_ptr<TableInfo>> GetTableInfo(std::string tableName)const override;
     virtual ~DBSqllite();
 protected:
 private:
 
     // int CallbackQueryGetTables(void *data, int coln, char **rows, char **colnm);
-     sqlite3 *ppDb  ;
-     int status ;
+    sqlite3 *ppDb  ;
+    //  std::shared_ptr<sqlite3> ppDb;
+    int status ;
 
 
-     const std::string GET_TABLES_QUERY = "select * from sqlite_master";
+    const std::string GET_TABLES_QUERY = "select * from sqlite_master";
 };
 }
 #endif // DBSQLLITE_H

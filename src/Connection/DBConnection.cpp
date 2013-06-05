@@ -8,23 +8,24 @@ DBConnection::~DBConnection() {
     //dtor
 }
 
-DB::DBBase * DBConnection::GetConnection(DB::DBType dbType) {
+std::shared_ptr<DB::DBBase> DBConnection::GetConnection(DB::DBType dbType)  {
     using namespace DB;
-    DBBase * result = nullptr;
+    std::shared_ptr<DBBase> result = nullptr;
 
     switch (dbType) {
-    case DBType::Sqllite :{
-            result = new DBSqllite();
-            break;
-        }
-    case DBType::Mysql :{
-            result = new DBMySql();
-            break;
-        }
-    case DBType::Postgres :{
-            throw  Tools::NotImplementedException();
-            break;
-        }
+    case DBType::Sqllite : {
+
+        result = std::shared_ptr<DBBase> (new DBSqllite());
+        break;
+    }
+    case DBType::Mysql : {
+        result = std::shared_ptr<DBBase> (new DBMySql());
+        break;
+    }
+    case DBType::Postgres : {
+        throw  Tools::NotImplementedException();
+        break;
+    }
     }
     return result;
 }

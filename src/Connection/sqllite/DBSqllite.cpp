@@ -12,7 +12,7 @@ DBSqllite::~DBSqllite() {
 void DBSqllite::Close() {
     sqlite3_close(ppDb);
 }
-std::string DBSqllite::GetDBName() {
+std::string DBSqllite::GetDBName() const {
     return "";
 }
 
@@ -20,7 +20,7 @@ void DBSqllite::Connect(std::string patch, std::string login, std::string passwo
     status =  sqlite3_open(patch.c_str(),&ppDb);
 }
 
-std::vector<std::string> DBSqllite::GetTables() {
+std::vector<std::string> DBSqllite::GetTables() const {
     //LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
     std::vector<std::string> vectorResult;
     char  *pSQL2;
@@ -42,9 +42,9 @@ std::vector<std::string> DBSqllite::GetTables() {
     return vectorResult;
 }
 
-std::vector<TableInfo *> DBSqllite::GetTableInfo(std::string tableName) {
+std::vector<std::shared_ptr<TableInfo>> DBSqllite::GetTableInfo(std::string tableName) const {
     std::string  getTableInfoQuery ="PRAGMA table_info( '"+ tableName +"' );";
-    std::vector<TableInfo *> result;
+    std::vector<std::shared_ptr<TableInfo>> result;
     char  *pSQL2;
     sqlite3_stmt *stmt;
     int rc;
@@ -53,7 +53,7 @@ std::vector<TableInfo *> DBSqllite::GetTableInfo(std::string tableName) {
         if (sqlite3_column_count(stmt)) {
             while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
                 auto nameFild = sqlite3_column_text(stmt, 1);
-                auto rowFild = new TableInfo();
+                std::shared_ptr<TableInfo> rowFild(new TableInfo());
                 DataType typeFild;
                 std::string fildTypeRaw = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
                 if("NUMERIC"==fildTypeRaw )

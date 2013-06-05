@@ -10,7 +10,7 @@ int main() {
 
  //   Log->Write("Hello world!");
 
-    DB::DBBase * dbSqlLite =  var.GetConnection(DB::DBType::Sqllite);
+    std::shared_ptr<DB::DBBase> dbSqlLite =  var.GetConnection(DB::DBType::Sqllite);
 
     dbSqlLite->Connect("122.db","","");
     for(auto tableName : dbSqlLite->GetTables()) {

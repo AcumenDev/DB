@@ -2,6 +2,7 @@
 #define DBBASE_H
 #include <iostream>
 #include <vector>
+#include <memory>
 #include "../tools/Log/LoggingSystem.h"
 #include "TableInfo.h"
 #include "../tools/tools.h"
@@ -13,9 +14,9 @@ public:
     DBBase() ;
     virtual  void Connect(std::string patch, std::string login, std::string password) =0;
     virtual  void  Close()=0;
-    virtual std::string GetDBName()=0;
-    virtual std::vector<std::string> GetTables() = 0;
-    virtual std::vector<TableInfo *> GetTableInfo(std::string tableName) = 0;
+    virtual std::string GetDBName() const =0;
+    virtual std::vector<std::string> GetTables() const = 0;
+    virtual std::vector<std::shared_ptr<TableInfo>> GetTableInfo(std::string tableName) const = 0;
     /** Default destructor */
     virtual ~DBBase();
 protected:

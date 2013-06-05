@@ -10,7 +10,7 @@ class DBConnection {
 public:
     /** Default constructor */
     DBConnection();
-    static DB::DBBase  * GetConnection(DB::DBType dbType);
+    static std::shared_ptr<DB::DBBase> GetConnection(DB::DBType dbType);
     /** Default destructor */
     virtual ~DBConnection();
 protected:

@@ -15,10 +15,10 @@ public:
       *
       * (documentation goes here)
       */
-      std::string GetDBName();
-    void Connect(std::string patch, std::string login, std::string password) override;
-    std::vector<std::string> GetTables();
-    std::vector<TableInfo *> GetTableInfo(std::string tableName);
+    std::string GetDBName() const;
+    void Connect(std::string patch, std::string login, std::string password)  override ;
+    std::vector<std::string> GetTables() const override;
+    std::vector<std::shared_ptr<TableInfo>> GetTableInfo(std::string tableName) const override;
 protected:
 private:
 };
