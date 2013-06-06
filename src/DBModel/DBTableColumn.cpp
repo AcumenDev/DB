@@ -1,6 +1,6 @@
 #include "DBTableColumn.h"
 
-DBTableColumn::DBTableColumn()
+DBTableColumn::DBTableColumn(std::string name, std::string type)
 {
     //ctor
 }

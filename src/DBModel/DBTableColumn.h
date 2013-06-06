@@ -5,7 +5,7 @@
 class DBTableColumn
 {
     public:
-        DBTableColumn();
+        DBTableColumn(std::string name, std::string type);
         std::string Name;
         std::string Type;
         virtual ~DBTableColumn();

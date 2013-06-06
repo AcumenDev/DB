@@ -78,82 +78,88 @@
 1369029396 d:\my\git_repository\db\extern_lib\sqlite3\include\sqlite3.h
 	<stdarg.h>
 
-1370111221 source:c:\users\grey\work\db\main.cpp
+1370544376 source:c:\users\grey\work\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
 
-1370111221 c:\users\grey\work\db\src\connection\dbconnection.h
+1370542464 c:\users\grey\work\db\src\connection\dbconnection.h
 	"DefDB.h"
 	"../tools/tools.h"
 	"sqllite/DBSqllite.h"
 	"mysql/DBMySql.h"
 
-1370111221 c:\users\grey\work\db\src\connection\defdb.h
+1370542464 c:\users\grey\work\db\src\connection\defdb.h
+	<iostream>
 
-1370111221 c:\users\grey\work\db\src\tools\tools.h
+1370542464 c:\users\grey\work\db\src\tools\tools.h
 	<exception>
 
-1370111221 c:\users\grey\work\db\src\connection\sqllite\dbsqllite.h
+1370542464 c:\users\grey\work\db\src\connection\sqllite\dbsqllite.h
+	<memory>
 	"../DBBase.h"
 	"sqlite3.h"
 
-1370111221 c:\users\grey\work\db\src\connection\dbbase.h
+1370542464 c:\users\grey\work\db\src\connection\dbbase.h
 	<iostream>
 	<vector>
+	<memory>
 	"../tools/Log/LoggingSystem.h"
+	"TableInfo.h"
+	"../tools/tools.h"
 
-1370111221 c:\users\grey\work\db\src\tools\log\loggingsystem.h
+1370542464 c:\users\grey\work\db\src\tools\log\loggingsystem.h
 	<iostream>
 	"LogStdConsole.h"
 
-1370111221 c:\users\grey\work\db\src\tools\log\logstdconsole.h
+1370542464 c:\users\grey\work\db\src\tools\log\logstdconsole.h
 	"ILog.h"
 
-1370111221 c:\users\grey\work\db\src\tools\log\ilog.h
+1370542464 c:\users\grey\work\db\src\tools\log\ilog.h
 	<iostream>
 
-1370111221 c:\users\grey\work\db\extern_lib\sqlite3\include\sqlite3.h
+1370542464 c:\users\grey\work\db\extern_lib\sqlite3\include\sqlite3.h
 	<stdarg.h>
 
-1370111221 c:\users\grey\work\db\src\connection\mysql\dbmysql.h
+1370542464 c:\users\grey\work\db\src\connection\mysql\dbmysql.h
 	"../DBBase.h"
 
-1370111221 source:c:\users\grey\work\db\src\connection\dbbase.cpp
+1370542464 source:c:\users\grey\work\db\src\connection\dbbase.cpp
 	"DBBase.h"
 
-1370111221 source:c:\users\grey\work\db\src\connection\dbconnection.cpp
+1370542464 source:c:\users\grey\work\db\src\connection\dbconnection.cpp
 	"DBConnection.h"
 
-1370111221 source:c:\users\grey\work\db\src\connection\mysql\dbmysql.cpp
+1370542464 source:c:\users\grey\work\db\src\connection\mysql\dbmysql.cpp
 	"DBMySql.h"
 
-1370111221 source:c:\users\grey\work\db\src\connection\sqllite\dbsqllite.cpp
+1370542464 source:c:\users\grey\work\db\src\connection\sqllite\dbsqllite.cpp
 	"DBSqllite.h"
 
-1370111221 source:c:\users\grey\work\db\src\tools\log\loggingsystem.cpp
+1370542464 source:c:\users\grey\work\db\src\tools\log\loggingsystem.cpp
 	"LoggingSystem.h"
 
-1370111221 source:c:\users\grey\work\db\src\tools\log\logstdconsole.cpp
+1370542464 source:c:\users\grey\work\db\src\tools\log\logstdconsole.cpp
 	"LogStdConsole.h"
 
-1370112053 source:c:\users\grey\work\db\src\dbmodel\dbtable.cpp
+1370545893 source:c:\users\grey\work\db\src\dbmodel\dbtable.cpp
 	"DBTable.h"
 
-1370114445 c:\users\grey\work\db\src\dbmodel\dbtable.h
+1370545962 c:\users\grey\work\db\src\dbmodel\dbtable.h
 	<vector>
 	"DBTableColumn.h"
 
-1370112053 source:c:\users\grey\work\db\src\dbmodel\dbmodel.cpp
+1370546761 source:c:\users\grey\work\db\src\dbmodel\dbmodel.cpp
 	"DBModel.h"
 
-1370114445 c:\users\grey\work\db\src\dbmodel\dbmodel.h
+1370544467 c:\users\grey\work\db\src\dbmodel\dbmodel.h
 	"DBTable.h"
+	"../Connection/DBBase.h"
 
-1370114445 c:\users\grey\work\db\src\dbmodel\dbtablecolumn.h
+1370545962 c:\users\grey\work\db\src\dbmodel\dbtablecolumn.h
 	<iostream>
 
-1370113842 source:c:\users\grey\work\db\src\dbmodel\dbtablecolumn.cpp
+1370545979 source:c:\users\grey\work\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
 
 1370114704 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
@@ -179,5 +185,11 @@
 	"DefDB.h"
 
 1370441402 source:d:\my\git_repository\db\src\connection\tableinfo.cpp
+	"TableInfo.h"
+
+1370542464 c:\users\grey\work\db\src\connection\tableinfo.h
+	"DefDB.h"
+
+1370542464 source:c:\users\grey\work\db\src\connection\tableinfo.cpp
 	"TableInfo.h"
 

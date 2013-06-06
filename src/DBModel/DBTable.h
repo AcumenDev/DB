@@ -6,8 +6,8 @@ namespace DBModel {
 class DBTable
 {
     public:
-        DBTable();
-        std::string Name;
+        DBTable(std::string tableName);
+        std::string TableName;
         std::vector<DBTableColumn> DBTableColumnList;
         virtual ~DBTable();
     protected:

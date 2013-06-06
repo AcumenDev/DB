@@ -1,6 +1,6 @@
 #include "DBTable.h"
 namespace DBModel {
-DBTable::DBTable()
+DBTable::DBTable(std::string tableName)
 {
     //ctor
 }
