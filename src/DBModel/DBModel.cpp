@@ -1,10 +1,12 @@
 #include "DBModel.h"
-namespace DBModel {
+namespace DBModel
+{
 DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase)
 {
-this->DBName=dbBase->GetDBName();
+    this->DBName=dbBase->GetDBName();
 
-for(auto tableName : dbBase->GetTables()) {
+    for(auto tableName : dbBase->GetTables())
+    {
 
         DBTable table = DBTable(tableName);
 

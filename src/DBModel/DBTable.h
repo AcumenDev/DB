@@ -2,16 +2,17 @@
 #define DBTABLE_H
 #include <vector>
 #include "DBTableColumn.h"
-namespace DBModel {
+namespace DBModel
+{
 class DBTable
 {
-    public:
-        DBTable(std::string tableName);
-        std::string TableName;
-        std::vector<DBTableColumn> DBTableColumnList;
-        virtual ~DBTable();
-    protected:
-    private:
+public:
+    DBTable(std::string tableName);
+    std::string TableName;
+    std::vector<DBTableColumn> DBTableColumnList;
+    virtual ~DBTable();
+protected:
+private:
 };
 }
 

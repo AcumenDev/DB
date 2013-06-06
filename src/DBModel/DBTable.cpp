@@ -1,8 +1,9 @@
 #include "DBTable.h"
-namespace DBModel {
+namespace DBModel
+{
 DBTable::DBTable(std::string tableName)
 {
-    //ctor
+    this->TableName=tableName;
 }
 
 DBTable::~DBTable()
