@@ -1,10 +1,10 @@
 #include "DBTableColumn.h"
 
-DBTableColumn::DBTableColumn(std::string name, std::string type)
+DBTableColumn::DBTableColumn(std::string name, DB::DataType type)
 {
     //ctor
-    this->Name=name;
-    this->Type=type;
+    this->ColumnName=name;
+    this->ColumnType=type;
 }
 
 DBTableColumn::~DBTableColumn()
