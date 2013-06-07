@@ -8,9 +8,10 @@ public:
     CGBase();
     virtual ~CGBase();
     void SetDBModel(DBModel::DBModel dbModel ) ;
+    virtual void Generate();
     virtual void GenerateTables() = 0;
-   // virtual void GenerateViews() = 0;
-  //  virtual void GenerateStoredProcedures() = 0;
+    virtual void GenerateViews() = 0;
+    virtual void GenerateStoredProcedures() = 0;
 
 
 //        void SaveToFile(std::string patch, std::string content);

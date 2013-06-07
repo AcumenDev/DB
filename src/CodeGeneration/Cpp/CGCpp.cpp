@@ -1,16 +1,30 @@
 #include "CGCpp.h"
+
 namespace CG {
+
 CGCpp::CGCpp() {
-    //ctor
 }
 
 CGCpp::~CGCpp() {
-    //dtor
 }
+
 void CGCpp::GenerateTables() {
+
+    //  mkdir("12376");
+
     for( auto table : _dbModel.DBTableList) {
 
     }
+}
+
+
+
+void CGCpp::GenerateViews() {
+
+}
+
+void CGCpp::GenerateStoredProcedures() {
+
 }
 
 

@@ -13,4 +13,12 @@ CGBase::CGBase() {
 CGBase::~CGBase() {
     //dtor
 }
+void CGBase::Generate()
+{
+    GenerateTables();
+    GenerateViews();
+    GenerateStoredProcedures();
+}
+
+
 }

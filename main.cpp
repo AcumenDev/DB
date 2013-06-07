@@ -12,9 +12,9 @@ int main() {
 
     std::shared_ptr<DB::DBBase> dbSqlLite =  var.GetConnection(DB::DBType::Sqllite);
     dbSqlLite->Connect("122.db","","");
-    for(auto tableName : dbSqlLite->GetTables()) {
+    for(auto& tableName : dbSqlLite->GetTables()) {
         std::cout<<tableName<<" "<<std::endl;
-        for(auto field : dbSqlLite->GetTableInfo(tableName))
+        for(auto& field : dbSqlLite->GetTableInfo(tableName))
             std::cout<<field->GetName()<<" "<<field->GetTypeStr()<<std::endl;
         std::cout<<std::endl;
     }

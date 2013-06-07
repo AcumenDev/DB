@@ -23,7 +23,7 @@ std::shared_ptr<DB::DBBase> DBConnection::GetConnection(DB::DBType dbType)  {
         break;
     }
     case DBType::Postgres : {
-        throw  Tools::NotImplementedException();
+        throw  Tools::Exception::NotImplementedException();
         break;
     }
     }
