@@ -78,29 +78,30 @@
 1369029396 d:\my\git_repository\db\extern_lib\sqlite3\include\sqlite3.h
 	<stdarg.h>
 
-1370632601 source:c:\users\grey\work\db\main.cpp
+1370634301 source:c:\users\grey\work\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
+	"src/DBModel/DBModel.h"
 
-1370542464 c:\users\grey\work\db\src\connection\dbconnection.h
+1370633741 c:\users\grey\work\db\src\connection\dbconnection.h
 	"DefDB.h"
 	"../tools/tools.h"
 	"sqllite/DBSqllite.h"
 	"mysql/DBMySql.h"
 
-1370542464 c:\users\grey\work\db\src\connection\defdb.h
+1370633741 c:\users\grey\work\db\src\connection\defdb.h
 	<iostream>
 
-1370632601 c:\users\grey\work\db\src\tools\tools.h
+1370633741 c:\users\grey\work\db\src\tools\tools.h
 	<exception>
 
-1370542464 c:\users\grey\work\db\src\connection\sqllite\dbsqllite.h
+1370633741 c:\users\grey\work\db\src\connection\sqllite\dbsqllite.h
 	<memory>
 	"../DBBase.h"
 	"sqlite3.h"
 
-1370542464 c:\users\grey\work\db\src\connection\dbbase.h
+1370633741 c:\users\grey\work\db\src\connection\dbbase.h
 	<iostream>
 	<vector>
 	<memory>
@@ -108,59 +109,59 @@
 	"TableInfo.h"
 	"../tools/tools.h"
 
-1370542464 c:\users\grey\work\db\src\tools\log\loggingsystem.h
+1370633741 c:\users\grey\work\db\src\tools\log\loggingsystem.h
 	<iostream>
 	"LogStdConsole.h"
 
-1370542464 c:\users\grey\work\db\src\tools\log\logstdconsole.h
+1370633741 c:\users\grey\work\db\src\tools\log\logstdconsole.h
 	"ILog.h"
 
-1370542464 c:\users\grey\work\db\src\tools\log\ilog.h
+1370633741 c:\users\grey\work\db\src\tools\log\ilog.h
 	<iostream>
 
-1370542464 c:\users\grey\work\db\extern_lib\sqlite3\include\sqlite3.h
+1370633741 c:\users\grey\work\db\extern_lib\sqlite3\include\sqlite3.h
 	<stdarg.h>
 
-1370542464 c:\users\grey\work\db\src\connection\mysql\dbmysql.h
+1370633741 c:\users\grey\work\db\src\connection\mysql\dbmysql.h
 	"../DBBase.h"
 
-1370542464 source:c:\users\grey\work\db\src\connection\dbbase.cpp
+1370633741 source:c:\users\grey\work\db\src\connection\dbbase.cpp
 	"DBBase.h"
 
-1370632601 source:c:\users\grey\work\db\src\connection\dbconnection.cpp
+1370633741 source:c:\users\grey\work\db\src\connection\dbconnection.cpp
 	"DBConnection.h"
 
-1370632601 source:c:\users\grey\work\db\src\connection\mysql\dbmysql.cpp
+1370633741 source:c:\users\grey\work\db\src\connection\mysql\dbmysql.cpp
 	"DBMySql.h"
 
-1370632601 source:c:\users\grey\work\db\src\connection\sqllite\dbsqllite.cpp
+1370633741 source:c:\users\grey\work\db\src\connection\sqllite\dbsqllite.cpp
 	"DBSqllite.h"
 
-1370542464 source:c:\users\grey\work\db\src\tools\log\loggingsystem.cpp
+1370633741 source:c:\users\grey\work\db\src\tools\log\loggingsystem.cpp
 	"LoggingSystem.h"
 
-1370542464 source:c:\users\grey\work\db\src\tools\log\logstdconsole.cpp
+1370633741 source:c:\users\grey\work\db\src\tools\log\logstdconsole.cpp
 	"LogStdConsole.h"
 
-1370547256 source:c:\users\grey\work\db\src\dbmodel\dbtable.cpp
+1370633796 source:c:\users\grey\work\db\src\dbmodel\dbtable.cpp
 	"DBTable.h"
 
-1370547256 c:\users\grey\work\db\src\dbmodel\dbtable.h
+1370633796 c:\users\grey\work\db\src\dbmodel\dbtable.h
 	<vector>
 	"DBTableColumn.h"
 
-1370546761 source:c:\users\grey\work\db\src\dbmodel\dbmodel.cpp
+1370634535 source:c:\users\grey\work\db\src\dbmodel\dbmodel.cpp
 	"DBModel.h"
 
-1370632601 c:\users\grey\work\db\src\dbmodel\dbmodel.h
+1370634535 c:\users\grey\work\db\src\dbmodel\dbmodel.h
 	"DBTable.h"
 	"../Connection/DBBase.h"
 
-1370632838 c:\users\grey\work\db\src\dbmodel\dbtablecolumn.h
+1370633741 c:\users\grey\work\db\src\dbmodel\dbtablecolumn.h
 	<iostream>
 	"../Connection/TableInfo.h"
 
-1370547215 source:c:\users\grey\work\db\src\dbmodel\dbtablecolumn.cpp
+1370633741 source:c:\users\grey\work\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
 
 1370606239 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
@@ -189,10 +190,10 @@
 1370441402 source:d:\my\git_repository\db\src\connection\tableinfo.cpp
 	"TableInfo.h"
 
-1370542464 c:\users\grey\work\db\src\connection\tableinfo.h
+1370633741 c:\users\grey\work\db\src\connection\tableinfo.h
 	"DefDB.h"
 
-1370542464 source:c:\users\grey\work\db\src\connection\tableinfo.cpp
+1370633741 source:c:\users\grey\work\db\src\connection\tableinfo.cpp
 	"TableInfo.h"
 
 1370587802 source:d:\my\git_repository\db\src\codegeneration\codegenerationbase.cpp
@@ -226,29 +227,29 @@
 	<iostream>
 	<direct.h>
 
-1370632601 source:c:\users\grey\work\db\src\codegeneration\cgbase.cpp
+1370633808 source:c:\users\grey\work\db\src\codegeneration\cgbase.cpp
 	"CGBase.h"
 
-1370632601 c:\users\grey\work\db\src\codegeneration\cgbase.h
+1370633804 c:\users\grey\work\db\src\codegeneration\cgbase.h
 	"../DBModel/DBModel.h"
 
-1370632601 source:c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.cpp
+1370633741 source:c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.cpp
 	"CGCpp.h"
 
-1370632601 c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.h
+1370633741 c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.h
 	"../CGBase.h"
 
-1370632601 source:c:\users\grey\work\db\src\tools\filesystem.cpp
+1370633741 source:c:\users\grey\work\db\src\tools\filesystem.cpp
 	"FileSystem.h"
 
-1370632601 c:\users\grey\work\db\src\tools\filesystem.h
+1370633741 c:\users\grey\work\db\src\tools\filesystem.h
 	<iostream>
 	<direct.h>
 
-1370632601 source:c:\users\grey\work\db\src\tools\settings.cpp
+1370633741 source:c:\users\grey\work\db\src\tools\settings.cpp
 	"Settings.h"
 
-1370632601 c:\users\grey\work\db\src\tools\settings.h
+1370633741 c:\users\grey\work\db\src\tools\settings.h
 	<memory>
 	<iostream>
 

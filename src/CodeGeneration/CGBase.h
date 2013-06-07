@@ -7,7 +7,7 @@ class CGBase {
 public:
     CGBase();
     virtual ~CGBase();
-    void SetDBModel(DBModel::DBModel dbModel ) ;
+    void SetDBModel(DBEntity::DBModel dbModel ) ;
     virtual void Generate();
     virtual void GenerateTables() = 0;
     virtual void GenerateViews() = 0;
@@ -17,7 +17,7 @@ public:
 //        void SaveToFile(std::string patch, std::string content);
 
 protected:
-    DBModel::DBModel _dbModel;
+    DBEntity::DBModel _dbModel;
 private:
 };
 }

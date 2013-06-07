@@ -2,7 +2,7 @@
 #define DBTABLE_H
 #include <vector>
 #include "DBTableColumn.h"
-namespace DBModel
+namespace DBEntity
 {
 class DBTable
 {

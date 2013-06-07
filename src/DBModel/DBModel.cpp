@@ -1,5 +1,5 @@
 #include "DBModel.h"
-namespace DBModel
+namespace DBEntity
 {
 
 DBModel::DBModel()

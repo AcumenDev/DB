@@ -1,6 +1,6 @@
 #include "CGBase.h"
 namespace CG {
-void CGBase::SetDBModel(DBModel::DBModel dbModel)
+void CGBase::SetDBModel(DBEntity::DBModel dbModel)
 {
     this->_dbModel = dbModel;
 }

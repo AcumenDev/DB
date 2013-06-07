@@ -2,7 +2,7 @@
 #define DBMODEL_H
 #include "DBTable.h"
 #include "../Connection/DBBase.h"
-namespace DBModel {
+namespace DBEntity {
 class DBModel
 {
     public:

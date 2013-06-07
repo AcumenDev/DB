@@ -1,5 +1,5 @@
 #include "DBTable.h"
-namespace DBModel
+namespace DBEntity
 {
 DBTable::DBTable(std::string tableName)
 {
