@@ -2,7 +2,7 @@
 1333917712 source:d:\my\git_repository\db\db\main.cpp
 	<iostream>
 
-1370586653 source:d:\my\git_repository\db\main.cpp
+1370613871 source:d:\my\git_repository\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
@@ -18,7 +18,7 @@
 	"TableInfo.h"
 	"../tools/tools.h"
 
-1370441789 source:d:\my\git_repository\db\src\connection\dbconnection.cpp
+1370609848 source:d:\my\git_repository\db\src\connection\dbconnection.cpp
 	"DBConnection.h"
 
 1370441283 d:\my\git_repository\db\src\connection\dbconnection.h
@@ -27,7 +27,7 @@
 	"sqllite/DBSqllite.h"
 	"mysql/DBMySql.h"
 
-1370441789 source:d:\my\git_repository\db\src\connection\sqllite\dbsqllite.cpp
+1370610565 source:d:\my\git_repository\db\src\connection\sqllite\dbsqllite.cpp
 	"DBSqllite.h"
 
 1370441789 d:\my\git_repository\db\src\connection\sqllite\dbsqllite.h
@@ -35,7 +35,7 @@
 	"../DBBase.h"
 	"sqlite3.h"
 
-1370441789 source:d:\my\git_repository\db\src\connection\mysql\dbmysql.cpp
+1370609843 source:d:\my\git_repository\db\src\connection\mysql\dbmysql.cpp
 	"DBMySql.h"
 
 1370441789 d:\my\git_repository\db\src\connection\mysql\dbmysql.h
@@ -47,7 +47,7 @@
 1369855814 d:\my\git_repository\db\src\utils\utils.h
 	<exception>
 
-1370091409 d:\my\git_repository\db\src\tools\tools.h
+1370610234 d:\my\git_repository\db\src\tools\tools.h
 	<exception>
 
 1370091409 source:d:\my\git_repository\db\src\tools\log\logstdconsole.cpp
@@ -199,21 +199,29 @@
 
 1370600879 d:\my\git_repository\db\src\codegeneration\codegenerationbase.h
 
-1370601405 source:d:\my\git_repository\db\src\tools\settings.cpp
+1370607816 source:d:\my\git_repository\db\src\tools\settings.cpp
 	"Settings.h"
 
-1370602996 d:\my\git_repository\db\src\tools\settings.h
+1370607816 d:\my\git_repository\db\src\tools\settings.h
 	<memory>
+	<iostream>
 
-1370606350 source:d:\my\git_repository\db\src\codegeneration\cgbase.cpp
+1370607944 source:d:\my\git_repository\db\src\codegeneration\cgbase.cpp
 	"CGBase.h"
 
-1370606084 d:\my\git_repository\db\src\codegeneration\cgbase.h
+1370607927 d:\my\git_repository\db\src\codegeneration\cgbase.h
 	"../DBModel/DBModel.h"
 
-1370606921 source:d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.cpp
+1370613143 source:d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.cpp
 	"CGCpp.h"
 
-1370605061 d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.h
+1370608071 d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.h
 	"../CGBase.h"
+
+1370613217 source:d:\my\git_repository\db\src\tools\filesystem.cpp
+	"FileSystem.h"
+
+1370613143 d:\my\git_repository\db\src\tools\filesystem.h
+	<iostream>
+	<direct.h>
 

@@ -23,7 +23,7 @@ std::vector<std::string> DBMySql::GetTables()const {
     return vectorResult;
 }
 std::vector<std::shared_ptr<TableInfo>> DBMySql::GetTableInfo(std::string tableName)const {
-    throw  Tools::NotImplementedException();
+    throw  Tools::Exception::NotImplementedException();
 }
 
 }
