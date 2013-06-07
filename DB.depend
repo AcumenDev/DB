@@ -2,7 +2,7 @@
 1333917712 source:d:\my\git_repository\db\db\main.cpp
 	<iostream>
 
-1370441317 source:d:\my\git_repository\db\main.cpp
+1370586653 source:d:\my\git_repository\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
@@ -162,23 +162,24 @@
 1370547215 source:c:\users\grey\work\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
 
-1370114704 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
+1370585363 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
 	"DBModel.h"
 
-1370114704 d:\my\git_repository\db\src\dbmodel\dbmodel.h
+1370585363 d:\my\git_repository\db\src\dbmodel\dbmodel.h
 	"DBTable.h"
+	"../Connection/DBBase.h"
 
-1370114704 d:\my\git_repository\db\src\dbmodel\dbtable.h
+1370585363 d:\my\git_repository\db\src\dbmodel\dbtable.h
 	<vector>
 	"DBTableColumn.h"
 
-1370114704 d:\my\git_repository\db\src\dbmodel\dbtablecolumn.h
+1370585363 d:\my\git_repository\db\src\dbmodel\dbtablecolumn.h
 	<iostream>
 
-1370114704 source:d:\my\git_repository\db\src\dbmodel\dbtable.cpp
+1370585363 source:d:\my\git_repository\db\src\dbmodel\dbtable.cpp
 	"DBTable.h"
 
-1370114704 source:d:\my\git_repository\db\src\dbmodel\dbtablecolumn.cpp
+1370585363 source:d:\my\git_repository\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
 
 1370441382 d:\my\git_repository\db\src\connection\tableinfo.h

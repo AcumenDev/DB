@@ -14,8 +14,8 @@ int main() {
     dbSqlLite->Connect("122.db","","");
     for(auto tableName : dbSqlLite->GetTables()) {
         std::cout<<tableName<<" "<<std::endl;
-        for(auto fild : dbSqlLite->GetTableInfo(tableName))
-            std::cout<<fild->GetName()<<" "<<fild->GetTypeStr()<<std::endl;
+        for(auto field : dbSqlLite->GetTableInfo(tableName))
+            std::cout<<field->GetName()<<" "<<field->GetTypeStr()<<std::endl;
         std::cout<<std::endl;
     }
 
