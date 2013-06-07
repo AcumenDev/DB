@@ -38,6 +38,11 @@
 			<Add directory="extern_lib/sqlite3/lib" />
 		</Linker>
 		<Unit filename="main.cpp" />
+		<Unit filename="src/CodeGeneration/CGBase.cpp" />
+		<Unit filename="src/CodeGeneration/CGBase.h" />
+		<Unit filename="src/CodeGeneration/Cpp/CGCpp.cpp" />
+		<Unit filename="src/CodeGeneration/Cpp/CGCpp.h" />
+		<Unit filename="src/CodeGeneration/Cpp/TemplateCpp.tpl" />
 		<Unit filename="src/Connection/DBBase.cpp" />
 		<Unit filename="src/Connection/DBBase.h" />
 		<Unit filename="src/Connection/DBConnection.cpp" />
@@ -60,6 +65,8 @@
 		<Unit filename="src/tools/Log/LogStdConsole.h" />
 		<Unit filename="src/tools/Log/LoggingSystem.cpp" />
 		<Unit filename="src/tools/Log/LoggingSystem.h" />
+		<Unit filename="src/tools/Settings.cpp" />
+		<Unit filename="src/tools/Settings.h" />
 		<Unit filename="src/tools/tools.h" />
 		<Extensions>
 			<code_completion />

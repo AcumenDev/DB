@@ -1,6 +1,10 @@
 #include "DBModel.h"
 namespace DBModel
 {
+    DBModel::DBModel()
+    {
+
+    }
 DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase)
 {
     this->DBName=dbBase->GetDBName();

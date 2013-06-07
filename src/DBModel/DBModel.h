@@ -6,6 +6,7 @@ namespace DBModel {
 class DBModel
 {
     public:
+        DBModel();
         DBModel(std::shared_ptr<DB::DBBase> dbBase);
         std::string DBName;
         std::vector<DBTable> DBTableList;

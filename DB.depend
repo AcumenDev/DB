@@ -162,10 +162,10 @@
 1370547215 source:c:\users\grey\work\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
 
-1370585363 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
+1370606239 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
 	"DBModel.h"
 
-1370585363 d:\my\git_repository\db\src\dbmodel\dbmodel.h
+1370606239 d:\my\git_repository\db\src\dbmodel\dbmodel.h
 	"DBTable.h"
 	"../Connection/DBBase.h"
 
@@ -193,4 +193,27 @@
 
 1370542464 source:c:\users\grey\work\db\src\connection\tableinfo.cpp
 	"TableInfo.h"
+
+1370587802 source:d:\my\git_repository\db\src\codegeneration\codegenerationbase.cpp
+	"CodeGenerationBase.h"
+
+1370600879 d:\my\git_repository\db\src\codegeneration\codegenerationbase.h
+
+1370601405 source:d:\my\git_repository\db\src\tools\settings.cpp
+	"Settings.h"
+
+1370602996 d:\my\git_repository\db\src\tools\settings.h
+	<memory>
+
+1370606350 source:d:\my\git_repository\db\src\codegeneration\cgbase.cpp
+	"CGBase.h"
+
+1370606084 d:\my\git_repository\db\src\codegeneration\cgbase.h
+	"../DBModel/DBModel.h"
+
+1370606921 source:d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.cpp
+	"CGCpp.h"
+
+1370605061 d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.h
+	"../CGBase.h"
 
