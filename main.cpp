@@ -3,6 +3,7 @@
 #include "src/tools/Log/LoggingSystem.h"
 #include "src/DBEntity/DBModel.h"
 #include "src/tools/FileSystem.h"
+#include "src/CodeGeneration/Cpp/CGCpp.h"
 using namespace std;
 
 int main() {
@@ -26,6 +27,9 @@ int main() {
 
         std::cout<<std::endl;
     }
+    CG::CGCpp cgCpp;
+    cgCpp.SetDBModel(dbModel);
+    cgCpp.GenerateTables();
 
 //    Tools::FileSystem::DirCreate("./","lal");
 

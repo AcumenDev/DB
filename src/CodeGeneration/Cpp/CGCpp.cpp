@@ -9,7 +9,7 @@ CGCpp::~CGCpp() {
 }
 
 void CGCpp::GenerateTables() {
-
+    Tools::FileSystem::DirCreate("./DB/", "Folder");
     std::string content="";
     for(const auto& table : _dbModel.DBTableList) {
         content+="class "+table.TableName +" {\n ";
@@ -28,10 +28,11 @@ void CGCpp::GenerateTables() {
                     break;
                 }
             }
-            content+= field.ColumnName + ";";
+            content+= field.ColumnName + ";\n";
         }
-    content+="}";
-    }
+        }
+    content+="}\n";
+    Tools::FileSystem::FileSave("./DB/Folder/", "tables", content);
 }
 
 

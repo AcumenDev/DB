@@ -1,0 +1,8 @@
+class test1 {
+ int id;
+string name;
+class test2 {
+ int number;
+string name;
+string phone;
+}
