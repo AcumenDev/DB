@@ -16,3 +16,4 @@
 *.layout
 obj/
 bin/
+db/
