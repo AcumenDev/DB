@@ -55,7 +55,17 @@
 			<Add option="-Wall" />
 			<Add option="-ansi" />
 			<Add option="-fexceptions" />
+			<Add directory="../../extern_lib/sqlite3/include" />
 		</Compiler>
+		<Linker>
+			<Add option="-lsqlite3" />
+			<Add directory="../../extern_lib/sqlite3/lib" />
+		</Linker>
+		<Unit filename="DBEn/DBEntityTestDB.cpp" />
+		<Unit filename="DBEn/DBEntityTestDB.h" />
+		<Unit filename="DBEn/Tables/Test1_logic.cpp" />
+		<Unit filename="DBEn/Tables/Test1_logic.h" />
+		<Unit filename="DBEn/Tables/test1.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

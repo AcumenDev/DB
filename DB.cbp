@@ -55,7 +55,7 @@
 			<Add option="-Wall" />
 			<Add option="-ansi" />
 			<Add option="-fexceptions" />
-			<Add directory="extern_lib/sqlite3/include" />
+			<Add directory="../../extern_lib/sqlite3/include" />
 		</Compiler>
 		<Linker>
 			<Add option="-lsqlite3" />
