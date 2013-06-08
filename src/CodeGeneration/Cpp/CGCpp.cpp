@@ -10,10 +10,27 @@ CGCpp::~CGCpp() {
 
 void CGCpp::GenerateTables() {
 
-    //  mkdir("12376");
-    std::string content;
+    std::string content="";
     for(const auto& table : _dbModel.DBTableList) {
-
+        content+="class "+table.TableName +" {\n ";
+        for (const auto& field : table.DBTableColumnList)
+        {
+            switch (field.ColumnType)
+            {
+            case DB::DataType::Number:
+                {
+                    content+="int ";
+                    break;
+                }
+            case DB::DataType::Text:
+                {
+                    content+="string ";
+                    break;
+                }
+            }
+            content+= field.ColumnName + ";";
+        }
+    content+="}";
     }
 }
 

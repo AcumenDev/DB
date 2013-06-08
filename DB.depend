@@ -79,7 +79,7 @@
 1369029396 d:\my\git_repository\db\extern_lib\sqlite3\include\sqlite3.h
 	<stdarg.h>
 
-1370692816 source:c:\users\grey\work\db\main.cpp
+1370695805 source:c:\users\grey\work\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
@@ -98,10 +98,10 @@
 1370688166 c:\users\grey\work\db\src\tools\tools.h
 	<exception>
 
-1370633741 c:\users\grey\work\db\src\connection\sqllite\dbsqllite.h
+1370695389 c:\users\grey\work\db\src\connection\sqllite\dbsqllite.h
 	<memory>
 	"../DBBase.h"
-	"sqlite3.h"
+	"../../../extern_lib/sqlite3/include/sqlite3.h"
 
 1370633741 c:\users\grey\work\db\src\connection\dbbase.h
 	<iostream>
@@ -237,7 +237,7 @@
 1370692957 c:\users\grey\work\db\src\codegeneration\cgbase.h
 	"../DBEntity/DBModel.h"
 
-1370633741 source:c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.cpp
+1370694581 source:c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.cpp
 	"CGCpp.h"
 
 1370633741 c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.h

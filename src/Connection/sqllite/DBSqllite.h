@@ -2,7 +2,7 @@
 #define DBSQLLITE_H
 #include <memory>
 #include "../DBBase.h"
-#include "sqlite3.h"
+#include "../../../extern_lib/sqlite3/include/sqlite3.h"
 
 namespace DB {
 class DBSqllite : public  DBBase {

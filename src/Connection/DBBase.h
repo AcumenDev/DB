@@ -4,7 +4,7 @@
 #include <vector>
 #include <memory>
 #include "../tools/Log/LoggingSystem.h"
-#include "TableInfo.h"
+#include "./TableInfo.h"
 #include "../tools/tools.h"
 namespace DB {
 ///Базовый класс для подключения к бд

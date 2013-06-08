@@ -31,7 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="../../src" />
 		</Compiler>
+		<Linker>
+			<Add option="-lsqlite3" />
+			<Add directory="../../extern_lib/sqlite3/lib" />
+		</Linker>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

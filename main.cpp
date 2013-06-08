@@ -6,13 +6,13 @@
 using namespace std;
 
 int main() {
-    Connection::DBConnection var;
+//    Connection::DBConnection var;
 
     // LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
 
 //   Log->Write("Hello world!");
 
-    std::shared_ptr<DB::DBBase> dbSqlLite =  var.GetConnection(DB::DBType::Sqllite);
+    std::shared_ptr<DB::DBBase> dbSqlLite = Connection::DBConnection::GetConnection(DB::DBType::Sqllite);
 
     dbSqlLite->Connect("122.db","","");
 

@@ -1,0 +1,69 @@
+# depslib dependency file v1.0
+1370695500 source:c:\users\grey\work\db\test\testdb\main.cpp
+	<iostream>
+	"../../src/Connection/DefDB.h"
+	"../../src/Connection/DBConnection.h"
+	"../../src/CodeGeneration/Cpp/CGCpp.h"
+
+1370633741 c:\users\grey\work\db\src\connection\defdb.h
+	<iostream>
+
+1370633741 c:\users\grey\work\db\src\connection\dbconnection.h
+	"DefDB.h"
+	"../tools/tools.h"
+	"sqllite/DBSqllite.h"
+	"mysql/DBMySql.h"
+
+1370688166 c:\users\grey\work\db\src\tools\tools.h
+	<exception>
+
+1370695389 c:\users\grey\work\db\src\connection\sqllite\dbsqllite.h
+	<memory>
+	"../DBBase.h"
+	"../../../extern_lib/sqlite3/include/sqlite3.h"
+
+1370633741 c:\users\grey\work\db\src\connection\dbbase.h
+	<iostream>
+	<vector>
+	<memory>
+	"../tools/Log/LoggingSystem.h"
+	"TableInfo.h"
+	"../tools/tools.h"
+
+1370633741 c:\users\grey\work\db\src\tools\log\loggingsystem.h
+	<iostream>
+	"LogStdConsole.h"
+
+1370633741 c:\users\grey\work\db\src\tools\log\logstdconsole.h
+	"ILog.h"
+
+1370633741 c:\users\grey\work\db\src\tools\log\ilog.h
+	<iostream>
+
+1370633741 c:\users\grey\work\db\src\connection\tableinfo.h
+	"DefDB.h"
+
+1370633741 c:\users\grey\work\db\extern_lib\sqlite3\include\sqlite3.h
+	<stdarg.h>
+
+1370633741 c:\users\grey\work\db\src\connection\mysql\dbmysql.h
+	"../DBBase.h"
+
+1370633741 c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.h
+	"../CGBase.h"
+
+1370692957 c:\users\grey\work\db\src\codegeneration\cgbase.h
+	"../DBEntity/DBModel.h"
+
+1370687334 c:\users\grey\work\db\src\dbentity\dbmodel.h
+	"DBTable.h"
+	"../Connection/DBBase.h"
+
+1370687334 c:\users\grey\work\db\src\dbentity\dbtable.h
+	<vector>
+	"DBTableColumn.h"
+
+1370687334 c:\users\grey\work\db\src\dbentity\dbtablecolumn.h
+	<iostream>
+	"../Connection/TableInfo.h"
+
