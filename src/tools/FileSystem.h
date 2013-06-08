@@ -8,8 +8,8 @@ public:
     FileSystem();
     virtual ~FileSystem();
 
-   static bool DirCreate(std::string patch,std::string  name );
-   static bool FileSave(std::string patch,std::string  name,std::string  content );
+    static bool DirCreate(std::string path,std::string  name );
+    static bool FileSave(std::string path,std::string  name,std::string  content );
 
 protected:
 private:

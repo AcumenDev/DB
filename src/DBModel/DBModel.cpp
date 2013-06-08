@@ -1,23 +1,18 @@
 #include "DBModel.h"
-namespace DBEntity
-{
+namespace DBEntity {
 
-DBModel::DBModel()
-{
+DBModel::DBModel() {
 
 }
 
-DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase)
-{
+DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase) {
     this->DBName=dbBase->GetDBName();
 
-    for(auto tableName : dbBase->GetTables())
-    {
+    for(auto tableName : dbBase->GetTables()) {
 
         DBTable table = DBTable(tableName);
 
-        for(auto field : dbBase->GetTableInfo(tableName))
-        {
+        for(auto field : dbBase->GetTableInfo(tableName)) {
             DBTableColumn column =  DBTableColumn(field->GetName(), field->GetType());
             table.DBTableColumnList.push_back(column);
         }
@@ -26,8 +21,7 @@ DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase)
     }
 }
 
-DBModel::~DBModel()
-{
+DBModel::~DBModel() {
     //dtor
 }
 }
