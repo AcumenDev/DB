@@ -10,17 +10,5 @@ class NotImplementedException : public std::exception {
 };
 } //end namespace Exception
 
-
-
-namespace FileSystem {
-
-
-
-}
-
-
-
-
-
 }//end namespace Tools
 #endif // TOOLS_H_INCLUDED

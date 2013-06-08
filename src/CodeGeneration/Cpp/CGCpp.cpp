@@ -11,8 +11,8 @@ CGCpp::~CGCpp() {
 void CGCpp::GenerateTables() {
 
     //  mkdir("12376");
-
-    for( auto table : _dbModel.DBTableList) {
+    string content;
+    for(const auto& table : _dbModel.DBTableList) {
 
     }
 }
