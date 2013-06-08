@@ -67,3 +67,51 @@
 	<iostream>
 	"../Connection/TableInfo.h"
 
+1370697675 source:d:\my\git_repository\db\test\testdb\main.cpp
+	<iostream>
+	"Connection/DBConnection.h"
+
+1370697548 d:\my\git_repository\db\src\connection\defdb.h
+	<iostream>
+
+1370697548 d:\my\git_repository\db\src\connection\dbconnection.h
+	"./DefDB.h"
+	"../tools/tools.h"
+	"./sqllite/DBSqllite.h"
+	"./mysql/DBMySql.h"
+
+1370693030 d:\my\git_repository\db\src\tools\tools.h
+	<exception>
+
+1370696238 d:\my\git_repository\db\src\connection\sqllite\dbsqllite.h
+	<memory>
+	"../DBBase.h"
+	"../../../extern_lib/sqlite3/include/sqlite3.h"
+
+1370697548 d:\my\git_repository\db\src\connection\dbbase.h
+	<iostream>
+	<vector>
+	<memory>
+	"../tools/Log/LoggingSystem.h"
+	"./TableInfo.h"
+	"../tools/tools.h"
+
+1370441789 d:\my\git_repository\db\src\tools\log\loggingsystem.h
+	<iostream>
+	"LogStdConsole.h"
+
+1370441789 d:\my\git_repository\db\src\tools\log\logstdconsole.h
+	"ILog.h"
+
+1370091409 d:\my\git_repository\db\src\tools\log\ilog.h
+	<iostream>
+
+1370697548 d:\my\git_repository\db\src\connection\tableinfo.h
+	"./DefDB.h"
+
+1369029396 d:\my\git_repository\db\extern_lib\sqlite3\include\sqlite3.h
+	<stdarg.h>
+
+1370441789 d:\my\git_repository\db\src\connection\mysql\dbmysql.h
+	"../DBBase.h"
+
