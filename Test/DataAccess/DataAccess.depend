@@ -1,4 +1,8 @@
 # depslib dependency file v1.0
-1333917712 source:d:\my\git_repository\db\test\dataaccess\main.cpp
+1370703676 source:d:\my\git_repository\db\test\dataaccess\main.cpp
+	<iostream>
+	"test1.h"
+
+1370703074 d:\my\git_repository\db\test\dataaccess\test1.h
 	<iostream>
 
