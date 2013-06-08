@@ -12,8 +12,7 @@ class NotImplementedException : public std::exception {
 
 
 
-namespace FileSystem
-{
+namespace FileSystem {
 
 
 

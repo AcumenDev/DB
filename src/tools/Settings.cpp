@@ -22,14 +22,12 @@ Settings::~Settings() {
     //dtor
 }
 
-void Settings::SetOutputDir(std::string name)
-{
+void Settings::SetOutputDir(std::string name) {
     _OutputDir=name;
 }
 
-std::string Settings::GetOutputDir() const
-{
-return  _OutputDir;
+std::string Settings::GetOutputDir() const {
+    return  _OutputDir;
 }
 
 

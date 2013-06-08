@@ -7,9 +7,9 @@ using namespace std;
 int main() {
     Connection::DBConnection var;
 
-   // LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
+    // LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
 
- //   Log->Write("Hello world!");
+//   Log->Write("Hello world!");
 
     std::shared_ptr<DB::DBBase> dbSqlLite =  var.GetConnection(DB::DBType::Sqllite);
 
@@ -17,7 +17,7 @@ int main() {
 
     DBEntity::DBModel dbModel =  DBEntity::DBModel(dbSqlLite);
 
-     for(auto table : dbModel.DBTableList) {
+    for(auto table : dbModel.DBTableList) {
         std::cout<<table.TableName<<" "<<std::endl;
 
         for(auto field : table.DBTableColumnList )

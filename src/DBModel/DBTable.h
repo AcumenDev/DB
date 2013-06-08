@@ -2,10 +2,8 @@
 #define DBTABLE_H
 #include <vector>
 #include "DBTableColumn.h"
-namespace DBEntity
-{
-class DBTable
-{
+namespace DBEntity {
+class DBTable {
 public:
     DBTable(std::string tableName);
     std::string TableName;
