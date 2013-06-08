@@ -15,6 +15,8 @@ CGBase::~CGBase() {
 }
 void CGBase::Generate()
 {
+
+
     GenerateTables();
     GenerateViews();
     GenerateStoredProcedures();

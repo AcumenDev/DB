@@ -2,10 +2,11 @@
 1333917712 source:d:\my\git_repository\db\db\main.cpp
 	<iostream>
 
-1370613871 source:d:\my\git_repository\db\main.cpp
+1370634892 source:d:\my\git_repository\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
+	"src/DBModel/DBModel.h"
 
 1369853674 source:d:\my\git_repository\db\src\connection\dbbase.cpp
 	"DBBase.h"
@@ -164,24 +165,25 @@
 1370633741 source:c:\users\grey\work\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
 
-1370606239 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
+1370634892 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
 	"DBModel.h"
 
-1370606239 d:\my\git_repository\db\src\dbmodel\dbmodel.h
+1370634892 d:\my\git_repository\db\src\dbmodel\dbmodel.h
 	"DBTable.h"
 	"../Connection/DBBase.h"
 
-1370585363 d:\my\git_repository\db\src\dbmodel\dbtable.h
+1370634892 d:\my\git_repository\db\src\dbmodel\dbtable.h
 	<vector>
 	"DBTableColumn.h"
 
-1370585363 d:\my\git_repository\db\src\dbmodel\dbtablecolumn.h
+1370634610 d:\my\git_repository\db\src\dbmodel\dbtablecolumn.h
 	<iostream>
+	"../Connection/TableInfo.h"
 
-1370585363 source:d:\my\git_repository\db\src\dbmodel\dbtable.cpp
+1370634892 source:d:\my\git_repository\db\src\dbmodel\dbtable.cpp
 	"DBTable.h"
 
-1370585363 source:d:\my\git_repository\db\src\dbmodel\dbtablecolumn.cpp
+1370634610 source:d:\my\git_repository\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
 
 1370441382 d:\my\git_repository\db\src\connection\tableinfo.h
@@ -208,10 +210,10 @@
 	<memory>
 	<iostream>
 
-1370607944 source:d:\my\git_repository\db\src\codegeneration\cgbase.cpp
+1370634892 source:d:\my\git_repository\db\src\codegeneration\cgbase.cpp
 	"CGBase.h"
 
-1370607927 d:\my\git_repository\db\src\codegeneration\cgbase.h
+1370634892 d:\my\git_repository\db\src\codegeneration\cgbase.h
 	"../DBModel/DBModel.h"
 
 1370613143 source:d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.cpp
