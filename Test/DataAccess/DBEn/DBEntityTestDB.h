@@ -1,6 +1,6 @@
 #ifndef DBENTITYTESTDB_H
 #define DBENTITYTESTDB_H
-#include "Tables/Test1_logic.h"
+#include "Tables/Test1/Test1_logic.h"
 
 class DBEntityTestDB {
 public:
