@@ -13,9 +13,6 @@ public:
     virtual void GenerateViews() = 0;
     virtual void GenerateStoredProcedures() = 0;
 
-
-//        void SaveToFile(std::string patch, std::string content);
-
 protected:
     DBEntity::DBModel _dbModel;
 private:

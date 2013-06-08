@@ -2,10 +2,11 @@
 1333917712 source:d:\my\git_repository\db\db\main.cpp
 	<iostream>
 
-1370613871 source:d:\my\git_repository\db\main.cpp
+1370688323 source:d:\my\git_repository\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
+	"src/DBModel/DBModel.h"
 
 1369853674 source:d:\my\git_repository\db\src\connection\dbbase.cpp
 	"DBBase.h"
@@ -47,7 +48,7 @@
 1369855814 d:\my\git_repository\db\src\utils\utils.h
 	<exception>
 
-1370610234 d:\my\git_repository\db\src\tools\tools.h
+1370687520 d:\my\git_repository\db\src\tools\tools.h
 	<exception>
 
 1370091409 source:d:\my\git_repository\db\src\tools\log\logstdconsole.cpp
@@ -165,24 +166,25 @@
 1370687334 source:c:\users\grey\work\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
 
-1370606239 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
+1370687520 source:d:\my\git_repository\db\src\dbmodel\dbmodel.cpp
 	"DBModel.h"
 
-1370606239 d:\my\git_repository\db\src\dbmodel\dbmodel.h
+1370687520 d:\my\git_repository\db\src\dbmodel\dbmodel.h
 	"DBTable.h"
 	"../Connection/DBBase.h"
 
-1370585363 d:\my\git_repository\db\src\dbmodel\dbtable.h
+1370687520 d:\my\git_repository\db\src\dbmodel\dbtable.h
 	<vector>
 	"DBTableColumn.h"
 
-1370585363 d:\my\git_repository\db\src\dbmodel\dbtablecolumn.h
+1370687520 d:\my\git_repository\db\src\dbmodel\dbtablecolumn.h
 	<iostream>
+	"../Connection/TableInfo.h"
 
-1370585363 source:d:\my\git_repository\db\src\dbmodel\dbtable.cpp
+1370687520 source:d:\my\git_repository\db\src\dbmodel\dbtable.cpp
 	"DBTable.h"
 
-1370585363 source:d:\my\git_repository\db\src\dbmodel\dbtablecolumn.cpp
+1370687520 source:d:\my\git_repository\db\src\dbmodel\dbtablecolumn.cpp
 	"DBTableColumn.h"
 
 1370441382 d:\my\git_repository\db\src\connection\tableinfo.h
@@ -202,20 +204,21 @@
 
 1370600879 d:\my\git_repository\db\src\codegeneration\codegenerationbase.h
 
-1370607816 source:d:\my\git_repository\db\src\tools\settings.cpp
+1370690023 source:d:\my\git_repository\db\src\tools\settings.cpp
 	"Settings.h"
 
-1370607816 d:\my\git_repository\db\src\tools\settings.h
+1370690110 d:\my\git_repository\db\src\tools\settings.h
 	<memory>
 	<iostream>
+	"../Connection/DefDB.h"
 
-1370607944 source:d:\my\git_repository\db\src\codegeneration\cgbase.cpp
+1370687669 source:d:\my\git_repository\db\src\codegeneration\cgbase.cpp
 	"CGBase.h"
 
-1370607927 d:\my\git_repository\db\src\codegeneration\cgbase.h
+1370687827 d:\my\git_repository\db\src\codegeneration\cgbase.h
 	"../DBModel/DBModel.h"
 
-1370613143 source:d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.cpp
+1370688308 source:d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.cpp
 	"CGCpp.h"
 
 1370608071 d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.h
@@ -224,7 +227,7 @@
 1370613217 source:d:\my\git_repository\db\src\tools\filesystem.cpp
 	"FileSystem.h"
 
-1370613143 d:\my\git_repository\db\src\tools\filesystem.h
+1370688848 d:\my\git_repository\db\src\tools\filesystem.h
 	<iostream>
 	<direct.h>
 
@@ -240,7 +243,7 @@
 1370633741 c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.h
 	"../CGBase.h"
 
-1370687935 source:c:\users\grey\work\db\src\tools\filesystem.cpp
+1370689197 source:c:\users\grey\work\db\src\tools\filesystem.cpp
 	"FileSystem.h"
 
 1370689098 c:\users\grey\work\db\src\tools\filesystem.h
