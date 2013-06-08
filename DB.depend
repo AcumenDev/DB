@@ -79,7 +79,7 @@
 1369029396 d:\my\git_repository\db\extern_lib\sqlite3\include\sqlite3.h
 	<stdarg.h>
 
-1370689098 source:c:\users\grey\work\db\main.cpp
+1370692816 source:c:\users\grey\work\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
@@ -231,11 +231,11 @@
 	<iostream>
 	<direct.h>
 
-1370687334 source:c:\users\grey\work\db\src\codegeneration\cgbase.cpp
+1370692816 source:c:\users\grey\work\db\src\codegeneration\cgbase.cpp
 	"CGBase.h"
 
-1370633804 c:\users\grey\work\db\src\codegeneration\cgbase.h
-	"../DBModel/DBModel.h"
+1370692957 c:\users\grey\work\db\src\codegeneration\cgbase.h
+	"../DBEntity/DBModel.h"
 
 1370633741 source:c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.cpp
 	"CGCpp.h"
@@ -251,12 +251,13 @@
 	<fstream>
 	<direct.h>
 
-1370687317 source:c:\users\grey\work\db\src\tools\settings.cpp
+1370692816 source:c:\users\grey\work\db\src\tools\settings.cpp
 	"Settings.h"
 
-1370687317 c:\users\grey\work\db\src\tools\settings.h
+1370692816 c:\users\grey\work\db\src\tools\settings.h
 	<memory>
 	<iostream>
+	"../Connection/DefDB.h"
 
 1370687334 c:\users\grey\work\db\src\dbentity\dbmodel.h
 	"DBTable.h"

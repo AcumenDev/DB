@@ -1,6 +1,6 @@
 #ifndef CGBASE_H
 #define CGBASE_H
-#include "../DBModel/DBModel.h"
+#include "../DBEntity/DBModel.h"
 namespace CG {
 
 class CGBase {
