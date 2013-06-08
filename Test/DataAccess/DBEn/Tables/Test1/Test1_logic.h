@@ -10,6 +10,7 @@ public:
     virtual ~Test1_logic();
     void SetDBContext(sqlite3 * ppDb);
     std::vector<Test1> GetList();
+     Test1_logic(const Test1_logic&) = delete;
 protected:
 private:
 

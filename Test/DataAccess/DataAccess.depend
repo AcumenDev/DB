@@ -40,7 +40,8 @@
 1370709534 source:d:\my\git_repository\db\test\dataaccess\dben\tables\test1_logic.cpp
 	"Test1_logic.h"
 
-<<<<<<< HEAD
+1370704321 D
+
 1370711214 source:c:\users\grey\work\db\test\dataaccess\dben\dbentitytestdb.cpp
 	"DBEntityTestDB.h"
 
@@ -48,24 +49,28 @@
 	"Tables/Test1_logic.h"
 
 1370711214 c:\users\grey\work\db\test\dataaccess\dben\tables\test1_logic.h
-=======
-1370704321 d:\my\git_repository\db\test\dataaccess\dben\tables\test1\test1_logic.h
->>>>>>> 7c1135e91f79bec0764c41c13d9a261ea6b59f36
+
+1370714413 d:\my\git_repository\db\test\dataaccess\dben\tables\test1\test1_logic.h
 	<vector>
 	"test1.h"
 	"sqlite3.h"
 
-<<<<<<< HEAD
+1370709534 135e91f79bec0764c41c13d9a261ea6b59f36
+	<vector>
+	"test1.h"
+	"sqlite3.h"
+
 1370711214 c:\users\grey\work\db\test\dataaccess\dben\tables\test1.h
 	<iostream>
 
 1370633741 c:\users\grey\work\db\extern_lib\sqlite3\include\sqlite3.h
 	<stdarg.h>
-=======
+
+1370633741 
+
 1370709072 d:\my\git_repository\db\test\dataaccess\dben\tables\test1\test1.h
 	<iostream>
 
 1370709534 source:d:\my\git_repository\db\test\dataaccess\dben\tables\test1\test1_logic.cpp
 	"Test1_logic.h"
->>>>>>> 7c1135e91f79bec0764c41c13d9a261ea6b59f36
 
