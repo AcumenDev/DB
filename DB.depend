@@ -2,12 +2,14 @@
 1333917712 source:d:\my\git_repository\db\db\main.cpp
 	<iostream>
 
-1370697571 source:d:\my\git_repository\db\main.cpp
+1370712727 source:d:\my\git_repository\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
 	"src/DBEntity/DBModel.h"
 	"src/tools/FileSystem.h"
+	"src/tools/Settings.h"
+	"src/CodeGeneration/Cpp/CGCpp.h"
 
 1370696238 source:d:\my\git_repository\db\src\connection\dbbase.cpp
 	"./DBBase.h"
@@ -215,17 +217,19 @@
 	<iostream>
 	"../Connection/DefDB.h"
 
-1370687669 source:d:\my\git_repository\db\src\codegeneration\cgbase.cpp
+1370712727 source:d:\my\git_repository\db\src\codegeneration\cgbase.cpp
 	"CGBase.h"
 
-1370693030 d:\my\git_repository\db\src\codegeneration\cgbase.h
+1370712727 d:\my\git_repository\db\src\codegeneration\cgbase.h
 	"../DBEntity/DBModel.h"
+	"../tools/Settings.h"
 
-1370696238 source:d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.cpp
+1370715019 source:d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.cpp
 	"CGCpp.h"
 
-1370608071 d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.h
+1370714985 d:\my\git_repository\db\src\codegeneration\cpp\cgcpp.h
 	"../CGBase.h"
+	"../../tools/FileSystem.h"
 
 1370693030 source:d:\my\git_repository\db\src\tools\filesystem.cpp
 	"FileSystem.h"

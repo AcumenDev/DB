@@ -8,10 +8,8 @@ class CGCpp : public  CGBase {
 public:
     CGCpp();
     virtual ~CGCpp();
-    /** @brief (one liner)
-      *
-      * (documentation goes here)
-      */
+    void GenerateTablesLogic(DBEntity::DBTable dbTable);
+    void GenerateTablesStruct(DBEntity::DBTable dbTable);
     void GenerateTables() override;
     void GenerateViews() override;
     void GenerateStoredProcedures() override;

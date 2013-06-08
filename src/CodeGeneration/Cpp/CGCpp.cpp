@@ -8,27 +8,42 @@ CGCpp::CGCpp() {
 CGCpp::~CGCpp() {
 }
 
-void CGCpp::GenerateTables() {
+void CGCpp::GenerateTablesStruct(DBEntity::DBTable dbTable) {
     std::string content;
-    for(const auto& table : _dbModel.DBTableList) {
-        Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), table.TableName);
-        content="#ifndef "+table.TableName +"_H\n#define "+table.TableName+"_H\n";
-        content+="class "+table.TableName +" {\n";
-        for (const auto& field : table.DBTableColumnList) {
-            switch (field.ColumnType) {
-            case DB::DataType::Number: {
-                content+="int ";
-                break;
-            }
-            case DB::DataType::Text: {
-                content+="std::string ";
-                break;
-            }
-            }
-            content+= field.ColumnName + ";\n";
+
+    Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), dbTable.TableName);
+    content="#ifndef "+dbTable.TableName +"_H\n#define "+dbTable.TableName+"_H\n";
+    content+="class "+dbTable.TableName +" {\n";
+    for (const auto& field : dbTable.DBTableColumnList) {
+        switch (field.ColumnType) {
+        case DB::DataType::Number: {
+            content+="int ";
+            break;
         }
-        content+="}\n";
-        Tools::FileSystem::FileSave("./DB/"+table.TableName+"/", table.TableName+".h", content);
+        case DB::DataType::Text: {
+            content+="std::string ";
+            break;
+        }
+        }
+        content+= field.ColumnName + ";\n";
+    }
+    content+="}\n";
+    Tools::FileSystem::FileSave("./DB/"+dbTable.TableName+"/", dbTable.TableName+".h", content);
+
+}
+
+void CGCpp::GenerateTablesLogic(DBEntity::DBTable dbTable) {
+
+
+
+}
+
+
+
+void CGCpp::GenerateTables() {
+    for(const auto& table : _dbModel.DBTableList) {
+        GenerateTablesStruct(table);
+        GenerateTablesLogic(table);
     }
 }
 
