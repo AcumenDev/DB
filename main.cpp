@@ -17,10 +17,10 @@ int main() {
 
     DBEntity::DBModel dbModel =  DBEntity::DBModel(dbSqlLite);
 
-    for(auto table : dbModel.DBTableList) {
+    for(const auto& table : dbModel.DBTableList) {
         std::cout<<table.TableName<<" "<<std::endl;
 
-        for(auto field : table.DBTableColumnList )
+        for(const auto& field : table.DBTableColumnList )
             std::cout<<field.ColumnName<<" "<<field.ColumnType<<std::endl;
 
         std::cout<<std::endl;

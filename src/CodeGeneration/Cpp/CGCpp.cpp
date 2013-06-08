@@ -12,7 +12,7 @@ void CGCpp::GenerateTables() {
 
 
 
-    for( auto table : _dbModel.DBTableList) {
+    for( const auto& table : _dbModel.DBTableList) {
 
     }
 }
