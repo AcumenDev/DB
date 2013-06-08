@@ -22,11 +22,11 @@ std::vector<Test1> Test1_logic::GetList() {
     if (rc == SQLITE_OK) {
         if (sqlite3_column_count(stmt)) {
             while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
-                auto rawId = sqlite3_column_text(stmt, 0);
+                auto rawId = sqlite3_column_int(stmt, 0);
                 auto rawName = sqlite3_column_text(stmt, 1);
                 Test1 test1;
-                test1.id = reinterpret_cast<int>(rawId);
-                test1.Name = reinterpret_cast<const char*>(rawId);
+                test1.Id = rawId;
+                test1.Name = reinterpret_cast<const char*>(rawName);
                 vectorResult.push_back(test1);
             }
             std::cout<<std::endl;
