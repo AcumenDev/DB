@@ -6,6 +6,7 @@ void CGBase::SetDBModel(DBEntity::DBModel dbModel) {
 
 
 CGBase::CGBase() {
+    this->_Setting=Core::Settings::GetSettings();
     //ctor
 }
 

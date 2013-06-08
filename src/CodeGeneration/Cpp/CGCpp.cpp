@@ -9,10 +9,10 @@ CGCpp::~CGCpp() {
 }
 
 void CGCpp::GenerateTables() {
-    Tools::FileSystem::DirCreate("./DB/", "Folder");
+    Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), "Folder");
     std::string content="";
     for(const auto& table : _dbModel.DBTableList) {
-        content+="class "+table.TableName +" {\n ";
+        content+="class "+table.TableName +" {\n";
         for (const auto& field : table.DBTableColumnList)
         {
             switch (field.ColumnType)
@@ -24,15 +24,16 @@ void CGCpp::GenerateTables() {
                 }
             case DB::DataType::Text:
                 {
-                    content+="string ";
+                    content+="std::string ";
                     break;
                 }
             }
             content+= field.ColumnName + ";\n";
         }
+        content+="}\n";
         }
-    content+="}\n";
-    Tools::FileSystem::FileSave("./DB/Folder/", "tables", content);
+
+    Tools::FileSystem::FileSave("./DB/Folder/", "tables.h", content);
 }
 
 

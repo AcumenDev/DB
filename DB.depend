@@ -80,12 +80,13 @@
 1369029396 d:\my\git_repository\db\extern_lib\sqlite3\include\sqlite3.h
 	<stdarg.h>
 
-1370696693 source:c:\users\grey\work\db\main.cpp
+1370699520 source:c:\users\grey\work\db\main.cpp
 	<iostream>
 	"src/Connection/DBConnection.h"
 	"src/tools/Log/LoggingSystem.h"
 	"src/DBEntity/DBModel.h"
 	"src/tools/FileSystem.h"
+	"src/tools/Settings.h"
 	"src/CodeGeneration/Cpp/CGCpp.h"
 
 1370696050 c:\users\grey\work\db\src\connection\dbconnection.h
@@ -237,13 +238,14 @@
 1370692816 source:c:\users\grey\work\db\src\codegeneration\cgbase.cpp
 	"CGBase.h"
 
-1370692957 c:\users\grey\work\db\src\codegeneration\cgbase.h
+1370699551 c:\users\grey\work\db\src\codegeneration\cgbase.h
 	"../DBEntity/DBModel.h"
+	"../tools/Settings.h"
 
-1370696872 source:c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.cpp
+1370698843 source:c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.cpp
 	"CGCpp.h"
 
-1370696507 c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.h
+1370699520 c:\users\grey\work\db\src\codegeneration\cpp\cgcpp.h
 	"../CGBase.h"
 	"../../tools/FileSystem.h"
 

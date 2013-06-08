@@ -1,6 +1,7 @@
 #ifndef CGBASE_H
 #define CGBASE_H
 #include "../DBEntity/DBModel.h"
+#include "../tools/Settings.h"
 namespace CG {
 
 class CGBase {
@@ -15,6 +16,7 @@ public:
 
 protected:
     DBEntity::DBModel _dbModel;
+    std::shared_ptr<Core::Settings> _Setting;
 private:
 };
 }

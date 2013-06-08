@@ -2,6 +2,7 @@
 #define CGCPP_H
 #include "../CGBase.h"
 #include "../../tools/FileSystem.h"
+
 namespace CG {
 class CGCpp : public  CGBase {
 public:

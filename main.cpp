@@ -3,6 +3,7 @@
 #include "src/tools/Log/LoggingSystem.h"
 #include "src/DBEntity/DBModel.h"
 #include "src/tools/FileSystem.h"
+#include "src/tools/Settings.h"
 #include "src/CodeGeneration/Cpp/CGCpp.h"
 using namespace std;
 
@@ -12,7 +13,8 @@ int main() {
     // LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
 
 //   Log->Write("Hello world!");
-
+    std::shared_ptr<Core::Settings> settings= Core::Settings::GetSettings();
+    settings->SetOutputDir("./DB/");
     std::shared_ptr<DB::DBBase> dbSqlLite = Connection::DBConnection::GetConnection(DB::DBType::Sqllite);
 
     dbSqlLite->Connect("122.db","","");
