@@ -203,12 +203,13 @@
 
 1370600879 d:\my\git_repository\db\src\codegeneration\codegenerationbase.h
 
-1370687520 source:d:\my\git_repository\db\src\tools\settings.cpp
+1370690023 source:d:\my\git_repository\db\src\tools\settings.cpp
 	"Settings.h"
 
-1370687520 d:\my\git_repository\db\src\tools\settings.h
+1370690110 d:\my\git_repository\db\src\tools\settings.h
 	<memory>
 	<iostream>
+	"../Connection/DefDB.h"
 
 1370687669 source:d:\my\git_repository\db\src\codegeneration\cgbase.cpp
 	"CGBase.h"
@@ -225,7 +226,7 @@
 1370613217 source:d:\my\git_repository\db\src\tools\filesystem.cpp
 	"FileSystem.h"
 
-1370688562 d:\my\git_repository\db\src\tools\filesystem.h
+1370688848 d:\my\git_repository\db\src\tools\filesystem.h
 	<iostream>
 	<direct.h>
 

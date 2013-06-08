@@ -30,6 +30,15 @@ std::string Settings::GetOutputDir() const {
     return  _OutputDir;
 }
 
+void Settings::SetDBType(DB::DBType dbType)
+{
+    _DBType = dbType;
+}
+
+DB::DBType Settings::GetDBType() const
+{
+    return _DBType;
+}
 
 
 
