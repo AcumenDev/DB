@@ -10,12 +10,13 @@ FileSystem::~FileSystem() {
 }
 
 
-bool FileSystem::DirCreate(std::string path, std::string name) {
+std::string FileSystem::DirCreate(std::string path, std::string name) {
     std::string dir = path + "/" + name;
     if ( mkdir(dir.c_str())) {
-        return false;
+             std::cout<<"Create Dir : "<<dir<<std::endl;
+        return dir;
     }
-    return true;
+    return "";
 }
 
 bool FileSystem::FileSave(std::string path, std::string name, std::string content) {
@@ -25,9 +26,13 @@ bool FileSystem::FileSave(std::string path, std::string name, std::string conten
     myfile.open(path+"/"+name);
     myfile << content;
 
-    if (myfile.good())
+    if (myfile.good()){
         result= true;
-
+    std::cout<<"Save file : "<<path+"/"+name<<std::endl;
+    }else
+    {
+    std::cout<<"Error Save file : "<<path+"/"+name<<std::endl;
+    }
     myfile.close();
 
     return result;

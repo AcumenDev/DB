@@ -8,12 +8,12 @@ class CGCpp : public  CGBase {
 public:
     CGCpp();
     virtual ~CGCpp();
-    void GenerateTablesLogic(DBEntity::DBTable dbTable);
-    void GenerateTablesStruct(DBEntity::DBTable dbTable);
+    void GenerateTablesLogic( const DBEntity::DBTable& dbTable);
+    void GenerateTablesStruct(const DBEntity::DBTable& dbTable);
     void GenerateTables() override;
     void GenerateViews() override;
     void GenerateStoredProcedures() override;
-
+void Generate() override;
 
 protected:
 private:

@@ -9,7 +9,7 @@ public:
     FileSystem();
     virtual ~FileSystem();
 
-    static bool DirCreate(std::string path,std::string  name );
+    static std::string DirCreate(std::string path,std::string  name );
     static bool FileSave(std::string path,std::string  name,std::string  content );
 
 protected:
