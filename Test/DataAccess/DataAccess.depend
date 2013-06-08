@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
-1370709126 source:d:\my\git_repository\db\test\dataaccess\main.cpp
+1370710936 source:d:\my\git_repository\db\test\dataaccess\main.cpp
 	<iostream>
-	"DBEntityTestDB.h"
+	"DBEn/DBEntityTestDB.h"
 
 1370709072 d:\my\git_repository\db\test\dataaccess\test1.h
 	<iostream>
@@ -21,5 +21,22 @@
 	"DBEntityTestDB.h"
 
 1370709072 d:\my\git_repository\db\test\dataaccess\dbentitytestdb.h
+	"Test1_logic.h"
+
+1370709165 source:d:\my\git_repository\db\test\dataaccess\dben\dbentitytestdb.cpp
+	"DBEntityTestDB.h"
+
+1370710936 d:\my\git_repository\db\test\dataaccess\dben\dbentitytestdb.h
+	"Tables/Test1_logic.h"
+
+1370704321 d:\my\git_repository\db\test\dataaccess\dben\tables\test1_logic.h
+	<vector>
+	"test1.h"
+	"sqlite3.h"
+
+1370709072 d:\my\git_repository\db\test\dataaccess\dben\tables\test1.h
+	<iostream>
+
+1370709534 source:d:\my\git_repository\db\test\dataaccess\dben\tables\test1_logic.cpp
 	"Test1_logic.h"
 

@@ -61,12 +61,12 @@
 			<Add option="-lsqlite3" />
 			<Add directory="../../extern_lib/sqlite3/lib" />
 		</Linker>
-		<Unit filename="DBEntityTestDB.cpp" />
-		<Unit filename="DBEntityTestDB.h" />
-		<Unit filename="Test1_logic.cpp" />
-		<Unit filename="Test1_logic.h" />
+		<Unit filename="DBEn/DBEntityTestDB.cpp" />
+		<Unit filename="DBEn/DBEntityTestDB.h" />
+		<Unit filename="DBEn/Tables/Test1_logic.cpp" />
+		<Unit filename="DBEn/Tables/Test1_logic.h" />
+		<Unit filename="DBEn/Tables/test1.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="test1.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
