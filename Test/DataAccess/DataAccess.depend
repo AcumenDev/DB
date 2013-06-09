@@ -50,7 +50,7 @@
 
 1370711214 c:\users\grey\work\db\test\dataaccess\dben\tables\test1_logic.h
 
-1370714413 d:\my\git_repository\db\test\dataaccess\dben\tables\test1\test1_logic.h
+1370721683 d:\my\git_repository\db\test\dataaccess\dben\tables\test1\test1_logic.h
 	<vector>
 	"test1.h"
 	"sqlite3.h"
@@ -71,6 +71,6 @@
 1370709072 d:\my\git_repository\db\test\dataaccess\dben\tables\test1\test1.h
 	<iostream>
 
-1370709534 source:d:\my\git_repository\db\test\dataaccess\dben\tables\test1\test1_logic.cpp
+1370777280 source:d:\my\git_repository\db\test\dataaccess\dben\tables\test1\test1_logic.cpp
 	"Test1_logic.h"
 
