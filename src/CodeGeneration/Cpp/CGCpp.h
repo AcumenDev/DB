@@ -13,6 +13,7 @@ public:
     void GenerateTables() override;
     void GenerateViews() override;
     void GenerateStoredProcedures() override;
+    void GenerateExternalFiles() override;
 void Generate() override;
 
 protected:

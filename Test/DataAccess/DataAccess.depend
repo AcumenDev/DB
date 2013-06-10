@@ -42,11 +42,11 @@
 
 1370704321 D
 
-1370711214 source:c:\users\grey\work\db\test\dataaccess\dben\dbentitytestdb.cpp
+1370788275 source:c:\users\grey\work\db\test\dataaccess\dben\dbentitytestdb.cpp
 	"DBEntityTestDB.h"
 
-1370711214 c:\users\grey\work\db\test\dataaccess\dben\dbentitytestdb.h
-	"Tables/Test1_logic.h"
+1370788275 c:\users\grey\work\db\test\dataaccess\dben\dbentitytestdb.h
+	"Tables/Test1/Test1_logic.h"
 
 1370711214 c:\users\grey\work\db\test\dataaccess\dben\tables\test1_logic.h
 
@@ -63,7 +63,7 @@
 1370711214 c:\users\grey\work\db\test\dataaccess\dben\tables\test1.h
 	<iostream>
 
-1370633741 c:\users\grey\work\db\extern_lib\sqlite3\include\sqlite3.h
+1370788275 c:\users\grey\work\db\extern_lib\sqlite3\include\sqlite3.h
 	<stdarg.h>
 
 1370633741 
@@ -73,4 +73,19 @@
 
 1370777280 source:d:\my\git_repository\db\test\dataaccess\dben\tables\test1\test1_logic.cpp
 	"Test1_logic.h"
+
+1370788275 c:\users\grey\work\db\test\dataaccess\dben\tables\test1\test1_logic.h
+	<vector>
+	"test1.h"
+	"sqlite3.h"
+
+1370788275 c:\users\grey\work\db\test\dataaccess\dben\tables\test1\test1.h
+	<iostream>
+
+1370788275 source:c:\users\grey\work\db\test\dataaccess\dben\tables\test1\test1_logic.cpp
+	"Test1_logic.h"
+
+1370788275 source:c:\users\grey\work\db\test\dataaccess\main.cpp
+	<iostream>
+	"DBEn/DBEntityTestDB.h"
 

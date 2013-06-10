@@ -8,12 +8,77 @@ CGCpp::CGCpp() {
 CGCpp::~CGCpp() {
 }
 
+void CGCpp::GenerateExternalFiles ()
+{
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+   TStringList *lst = new TStringList; // Список, куда мы грузим "Log.txt"
+   TStringList *lstReplace = new TStringList; // Временный список
+   String str = "User"; // Слово которое мы ищем
+   String tempStr; // Формируемая строка в которой найденое слово "User" + текст из Edit
+   lst->LoadFromFile(ExtractFilePath(Application->ExeName) + "Log.txt"); // Загружаем файл
+
+   for(int i = 0; i < lst->Count; i++){
+      if(lst->Strings[i].Pos(str)){
+         for(int j = 0; j < i; j++){
+            lstReplace->Add(lst->Strings[j]);
+           }
+         tempStr = lst->Strings[i].SubString(1, lst->Strings[i].Pos(str) + str.Length());
+         tempStr += " " + Edit1->Text;
+         lstReplace->Add(tempStr);
+         break;
+        }
+     }
+   lstReplace->SaveToFile(ExtractFilePath(Application->ExeName) + "Test.txt");
+
+   delete lst;
+   delete lstReplace;
+}
+int main(int argc,char *argv[])
+{
+    ifstream input(argv[1],ios::in);//исходный файл
+    ifstream changelist(argv[3],ios::in);//файл замен
+    ofstream output(argv[2],ios::out);//результат
+    if(!input||!changelist)
+    {
+        cout<<"Error read from file"<<endl;
+        exit(1);
+    }
+    if(!output)
+    {
+        cout<<"Error write to file"<<endl;
+    }
+    string word;
+    string src;
+    string change;
+    while(!changelist.eof())
+    {
+        changelist>>word;
+        while(!input.eof())
+        {
+            input>>src;
+            if(src==word)
+            {
+                changelist>>change;
+                output<<change;
+            }
+            else
+            {
+                output<<src;
+            }
+            changelist>>change;
+        }
+    }
+}
+
+}
+
 void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)  {
+
     std::string content;
-
-
     content="#ifndef "+dbTable.TableName +"_H\n#define "+dbTable.TableName+"_H\n";
     content+="class "+dbTable.TableName +" {\n";
+
     for (const auto& field : dbTable.DBTableColumnList) {
         std::string  typeField ="\t";
         switch (field.ColumnType) {
@@ -165,6 +230,7 @@ void CGCpp::GenerateViews() {
 void CGCpp::GenerateStoredProcedures() {
 
 }
+
 void CGCpp::Generate() {
     Tools::FileSystem::DirCreate(".",_Setting->GetOutputDir());
     CGBase::Generate();

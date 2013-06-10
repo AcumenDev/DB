@@ -13,7 +13,7 @@ public:
     virtual void GenerateTables() = 0;
     virtual void GenerateViews() = 0;
     virtual void GenerateStoredProcedures() = 0;
-
+    virtual void GenerateExternalFiles() =0;
 protected:
     DBEntity::DBModel _dbModel;
     std::shared_ptr<Core::Settings> _Setting;
