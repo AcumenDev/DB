@@ -41,5 +41,16 @@ DB::DBType Settings::GetDBType() const
 }
 
 
+void Settings::SetTemplateDir(std::string name)
+{
+    _TemplateDir = name;
+}
+
+std::string Settings::GetTemplateDir() const
+{
+    return _TemplateDir;
+}
+
+
 
 }

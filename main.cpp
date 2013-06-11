@@ -3,11 +3,16 @@
 #include "src/tools/Log/LoggingSystem.h"
 #include "src/DBEntity/DBModel.h"
 #include "src/tools/FileSystem.h"
+#include "src/tools/TemplateHelper.h"
 #include "src/tools/Settings.h"
 #include "src/CodeGeneration/Cpp/CGCpp.h"
 using namespace std;
 
 int main() {
+
+
+ // std::cout<<TemplateHelper::TextRepalace("12345678901234567890_0","0","x")<<std::endl;
+
 //    Connection::DBConnection var;
 
     // LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
@@ -15,7 +20,7 @@ int main() {
 //   Log->Write("Hello world!");
     std::shared_ptr<Core::Settings> settings= Core::Settings::GetSettings();
     settings->SetOutputDir("OutputDB");
-
+    settings->SetTemplateDir("Templates");
     std::shared_ptr<DB::DBBase> dbSqlLite = Connection::DBConnection::GetConnection(DB::DBType::Sqllite);
 
     dbSqlLite->Connect("122.db","","");

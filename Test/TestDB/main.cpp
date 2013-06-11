@@ -10,7 +10,9 @@ using namespace std;
 int main()
 {
     cout << "Hello world!" << endl;
+int i =10;
 
+int y = i+y;
    //  Connection::DBConnection var;
 
     // LoggingSystem * Log = LoggingSystem::GetLoggingSystem();

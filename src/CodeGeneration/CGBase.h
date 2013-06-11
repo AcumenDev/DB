@@ -1,7 +1,10 @@
 #ifndef CGBASE_H
 #define CGBASE_H
+#include <regex>
+#include <iterator>
 #include "../DBEntity/DBModel.h"
 #include "../tools/Settings.h"
+#include "../tools/TemplateHelper.h"
 namespace CG {
 
 class CGBase {

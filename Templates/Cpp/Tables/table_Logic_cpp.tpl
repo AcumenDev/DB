@@ -1,14 +1,19 @@
-#include <test1Logic.h>
-test1Logic::test1Logic(){
+#include <[[NAME_TABLE]]Logic.h>
+
+[[NAME_TABLE]]Logic::[[NAME_TABLE]]Logic(){
+
 }
-test1Logic::~test1Logic(){
+
+[[NAME_TABLE]]Logic::~[[NAME_TABLE]]Logic(){
+
 }
 void test1Logic::SetDBContext(sqlite3* ppDb) {
 	this->_Db = ppDb;
 }
-std::vector<test1> test1Logic::GetList() {
-	const std::string GET_DATA_TABLE = "select id, name from test1";
-	std::vector<test1> vectorResult;
+
+std::vector<[[NAME_TABLE]]> [[NAME_TABLE]]Logic::GetList() {
+	const std::string GET_DATA_TABLE = "select id, name from [[NAME_TABLE]]";
+	std::vector<[[NAME_TABLE]]> vectorResult;
 	char  *pSQL2;
 	sqlite3_stmt *stmt;
 	int rc;
@@ -16,10 +21,9 @@ std::vector<test1> test1Logic::GetList() {
 	if (rc == SQLITE_OK) {
 		if (sqlite3_column_count(stmt)) {
 			while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
-				test1 test1_;
-				test1_.id = sqlite3_column_int(stmt, 0);
-				test1_.name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-				vectorResult.push_back(test1_.);
+				[[NAME_TABLE]] [[NAME_TABLE]]_;
+[[BODY]]
+				vectorResult.push_back([[NAME_TABLE]]_);
 			}
 		}
 	sqlite3_finalize(stmt);

@@ -46,13 +46,10 @@
 			<Add option="-pedantic-errors" />
 			<Add option="-pedantic" />
 			<Add option="-Wzero-as-null-pointer-constant" />
-			<Add option="-std=c++11" />
 			<Add option="-std=c++0x" />
-			<Add option="-std=c++98" />
 			<Add option="-w" />
 			<Add option="-Wfatal-errors" />
 			<Add option="-Wextra" />
-			<Add option="-Wall" />
 			<Add option="-ansi" />
 			<Add option="-fexceptions" />
 			<Add directory="../../extern_lib/sqlite3/include" />
@@ -63,7 +60,9 @@
 		</Linker>
 		<Unit filename="Templates/Cpp/DBentity_cpp.tpl" />
 		<Unit filename="Templates/Cpp/DBentity_h.tpl" />
+		<Unit filename="Templates/Cpp/Tables/table_logic_cpp.tpl" />
 		<Unit filename="Templates/Cpp/Tables/table_logic_h.tpl" />
+		<Unit filename="Templates/Cpp/Tables/table_struct_h.tpl" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/CodeGeneration/CGBase.cpp" />
 		<Unit filename="src/CodeGeneration/CGBase.h" />
@@ -95,6 +94,8 @@
 		<Unit filename="src/tools/Log/LoggingSystem.h" />
 		<Unit filename="src/tools/Settings.cpp" />
 		<Unit filename="src/tools/Settings.h" />
+		<Unit filename="src/tools/TemplateHelper.cpp" />
+		<Unit filename="src/tools/TemplateHelper.h" />
 		<Unit filename="src/tools/tools.h" />
 		<Extensions>
 			<code_completion />

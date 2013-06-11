@@ -10,5 +10,9 @@ class NotImplementedException : public std::exception {
 };
 } //end namespace Exception
 
+
+
+
+
 }//end namespace Tools
 #endif // TOOLS_H_INCLUDED
