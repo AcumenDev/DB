@@ -61,12 +61,14 @@
 			<Add option="-lsqlite3" />
 			<Add directory="extern_lib/sqlite3/lib" />
 		</Linker>
+		<Unit filename="Templates/Cpp/DBentity_cpp.tpl" />
+		<Unit filename="Templates/Cpp/DBentity_h.tpl" />
+		<Unit filename="Templates/Cpp/Tables/table_logic_h.tpl" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/CodeGeneration/CGBase.cpp" />
 		<Unit filename="src/CodeGeneration/CGBase.h" />
 		<Unit filename="src/CodeGeneration/Cpp/CGCpp.cpp" />
 		<Unit filename="src/CodeGeneration/Cpp/CGCpp.h" />
-		<Unit filename="src/CodeGeneration/Cpp/TemplateCpp.tpl" />
 		<Unit filename="src/Connection/DBBase.cpp" />
 		<Unit filename="src/Connection/DBBase.h" />
 		<Unit filename="src/Connection/DBConnection.cpp" />
