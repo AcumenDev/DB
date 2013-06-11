@@ -1,17 +1,19 @@
-#ifndef DBENTITYTESTDB_H
-#define DBENTITYTESTDB_H
-#include "Tables/Test1/Test1_logic.h"
+#ifndef DBENTITY[[DB_NAME]]_H
+#define DBENTITY[[DB_NAME]]_H
 
-class DBEntityTestDB {
+[[INCLUDE_BLOCK]]
+
+class DBEntity[[DB_NAME]] {
 public:
-    DBEntityTestDB(std::string patch,  std::string password);
-    virtual ~DBEntityTestDB();
+    DBEntity[[DB_NAME]](std::string path,  std::string password);
+    virtual ~DBEntity[[DB_NAME]]();
 
-    Test1_logic Test1;
+	[[LOGIC_VAR_BLOCK]]
+	
 protected:
 private:
     sqlite3*  _Db;
     int status;
 };
 
-#endif // DBENTITYTESTDB_H
+#endif // DBENTITY[[DB_NAME]]_H

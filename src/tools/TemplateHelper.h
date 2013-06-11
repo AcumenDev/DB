@@ -3,7 +3,7 @@
 #include <iostream>
 #include "FileSystem.h"
 namespace Tools {
-
+const std::string TEMPLATE_DB_NAME = "[[DB_NAME]]";
 const std::string TEMPLATE_NAME_TABLE = "[[NAME_TABLE]]";
 const std::string TEMPLATE_BODY = "[[BODY]]";
 
