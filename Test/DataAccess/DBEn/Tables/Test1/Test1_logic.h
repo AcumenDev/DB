@@ -11,8 +11,8 @@ public:
     void SetDBContext(sqlite3 * ppDb);
     Test1_logic(const Test1_logic&) = delete;
     std::vector<Test1> GetList();
-    std::vector<Test1> GetList(int startPos, int endPos);
-
+    std::vector<Test1> GetList(int startPos, int count);
+    std::vector<Test1> InsertList(std::vector<Test1> list);
 protected:
 private:
 

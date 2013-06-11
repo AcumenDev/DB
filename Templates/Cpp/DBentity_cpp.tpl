@@ -1,12 +1,12 @@
-#include "DBEntityTestDB.h"
+#include "DBEntity[[DB_NAME]].h"
 
-DBEntityTestDB::DBEntityTestDB(std::string patch,  std::string password) {
-    status =  sqlite3_open(patch.c_str(),&_Db);
+DBEntity[[DB_NAME]]::DBEntity[[DB_NAME]](std::string path,  std::string password) {
+    status =  sqlite3_open(path.c_str(),&_Db);
     if(status==0) {
-        Test1.SetDBContext(_Db);
+        [[SET_DBCONTEXT_BLOCK]]
     }
 }
 
-DBEntityTestDB::~DBEntityTestDB() {
+DBEntity[[DB_NAME]]::~DBEntity[[DB_NAME]]() {
     sqlite3_close(_Db);
 }

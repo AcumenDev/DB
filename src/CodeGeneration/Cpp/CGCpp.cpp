@@ -11,7 +11,31 @@ CGCpp::~CGCpp() {
 }
 
 void CGCpp::GenerateExternalFiles () {
+    Tools::TemplateHelper tmpHelper;
+    tmpHelper.OpenTemplate("Cpp/DBentity_h.tpl");
+    tmpHelper.TextInsert(Tools::TEMPLATE_DB_NAME, _dbModel.DBName);
 
+    std::string include_block_content; //в .h файле строки где подключаются хедеры из /Tables/
+    std::string logic_var_block_content; //в .h файле строки где объявляются переменные табличной логики
+    std::string set_dbcontext_block_content; //в cpp файле где передается dbcontext в файлы табличной логики
+
+    for(const auto& table : _dbModel.DBTableList) {
+        include_block_content+="\n#include ""Tables/"+table.TableName+"/"+table.TableName+"_logic.h";
+
+        logic_var_block_content+="\n"+table.TableName+"_logic "+table.TableName+";";
+
+        set_dbcontext_block_content+="\n"+table.TableName+".SetDBContext(_Db);";
+    }
+
+    tmpHelper.TextInsert("[[INCLUDE_BLOCK]]", include_block_content);
+    tmpHelper.TextInsert("[[LOGIC_VAR_BLOCK]]", logic_var_block_content);
+    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/", "DBEntity"+ _dbModel.DBName+".h", tmpHelper.GetText());
+
+    tmpHelper.OpenTemplate("Cpp/DBentity_cpp.tpl");
+    tmpHelper.TextInsert(Tools::TEMPLATE_DB_NAME, _dbModel.DBName);
+
+    tmpHelper.TextInsert("[[SET_DBCONTEXT_BLOCK]]", set_dbcontext_block_content);
+    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/", "DBEntity"+ _dbModel.DBName+".cpp", tmpHelper.GetText());
 }
 
 void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)  {
@@ -85,6 +109,8 @@ void CGCpp::GenerateTables() {
             GenerateTablesLogic(table);
         }
     }
+
+    GenerateExternalFiles();
 }
 
 void CGCpp::GenerateViews() {
