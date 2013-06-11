@@ -3,13 +3,14 @@
 namespace CG {
 
 CGCpp::CGCpp() {
+
 }
 
 CGCpp::~CGCpp() {
+
 }
 
 void CGCpp::GenerateExternalFiles () {
-
 
 }
 
@@ -30,7 +31,6 @@ void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)  {
         content+= typeField +" "+ field.ColumnName + ";\n";
     }
 
-
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/Tables/table_struct_h.tpl");
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.TableName);
@@ -48,13 +48,11 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)  {
     tmpHelper.OpenTemplate("Cpp/Tables/table_logic_h.tpl");
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.TableName);
 
-
     Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.TableName+"", tableName+".h", tmpHelper.GetText());
-
 
     std::string tab4 = "\t\t\t\t";
     int i = 0;
-    std::string  contentCpp ;//=tab4+dbTable.TableName +" "+dbTable.TableName+"_;\n";
+    std::string  contentCpp ;
     for (const auto& field : dbTable.DBTableColumnList) {
         std::string sqlite3call;
         switch (field.ColumnType) {
@@ -71,15 +69,12 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)  {
         contentCpp+=tab4+dbTable.TableName+"_."+field.ColumnName+" = "+sqlite3call;
     }
 
-
     tmpHelper.OpenTemplate("Cpp/Tables/table_logic_cpp.tpl");
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.TableName);
     tmpHelper.TextInsert(Tools::TEMPLATE_BODY,contentCpp);
 
     Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.TableName+"", tableName+".cpp", tmpHelper.GetText());
 }
-
-
 
 void CGCpp::GenerateTables() {
     for(const auto& table : _dbModel.DBTableList) {
@@ -91,8 +86,6 @@ void CGCpp::GenerateTables() {
         }
     }
 }
-
-
 
 void CGCpp::GenerateViews() {
 
@@ -106,6 +99,5 @@ void CGCpp::Generate() {
     Tools::FileSystem::DirCreate(".",_Setting->GetOutputDir());
     CGBase::Generate();
 }
-
 
 }

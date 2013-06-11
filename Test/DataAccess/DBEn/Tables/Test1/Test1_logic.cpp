@@ -35,3 +35,9 @@ std::vector<Test1> Test1_logic::GetList() {
     }
     return vectorResult;
 }
+
+std::vector Test1_logic::GetList(int startPos, int endPos)
+{
+
+}
+
