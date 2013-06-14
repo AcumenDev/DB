@@ -9,12 +9,6 @@
 using namespace std;
 
 int main() {
-
-
-// std::cout<<TemplateHelper::TextRepalace("12345678901234567890_0","0","x")<<std::endl;
-
-//    Connection::DBConnection var;
-
     LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
 
     Log->Write("Hello world!");//<<" 123";
@@ -23,7 +17,7 @@ int main() {
     settings->SetTemplateDir("Templates");
     std::shared_ptr<DB::DBBase> dbSqlLite = Connection::DBConnection::GetConnection(DB::DBType::Sqllite);
 
-    dbSqlLite->Connect("122.db","","");
+    dbSqlLite->Connect("TestDB.db","","");
 
     DBEntity::DBModel dbModel =  DBEntity::DBModel(dbSqlLite);
 
