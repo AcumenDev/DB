@@ -1,6 +1,6 @@
 #include "./TableInfo.h"
-namespace DB {
 
+namespace DB {
 
 std::string DataTypeEnumToString(DataType type) {
 
@@ -17,17 +17,6 @@ std::string DataTypeEnumToString(DataType type) {
         return "Unknown Type";
     }
     }
-}
-
-
-
-
-TableInfo::TableInfo() {
-    //ctor
-}
-
-TableInfo::~TableInfo() {
-    //dtor
 }
 
 void TableInfo::SetName(std::string name) {
@@ -48,7 +37,4 @@ DataType TableInfo::GetType() const {
 std::string TableInfo::GetName() const {
     return Name;
 }
-
-
-
-}
+}//end namespace DB

@@ -1,20 +1,18 @@
 #ifndef DBCONNECTION_H
 #define DBCONNECTION_H
 #include "./DefDB.h"
-#include "../tools/tools.h"
 #include "./sqllite/DBSqllite.h"
 #include "./mysql/DBMySql.h"
+#include "../tools/tools.h"
 
 namespace Connection {
 class DBConnection {
 public:
-    /** Default constructor */
-    DBConnection();
+    DBConnection(){};
     static std::shared_ptr<DB::DBBase> GetConnection(DB::DBType dbType);
-    /** Default destructor */
-    virtual ~DBConnection();
+    virtual ~DBConnection(){};
 protected:
 private:
 };
-}
+} //end namespace Connection
 #endif // DBCONNECTION_H

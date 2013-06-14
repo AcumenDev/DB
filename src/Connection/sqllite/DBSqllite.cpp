@@ -1,8 +1,6 @@
 #include "./DBSqllite.h"
-namespace DB {
 
-DBSqllite::DBSqllite() {
-}
+namespace DB {
 
 DBSqllite::~DBSqllite() {
     Close();
@@ -74,4 +72,4 @@ std::vector<std::shared_ptr<TableInfo>> DBSqllite::GetTableInfo(std::string tabl
     }
     return result;
 }
-}
+} //end namespace DB

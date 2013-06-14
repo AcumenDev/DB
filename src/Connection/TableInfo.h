@@ -5,8 +5,8 @@
 namespace DB {
 class TableInfo {
 public:
-    TableInfo();
-    virtual ~TableInfo();
+    TableInfo(){};
+    virtual ~TableInfo(){};
     void SetName(std::string name);
     void SetType(DataType type);
     std::string GetTypeStr() const;
@@ -17,5 +17,5 @@ private:
     std::string Name;
     DataType Type;
 };
-}
+}//end namespace DB
 #endif // TABLEINFO_H

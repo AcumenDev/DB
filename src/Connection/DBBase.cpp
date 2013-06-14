@@ -4,8 +4,4 @@ DBBase::DBBase() {
     //ctor
     _Log =  LoggingSystem::GetLoggingSystem();
 }
-
-DBBase::~DBBase() {
-    //dtor
-}
-}
+}//end namespace DB
