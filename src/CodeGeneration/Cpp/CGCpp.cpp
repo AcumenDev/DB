@@ -2,14 +2,6 @@
 
 namespace CG {
 
-CGCpp::CGCpp() {
-
-}
-
-CGCpp::~CGCpp() {
-
-}
-
 void CGCpp::GenerateExternalFiles () {
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/DBentity_h.tpl");
@@ -21,9 +13,7 @@ void CGCpp::GenerateExternalFiles () {
 
     for(const auto& table : _dbModel.DBTableList) {
         include_block_content+="\n#include ""Tables/"+table.TableName+"/"+table.TableName+"_logic.h";
-
         logic_var_block_content+="\n"+table.TableName+"_logic "+table.TableName+";";
-
         set_dbcontext_block_content+="\n"+table.TableName+".SetDBContext(_Db);";
     }
 
@@ -61,17 +51,14 @@ void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)  {
     tmpHelper.TextInsert(Tools::TEMPLATE_BODY,content);
 
     Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.TableName+"", dbTable.TableName+".h", tmpHelper.GetText());
-
 }
 
 void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)  {
 
     std::string tableName = dbTable.TableName+"Logic";
-
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/Tables/table_logic_h.tpl");
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.TableName);
-
     Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.TableName+"", tableName+".h", tmpHelper.GetText());
 
     std::string tab4 = "\t\t\t\t";
@@ -109,7 +96,6 @@ void CGCpp::GenerateTables() {
             GenerateTablesLogic(table);
         }
     }
-
     GenerateExternalFiles();
 }
 
@@ -125,5 +111,4 @@ void CGCpp::Generate() {
     Tools::FileSystem::DirCreate(".",_Setting->GetOutputDir());
     CGBase::Generate();
 }
-
-}
+}//end namespace CG

@@ -5,12 +5,12 @@
 #include "../DBEntity/DBModel.h"
 #include "../tools/Settings.h"
 #include "../tools/TemplateHelper.h"
-namespace CG {
 
+namespace CG {
 class CGBase {
 public:
     CGBase();
-    virtual ~CGBase();
+    virtual ~CGBase(){};
     void SetDBModel(DBEntity::DBModel dbModel ) ;
     virtual void Generate();
     virtual void GenerateTables() = 0;
@@ -22,5 +22,5 @@ protected:
     std::shared_ptr<Core::Settings> _Setting;
 private:
 };
-}
+}//end namespace CG
 #endif // CGBASE_H
