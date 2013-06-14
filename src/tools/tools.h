@@ -1,6 +1,7 @@
 #ifndef TOOLS_H_INCLUDED
 #define TOOLS_H_INCLUDED
 #include <exception>
+
 namespace Tools {
 namespace Exception {
 class NotImplementedException : public std::exception {
@@ -9,10 +10,5 @@ class NotImplementedException : public std::exception {
     }
 };
 } //end namespace Exception
-
-
-
-
-
 }//end namespace Tools
 #endif // TOOLS_H_INCLUDED

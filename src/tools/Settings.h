@@ -7,10 +7,8 @@
 namespace Core {
 class Settings {
 public:
-
-    virtual ~Settings();
+    virtual ~Settings() {};
     static std::shared_ptr<Settings>  GetSettings();
-
     void SetTemplateDir(std::string name);
     std::string GetTemplateDir() const;
     void SetOutputDir(std::string name);
@@ -23,7 +21,7 @@ private:
     std::string _OutputDir;
     std::string _TemplateDir;
     static     std::shared_ptr<Settings>  _Settings;
-    Settings();
+    Settings() {};
 };
-}
+}//end namespace Core
 #endif // SETTINGS_H

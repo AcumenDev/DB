@@ -1,14 +1,6 @@
 #include "FileSystem.h"
 
 namespace Tools {
-FileSystem::FileSystem() {
-    //ctor
-}
-
-FileSystem::~FileSystem() {
-    //dtor
-}
-
 
 std::string FileSystem::DirCreate(std::string path, std::string name) {
     std::string dir = path + "/" + name;
@@ -25,10 +17,8 @@ std::string FileSystem::DirCreate(std::string path, std::string name) {
 bool FileSystem::FileSave(std::string path, std::string name, std::string content) {
     bool result=false;
     std::ofstream myfile;
-
     myfile.open(path+"/"+name);
     myfile << content;
-
     if (myfile.good()) {
         result= true;
         std::cout<<"Save file : "<<path+"/"+name<<std::endl;
@@ -36,7 +26,6 @@ bool FileSystem::FileSave(std::string path, std::string name, std::string conten
         std::cout<<"Error Save file : "<<path+"/"+name<<std::endl;
     }
     myfile.close();
-
     return result;
 }
 std::string FileSystem::OpenTemplateFile(std::string path) {
@@ -53,6 +42,4 @@ std::string FileSystem::OpenTemplateFile(std::string path) {
     result << templateFile.rdbuf();
     return result.str();
 }
-
-
-}
+}//end namespace Tools

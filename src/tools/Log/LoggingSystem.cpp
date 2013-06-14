@@ -9,13 +9,6 @@ std::shared_ptr<LoggingSystem> LoggingSystem::GetLoggingSystem() {
     return _LoggingSystem;
 }
 
-
 void LoggingSystem::Write(std::string msg,  LogType type) {
     _LogOutSystem->Write(msg);
 }
-
-
-//ILog LoggingSystem::operator<<(const char* msg) {
-//    _LogOutSystem->Write(msg);
-//    return this;
-//}

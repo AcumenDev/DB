@@ -4,15 +4,13 @@
 #include <memory>
 #include "ILog.h"
 #include "LogStdConsole.h"
+
 class LoggingSystem : public ILog {
 public:
     virtual ~LoggingSystem() {}
-
     static std::shared_ptr<LoggingSystem> GetLoggingSystem();
     void Write(std::string msg, LogType type = LogType::Messages) override ;
-//    ILog operator<<(const char* msg)override;
     LoggingSystem(const LoggingSystem&) = delete;
-
 private:
     ILog * _LogOutSystem ;
     static     std::shared_ptr<LoggingSystem> _LoggingSystem;

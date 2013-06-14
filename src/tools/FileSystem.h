@@ -6,18 +6,18 @@
 #include <direct.h>
 #include <memory>
 #include "Settings.h"
+
 namespace Tools {
 class FileSystem {
 public:
-    FileSystem();
-    virtual ~FileSystem();
+    FileSystem(){};
+    virtual ~FileSystem(){};
 
     static std::string DirCreate(std::string path,std::string  name );
     static bool FileSave(std::string path,std::string  name,std::string  content );
     static std::string OpenTemplateFile(std::string path);
-
 protected:
 private:
 };
-}
+}//end namespace Tools
 #endif // FILESYSTEM_H
