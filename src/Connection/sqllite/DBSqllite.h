@@ -23,7 +23,7 @@ private:
     sqlite3 *ppDb  ;
     //  std::shared_ptr<sqlite3> ppDb;
     int status ;
-
+std::string _NameDB;
 
     const std::string GET_TABLES_QUERY = "select * from sqlite_master";
 };

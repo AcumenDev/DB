@@ -13,11 +13,13 @@ void DBSqllite::Close() {
     sqlite3_close(ppDb);
 }
 std::string DBSqllite::GetDBName() const {
-    return "";
+    return _NameDB;
 }
 
-void DBSqllite::Connect(std::string patch, std::string login, std::string password) {
-    status =  sqlite3_open(patch.c_str(),&ppDb);
+void DBSqllite::Connect(std::string path, std::string login, std::string password) {
+    std::cout<<"Connect to sqllite : "<<path<<std::endl;
+    _NameDB = path;
+    status =  sqlite3_open(path.c_str(),&ppDb);
 }
 
 std::vector<std::string> DBSqllite::GetTables() const {
