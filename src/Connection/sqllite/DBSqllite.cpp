@@ -17,8 +17,14 @@ std::string DBSqllite::GetDBName() const {
 }
 
 void DBSqllite::Connect(std::string path, std::string login, std::string password) {
+
+    unsigned found = path.find_last_of("/\\");
+    unsigned foundDot = path.find_last_of(".");
+    //std::cout << " file: " << path.substr(found+1,foundDot) << '\n';
+    _NameDB = path.substr(found+1,foundDot);
+
+
     std::cout<<"Connect to sqllite : "<<path<<std::endl;
-    _NameDB = path;
     status =  sqlite3_open(path.c_str(),&ppDb);
 }
 

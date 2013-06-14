@@ -29,3 +29,7 @@ void LogStdConsole::Write(std::string msg, LogType type) {
     }
     }
 }
+//ILog LogStdConsole::operator<<(const char* msg) {
+//    Write(msg,LogType::Messages);
+//    return this;
+//}

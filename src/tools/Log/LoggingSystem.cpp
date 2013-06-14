@@ -13,3 +13,9 @@ LoggingSystem * LoggingSystem::GetLoggingSystem() {
 void LoggingSystem::Write(std::string msg,  LogType type) {
     _LogOutSystem->Write(msg);
 }
+
+
+//ILog LoggingSystem::operator<<(const char* msg) {
+//    _LogOutSystem->Write(msg);
+//    return this;
+//}

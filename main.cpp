@@ -11,13 +11,13 @@ using namespace std;
 int main() {
 
 
- // std::cout<<TemplateHelper::TextRepalace("12345678901234567890_0","0","x")<<std::endl;
+// std::cout<<TemplateHelper::TextRepalace("12345678901234567890_0","0","x")<<std::endl;
 
 //    Connection::DBConnection var;
 
-    // LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
+    LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
 
-//   Log->Write("Hello world!");
+    Log->Write("Hello world!");//<<" 123";
     std::shared_ptr<Core::Settings> settings= Core::Settings::GetSettings();
     settings->SetOutputDir("OutputDB");
     settings->SetTemplateDir("Templates");
@@ -43,3 +43,6 @@ int main() {
 
     return 0;
 }
+
+
+
