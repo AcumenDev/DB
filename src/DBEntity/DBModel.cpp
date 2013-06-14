@@ -1,10 +1,6 @@
 #include "DBModel.h"
 namespace DBEntity {
 
-DBModel::DBModel() {
-
-}
-
 DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase) {
     this->DBName=dbBase->GetDBName();
 
@@ -20,8 +16,4 @@ DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase) {
         this->DBTableList.push_back(table);
     }
 }
-
-DBModel::~DBModel() {
-    //dtor
-}
-}
+}//end namespace DBEntity

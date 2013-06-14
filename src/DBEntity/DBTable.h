@@ -2,16 +2,16 @@
 #define DBTABLE_H
 #include <vector>
 #include "DBTableColumn.h"
+
 namespace DBEntity {
 class DBTable {
 public:
     DBTable(std::string tableName);
     std::string TableName;
     std::vector<DBTableColumn> DBTableColumnList;
-    virtual ~DBTable();
+    virtual ~DBTable(){};
 protected:
 private:
 };
-}
-
+}//end namespace DBEntity
 #endif // DBTABLE_H

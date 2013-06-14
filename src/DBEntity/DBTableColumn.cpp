@@ -5,7 +5,3 @@ DBTableColumn::DBTableColumn(std::string name, DB::DataType type) {
     this->ColumnName=name;
     this->ColumnType=type;
 }
-
-DBTableColumn::~DBTableColumn() {
-    //dtor
-}

@@ -8,9 +8,8 @@ public:
     DBTableColumn(std::string name, DB::DataType type);
     std::string ColumnName;
     DB::DataType ColumnType;
-    virtual ~DBTableColumn();
+    virtual ~DBTableColumn(){};
 protected:
 private:
 };
-
 #endif // DBTABLECOLUMN_H
