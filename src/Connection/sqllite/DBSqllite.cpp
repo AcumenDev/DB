@@ -40,7 +40,7 @@ std::vector<std::string> DBSqllite::GetTables() const {
         }
         sqlite3_finalize(stmt);
     } else {
-        _Log->Write(("Error: %s\n  "+ std::string(sqlite3_errmsg(ppDb))),LogType::Error);
+          _Log->Write(("Error: "+std::string(sqlite3_errmsg(ppDb))+"\n"),LogType::Error);
     }
     return vectorResult;
 }
@@ -70,9 +70,8 @@ std::vector<std::shared_ptr<TableInfo>> DBSqllite::GetTableInfo(std::string tabl
         }
         sqlite3_finalize(stmt);
     } else {
-        _Log->Write(("Error: %s\n  "+ std::string(sqlite3_errmsg(ppDb))),LogType::Error);
+        _Log->Write(("Error: "+std::string(sqlite3_errmsg(ppDb))+"\n"),LogType::Error);
     }
     return result;
 }
-
 }
