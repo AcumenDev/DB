@@ -2,11 +2,9 @@
 namespace DB {
 
 DBSqllite::DBSqllite() {
-    //ctor
 }
 
 DBSqllite::~DBSqllite() {
-    //dtor
     Close();
 }
 void DBSqllite::Close() {
@@ -20,16 +18,13 @@ void DBSqllite::Connect(std::string path, std::string login, std::string passwor
 
     unsigned found = path.find_last_of("/\\");
     unsigned foundDot = path.find_last_of(".");
-    //std::cout << " file: " << path.substr(found+1,foundDot) << '\n';
     _NameDB = path.substr(found+1,foundDot);
 
-
-    std::cout<<"Connect to sqllite : "<<path<<std::endl;
+    _Log->Write(("Connect to sqllite : "+path));
     status =  sqlite3_open(path.c_str(),&ppDb);
 }
 
 std::vector<std::string> DBSqllite::GetTables() const {
-    //LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
     std::vector<std::string> vectorResult;
     char  *pSQL2;
     sqlite3_stmt *stmt;
@@ -45,7 +40,7 @@ std::vector<std::string> DBSqllite::GetTables() const {
         }
         sqlite3_finalize(stmt);
     } else {
-        std::cout<<"Error: %s\n  "<<sqlite3_errmsg(ppDb);
+        _Log->Write(("Error: %s\n  "+ std::string(sqlite3_errmsg(ppDb))),LogType::Error);
     }
     return vectorResult;
 }
@@ -75,7 +70,7 @@ std::vector<std::shared_ptr<TableInfo>> DBSqllite::GetTableInfo(std::string tabl
         }
         sqlite3_finalize(stmt);
     } else {
-        std::cout<<"Error: %s\n  "<<sqlite3_errmsg(ppDb);
+        _Log->Write(("Error: %s\n  "+ std::string(sqlite3_errmsg(ppDb))),LogType::Error);
     }
     return result;
 }

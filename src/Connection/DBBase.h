@@ -20,7 +20,9 @@ public:
     /** Default destructor */
     virtual ~DBBase();
 protected:
+    std::shared_ptr<LoggingSystem> _Log;
 private:
+
 };
 }
 #endif // DBBASE_H

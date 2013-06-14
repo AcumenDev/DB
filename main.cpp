@@ -9,7 +9,7 @@
 using namespace std;
 
 int main() {
-    LoggingSystem * Log = LoggingSystem::GetLoggingSystem();
+   std::shared_ptr<LoggingSystem> Log = LoggingSystem::GetLoggingSystem();
 
     Log->Write("Hello world!");//<<" 123";
     std::shared_ptr<Core::Settings> settings= Core::Settings::GetSettings();

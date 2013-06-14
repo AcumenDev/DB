@@ -18,8 +18,6 @@ public:
     virtual ~DBSqllite();
 protected:
 private:
-
-    // int CallbackQueryGetTables(void *data, int coln, char **rows, char **colnm);
     sqlite3 *ppDb  ;
     //  std::shared_ptr<sqlite3> ppDb;
     int status ;

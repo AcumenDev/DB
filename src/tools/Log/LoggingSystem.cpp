@@ -1,10 +1,10 @@
 #include "LoggingSystem.h"
 
-LoggingSystem * LoggingSystem::_LoggingSystem=nullptr;
+std::shared_ptr<LoggingSystem> LoggingSystem::_LoggingSystem=nullptr;
 
-LoggingSystem * LoggingSystem::GetLoggingSystem() {
+std::shared_ptr<LoggingSystem> LoggingSystem::GetLoggingSystem() {
     if(_LoggingSystem ==nullptr) {
-        _LoggingSystem = new LoggingSystem();
+        _LoggingSystem =  std::shared_ptr<LoggingSystem> (new LoggingSystem());
     }
     return _LoggingSystem;
 }
