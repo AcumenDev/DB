@@ -16,6 +16,7 @@ public:
     void GenerateExternalFiles() override;
     void Generate() override;
 protected:
+
 private:
 };
 }

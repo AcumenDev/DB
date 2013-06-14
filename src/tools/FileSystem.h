@@ -6,6 +6,7 @@
 #include <direct.h>
 #include <memory>
 #include "Settings.h"
+#include "Log/LoggingSystem.h"
 
 namespace Tools {
 class FileSystem {

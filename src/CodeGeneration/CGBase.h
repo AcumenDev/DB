@@ -10,7 +10,7 @@ namespace CG {
 class CGBase {
 public:
     CGBase();
-    virtual ~CGBase(){};
+    virtual ~CGBase() {};
     void SetDBModel(DBEntity::DBModel dbModel ) ;
     virtual void Generate();
     virtual void GenerateTables() = 0;
@@ -20,6 +20,7 @@ public:
 protected:
     DBEntity::DBModel _dbModel;
     std::shared_ptr<Core::Settings> _Setting;
+    std::shared_ptr<LoggingSystem> _Log;
 private:
 };
 }//end namespace CG

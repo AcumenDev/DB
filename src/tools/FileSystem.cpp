@@ -3,39 +3,41 @@
 namespace Tools {
 
 std::string FileSystem::DirCreate(std::string path, std::string name) {
+    std::shared_ptr<LoggingSystem> _Log  =  LoggingSystem::GetLoggingSystem();
     std::string dir = path + "/" + name;
     if ( mkdir(dir.c_str())) {
-        std::cout<<"Create Dir : "<<dir<<std::endl;
+        _Log->Write("Create Dir : "+dir,LogType::Messages);
         return dir;
-    }else
-    {
-        std::cout<<"Error dir create  : "<<dir<<std::endl;
+    } else {
+        _Log->Write("Error dir create  : "+dir,LogType::Error);
     }
     return "";
 }
 
 bool FileSystem::FileSave(std::string path, std::string name, std::string content) {
+    std::shared_ptr<LoggingSystem> _Log  =  LoggingSystem::GetLoggingSystem();
     bool result=false;
     std::ofstream myfile;
     myfile.open(path+"/"+name);
     myfile << content;
     if (myfile.good()) {
         result= true;
-        std::cout<<"Save file : "<<path+"/"+name<<std::endl;
+        _Log->Write("Save file : "+path+"/"+name,LogType::Messages);
     } else {
-        std::cout<<"Error Save file : "<<path+"/"+name<<std::endl;
+        _Log->Write("Error Save file : "+path+"/"+name,LogType::Messages);
     }
     myfile.close();
     return result;
 }
 std::string FileSystem::OpenTemplateFile(std::string path) {
+    std::shared_ptr<LoggingSystem> _Log  =  LoggingSystem::GetLoggingSystem();
     std::shared_ptr<Core::Settings>  setting = Core::Settings::GetSettings();
     std::string templatePath =  setting->GetTemplateDir()+"/"+path;
     std::ifstream templateFile(templatePath, std::ios::in);
     if (templateFile.good()) {
-        std::cout<<"Open template file : "<<templatePath<<std::endl;
+        _Log->Write("Open template file : "+templatePath,LogType::Messages);
     } else {
-        std::cout<<"Error opening template file : "<<templatePath<<std::endl;
+        _Log->Write("Error opening template file : "+templatePath,LogType::Messages);
         return "";
     }
     std::ostringstream result;
