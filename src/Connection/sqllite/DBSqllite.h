@@ -4,10 +4,8 @@
 #include "../DBBase.h"
 #include "../../../extern_lib/sqlite3/include/sqlite3.h"
 
-namespace DB
-{
-class DBSqllite : public  DBBase
-{
+namespace DB {
+class DBSqllite : public  DBBase {
 public:
     DBSqllite() {};
     void Close();

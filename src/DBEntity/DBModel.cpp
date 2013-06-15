@@ -1,27 +1,21 @@
 #include "DBModel.h"
-namespace DBEntity
-{
+namespace DBEntity {
 
-std::string DBModel::GetDBName() const
-{
+std::string DBModel::GetDBName() const {
     return _DBName;
 }
 
-void DBModel::SetDBName(std::string dbName)
-{
+void DBModel::SetDBName(std::string dbName) {
     _DBName=dbName;
 }
 
-DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase)
-{
+DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase) {
     SetDBName(dbBase->GetDBName());
-    for(auto tableName : dbBase->GetTables())
-    {
+    for(auto tableName : dbBase->GetTables()) {
 
         DBTable table = DBTable(tableName);
 
-        for(auto field : dbBase->GetTableInfo(tableName))
-        {
+        for(auto field : dbBase->GetTableInfo(tableName)) {
             DBTableColumn column =  DBTableColumn(field->GetName(), field->GetType());
             table.DBTableColumnList.push_back(column);
         }

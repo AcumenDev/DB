@@ -2,10 +2,8 @@
 #define DBMYSQL_H
 #include "../DBBase.h"
 
-namespace DB
-{
-class DBMySql : public  DBBase
-{
+namespace DB {
+class DBMySql : public  DBBase {
 public:
     DBMySql() {};
     virtual ~DBMySql() {};

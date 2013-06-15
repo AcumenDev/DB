@@ -2,16 +2,14 @@
 #define ILOG_H
 #include <iostream>
 
-enum LogType
-{
+enum LogType {
     Debug,
     Messages ,
     Warning,
     Error
 };
 
-class ILog
-{
+class ILog {
 public:
     ILog() {}
     virtual ~ILog() {}

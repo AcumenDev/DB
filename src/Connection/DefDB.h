@@ -2,17 +2,14 @@
 #define DEFDB_H_INCLUDED
 #include <iostream>
 
-namespace DB
-{
-enum DBType
-{
+namespace DB {
+enum DBType {
     Sqllite,
     Mysql,
     Postgres
 };
 
-enum DataType
-{
+enum DataType {
     Number,
     Text
 };

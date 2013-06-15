@@ -7,12 +7,10 @@
 #include "../tools/Log/LoggingSystem.h"
 #include "../tools/tools.h"
 
-namespace DB
-{
+namespace DB {
 
 ///Базовый класс для подключения к бд
-class DBBase
-{
+class DBBase {
 public:
     DBBase() ;
     virtual  void Connect(std::string patch, std::string login, std::string password) =0;

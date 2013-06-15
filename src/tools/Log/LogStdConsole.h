@@ -2,8 +2,7 @@
 #define LOGSTDCONSOLE_H
 #include "ILog.h"
 
-class LogStdConsole : public ILog
-{
+class LogStdConsole : public ILog {
 public:
     LogStdConsole() {};
     virtual ~LogStdConsole() {};

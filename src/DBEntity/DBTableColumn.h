@@ -2,10 +2,8 @@
 #define DBTABLECOLUMN_H
 #include <iostream>
 #include "../Connection/TableInfo.h"
-namespace DBEntity
-{
-class DBTableColumn
-{
+namespace DBEntity {
+class DBTableColumn {
 public:
     DBTableColumn(std::string name, DB::DataType type);
     std::string GetColumnName() const;

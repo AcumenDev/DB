@@ -8,8 +8,7 @@
 #include "src/CodeGeneration/Cpp/CGCpp.h"
 using namespace std;
 
-int main()
-{
+int main() {
     std::shared_ptr<LoggingSystem> Log = LoggingSystem::GetLoggingSystem();
 
     Log->Write("Hello world!");//<<" 123";

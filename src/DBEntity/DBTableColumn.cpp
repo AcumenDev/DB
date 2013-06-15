@@ -1,27 +1,21 @@
 #include "DBTableColumn.h"
-namespace DBEntity
-{
+namespace DBEntity {
 
-std::string DBTableColumn::GetColumnName() const
-{
+std::string DBTableColumn::GetColumnName() const {
     return _ColumnName;
 }
-void DBTableColumn::SetColumnName(std::string columnName)
-{
+void DBTableColumn::SetColumnName(std::string columnName) {
     _ColumnName=columnName;
 }
 
-DB::DataType DBTableColumn::GetColumnDataType() const
-{
+DB::DataType DBTableColumn::GetColumnDataType() const {
     return _ColumnDataType;
 }
-void DBTableColumn::SetColumnDataType(DB::DataType dataType)
-{
+void DBTableColumn::SetColumnDataType(DB::DataType dataType) {
     _ColumnDataType=dataType;
 }
 
-DBTableColumn::DBTableColumn(std::string columnName, DB::DataType dataType)
-{
+DBTableColumn::DBTableColumn(std::string columnName, DB::DataType dataType) {
     //ctor
     SetColumnName(columnName);
     SetColumnDataType(dataType);

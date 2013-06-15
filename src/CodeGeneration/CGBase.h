@@ -6,10 +6,8 @@
 #include "../tools/Settings.h"
 #include "../tools/TemplateHelper.h"
 
-namespace CG
-{
-class CGBase
-{
+namespace CG {
+class CGBase {
 public:
     CGBase();
     virtual ~CGBase() {};

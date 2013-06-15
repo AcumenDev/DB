@@ -4,10 +4,8 @@
 #include <iostream>
 #include "../Connection/DefDB.h"
 
-namespace Core
-{
-class Settings
-{
+namespace Core {
+class Settings {
 public:
     virtual ~Settings() {};
     static std::shared_ptr<Settings>  GetSettings();
@@ -16,9 +14,9 @@ public:
     void SetOutputDir(std::string name);
     std::string GetOutputDir() const;
     void SetDBType(DB::DBType dbType);
-     std::string GetOutputDirTables() const;
-     void SetOutputDirTables(std::string name);
-      std::string GetPathToOutputDirTables() const;
+    std::string GetOutputDirTables() const;
+    void SetOutputDirTables(std::string name);
+    std::string GetPathToOutputDirTables() const;
     DB::DBType GetDBType() const;
 protected:
 private:

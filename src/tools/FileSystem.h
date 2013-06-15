@@ -8,10 +8,8 @@
 #include "Settings.h"
 #include "Log/LoggingSystem.h"
 
-namespace Tools
-{
-class FileSystem
-{
+namespace Tools {
+class FileSystem {
 public:
     FileSystem() {};
     virtual ~FileSystem() {};
