@@ -8,24 +8,39 @@ std::string FileSystem::DirCreate(std::string path, std::string name) {
         _Log->Write("Error dir "+name+" create path is empty ",LogType::Error);
         return "";
     }
+
+
+
     std::string dir = path + "/"+name;
-    if ( mkdir(dir.c_str())) {
-        _Log->Write("Create Dir : "+dir,LogType::Messages);
+
+
+    boost::filesystem::path dirc(dir);
+
+    if(boost::filesystem::exists(dirc)) {
+        return dir;
+    }
+    if ( boost::filesystem::create_directory(dirc)) {
+        _Log->Write("Create dir : "+dir,LogType::Messages);
         return dir;
     } else {
-        _Log->Write("Error dir create  : "+dir,LogType::Error);
+        _Log->Write("Error  dir create  : "+dir,LogType::Error);
     }
     return "";
 }
 
-std::string FileSystem::RootDirCreate(std::string name) {
+std::string FileSystem::RootDirCreate(std::string dirName) {
     std::shared_ptr<LoggingSystem> _Log  =  LoggingSystem::GetLoggingSystem();
-    std::string dir = name;
-    if ( mkdir(dir.c_str())) {
-        _Log->Write("Create root dir : "+dir,LogType::Messages);
-        return dir;
+    boost::filesystem::path dirc(dirName);
+
+    if(boost::filesystem::exists(dirc)) {
+            boost::filesystem::remove_all(dirc) ;
+       // return dirName;
+    }
+    if ( boost::filesystem::create_directory(dirc)) {
+        _Log->Write("Create root dir : "+dirName,LogType::Messages);
+        return dirName;
     } else {
-        _Log->Write("Error root dir create  : "+dir,LogType::Error);
+        _Log->Write("Error root dir create  : "+dirName,LogType::Error);
     }
     return "";
 }
@@ -60,4 +75,32 @@ std::string FileSystem::OpenTemplateFile(std::string path) {
     result << templateFile.rdbuf();
     return result.str();
 }
+bool FileSystem::FileCopy(std::string from, std::string to) {
+
+
+    std::shared_ptr<LoggingSystem> _Log  =  LoggingSystem::GetLoggingSystem();
+
+
+    _Log->Write("Copy file from : "+from+" to "+to,LogType::Messages);
+    boost::filesystem::path fromPath(from);
+    boost::filesystem::path toPath(to);
+
+    boost::system::error_code ec;
+    if(!boost::filesystem::exists(fromPath)) {
+        return false;
+    }
+
+
+
+    try {
+        // boost::filesystem::copy_file( fromPath, toPath );
+        boost::filesystem::copy(fromPath,toPath);
+    } catch (const boost::filesystem::filesystem_error& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        _Log->Write("Error copy file from : "+from+" to "+to+" "+e.what(),LogType::Error);
+        return false;
+    }
+    return true;
+}
+
 }//end namespace Tools

@@ -31,12 +31,20 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add directory="../../src" />
+			<Add directory="../../OutputDB" />
 		</Compiler>
 		<Linker>
 			<Add option="-lsqlite3" />
 			<Add directory="../../extern_lib/sqlite3/lib" />
 		</Linker>
+		<Unit filename="../../OutputDB/DBEntityTestDB.cpp" />
+		<Unit filename="../../OutputDB/DBEntityTestDB.h" />
+		<Unit filename="../../OutputDB/Tables/test1/test1.h" />
+		<Unit filename="../../OutputDB/Tables/test1/test1Logic.cpp" />
+		<Unit filename="../../OutputDB/Tables/test1/test1Logic.h" />
+		<Unit filename="../../OutputDB/Tables/test2/test2.h" />
+		<Unit filename="../../OutputDB/Tables/test2/test2Logic.cpp" />
+		<Unit filename="../../OutputDB/Tables/test2/test2Logic.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

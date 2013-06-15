@@ -15,6 +15,7 @@ public:
     void GenerateStoredProcedures() override;
     void GenerateExternalFiles() override;
     void Generate() override;
+    void CopyLib();
 protected:
 
 private:

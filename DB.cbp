@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="123" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -53,10 +54,14 @@
 			<Add option="-ansi" />
 			<Add option="-fexceptions" />
 			<Add directory="../../extern_lib/sqlite3/include" />
+			<Add directory="extern_lib/boost_1_53_0" />
 		</Compiler>
 		<Linker>
 			<Add option="-lsqlite3" />
+			<Add option="-lboost_system-mgw47-mt-1_53" />
+			<Add option="-lboost_filesystem-mgw47-mt-1_53" />
 			<Add directory="extern_lib/sqlite3/lib" />
+			<Add directory="extern_lib/boost_1_53_0/stage/lib" />
 		</Linker>
 		<Unit filename="Templates/Cpp/DBentity_cpp.tpl" />
 		<Unit filename="Templates/Cpp/DBentity_h.tpl" />

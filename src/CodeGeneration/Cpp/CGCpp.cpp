@@ -12,8 +12,8 @@ void CGCpp::GenerateExternalFiles () {
     std::string set_dbcontext_block_content; //в cpp файле где передается dbcontext в файлы табличной логики
 
     for(const auto& table : _dbModel.DBTableList) {
-        include_block_content+="\n#include ""\"Tables/"+table.GetTableName()+"/"+table.GetTableName()+"_logic.h\"";
-        logic_var_block_content+="\n"+table.GetTableName()+"_logic "+table.GetTableName()+";";
+        include_block_content+="\n#include ""\"Tables/"+table.GetTableName()+"/"+table.GetTableName()+"Logic.h\"";
+        logic_var_block_content+="\n"+table.GetTableName()+"Logic "+table.GetTableName()+";";
         set_dbcontext_block_content+="\n"+table.GetTableName()+".SetDBContext(_Db);";
     }
 
@@ -55,7 +55,7 @@ void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable,std::string p
 
 void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable,std::string path) {
 
-    std::string tableName = dbTable.GetTableName()+"_logic";
+    std::string tableName = dbTable.GetTableName()+"Logic";
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/Tables/table_logic_h.tpl");
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
@@ -110,6 +110,13 @@ void CGCpp::GenerateStoredProcedures() {
 
 void CGCpp::Generate() {
     Tools::FileSystem::RootDirCreate(_Setting->GetOutputDir());
+    CopyLib();
     CGBase::Generate();
 }
+void CGCpp::CopyLib() {
+    std::string dirOutput =  Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), "external_lib");
+    Tools::FileSystem::FileCopy(_Setting->GetTemplateDir()+"/external_lib/sqlite3/include/sqlite3.h",dirOutput+"/sqlite3.h");
+    Tools::FileSystem::FileCopy(_Setting->GetTemplateDir()+"/external_lib/sqlite3/include/sqlite3ext.h",dirOutput+"/sqlite3ext.h");
+}
+
 }//end namespace CG

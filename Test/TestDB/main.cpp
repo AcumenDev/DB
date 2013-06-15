@@ -1,8 +1,9 @@
 #include <iostream>
-#include "../../OutputDB/DBEntityTestDB.h"
+#include "DBEntityTestDB.h"
 
 using namespace std;
 
 int main() {
+    DBEntityTestDB dbEntity("../../TestDB.db");
     return 0;
 }
