@@ -12,7 +12,8 @@ public:
     Test1_logic(const Test1_logic&) = delete;
     std::vector<Test1> GetList();
     std::vector<Test1> GetList(int startPos, int count);
-    std::vector<Test1> InsertList(std::vector<Test1> listVal);
+    bool InsertList(std::vector<Test1> listVal);
+    bool Insert(Test1 value);
 protected:
 private:
     sqlite3 *_Db  ;

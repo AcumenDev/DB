@@ -64,14 +64,16 @@ std::vector<Test1> Test1_logic::GetList(int startPos, int count) {
     return vectorResult;
 }
 
-std::vector<Test1> Test1_logic::InsertList( const std::vector<Test1> listVal) {
+
+bool Test1_logic::InsertList( const std::vector<Test1> listVal) {
     std::string insertDataTableSQL = "INSERT INTO test1 (id, name) VALUES ";
     std::string values;
     for(const auto& item:listVal) {
-
         values+="("+std::to_string(item.Id)+",'"+ item.Name+"'),";
     }
+
     values = values.substr(0,values.length()-1);
+
     insertDataTableSQL+=values;
     std::cout<<insertDataTableSQL<<std::endl;
     char  *pSQL2;
@@ -83,6 +85,15 @@ std::vector<Test1> Test1_logic::InsertList( const std::vector<Test1> listVal) {
         std::cout<<"OK"<<std::endl;
     } else {
         std::cout<<"Error: "+std::string(sqlite3_errmsg(_Db))+" \n  ";
+        return false;
     }
-    return listVal;
+    return true;
+}
+
+
+bool Test1_logic::Insert(Test1 value)
+{
+    std::vector<Test1> values;
+    values.push_back(value);
+    return InsertList(values);
 }
