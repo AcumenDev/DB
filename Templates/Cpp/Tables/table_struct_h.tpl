@@ -3,7 +3,7 @@
 #define [[NAME_TABLE]]_H
 #include <iostream>
 class [[NAME_TABLE]] {
-	private:
+	public:
 [[BODY]]
 };
 #endif

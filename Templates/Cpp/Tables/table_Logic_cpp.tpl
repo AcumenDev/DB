@@ -8,7 +8,7 @@
 [[NAME_TABLE]]Logic::~[[NAME_TABLE]]Logic(){
 
 }
-void test1Logic::SetDBContext(sqlite3* ppDb) {
+void [[NAME_TABLE]]Logic::SetDBContext(sqlite3* ppDb) {
 	this->_Db = ppDb;
 }
 

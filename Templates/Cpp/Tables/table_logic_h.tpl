@@ -2,8 +2,10 @@
 #ifndef [[NAME_TABLE]]Logic_H
 #define [[NAME_TABLE]]Logic_H
 #include <vector>
+#include "../../external_lib/sqlite3.h"
 #include "[[NAME_TABLE]].h"
 class [[NAME_TABLE]]Logic {
+public:
 	[[NAME_TABLE]]Logic();
 	virtual ~[[NAME_TABLE]]Logic();
     [[NAME_TABLE]]Logic(const [[NAME_TABLE]]Logic&) = delete;
