@@ -32,7 +32,7 @@ void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)  {
     std::string content;
     for (const auto& field : dbTable.DBTableColumnList) {
         std::string  typeField ="\t\t";
-        switch (field.GetDataType()) {
+        switch (field.GetColumnDataType()) {
         case DB::DataType::Number: {
             typeField+="int";
             break;
@@ -66,7 +66,7 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)  {
     std::string  contentCpp ;
     for (const auto& field : dbTable.DBTableColumnList) {
         std::string sqlite3call;
-        switch (field.GetDataType()) {
+        switch (field.GetColumnDataType()) {
         case DB::DataType::Number: {
             sqlite3call="sqlite3_column_int(stmt, "+std::to_string(i)+");\n";
             break;

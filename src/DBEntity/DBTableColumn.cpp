@@ -11,19 +11,19 @@ void DBTableColumn::SetColumnName(std::string columnName)
     _ColumnName=columnName;
 }
 
-DB::DataType DBTableColumn::GetDataType() const
+DB::DataType DBTableColumn::GetColumnDataType() const
 {
-    return _DataType;
+    return _ColumnDataType;
 }
-void DBTableColumn::SetDataType(DB::DataType dataType)
+void DBTableColumn::SetColumnDataType(DB::DataType dataType)
 {
-    _DataType=dataType;
+    _ColumnDataType=dataType;
 }
 
 DBTableColumn::DBTableColumn(std::string columnName, DB::DataType dataType)
 {
     //ctor
     SetColumnName(columnName);
-    SetDataType(dataType);
+    SetColumnDataType(dataType);
 }
 } //end Namespace DBEntity

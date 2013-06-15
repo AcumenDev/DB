@@ -7,14 +7,14 @@ class DBTableColumn {
 public:
     DBTableColumn(std::string name, DB::DataType type);
     std::string GetColumnName() const;
-    DB::DataType GetDataType() const;
+    DB::DataType GetColumnDataType() const;
     void SetColumnName(std::string columnName);
-    void SetDataType(DB::DataType dataType);
+    void SetColumnDataType(DB::DataType dataType);
     virtual ~DBTableColumn(){};
 protected:
 private:
     std::string _ColumnName;
-    DB::DataType _DataType;
+    DB::DataType _ColumnDataType;
 };
 } //end Namespace DBEntity
 #endif // DBTABLECOLUMN_H
