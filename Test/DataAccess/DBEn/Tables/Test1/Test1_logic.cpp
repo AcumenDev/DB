@@ -1,12 +1,5 @@
 #include "Test1_logic.h"
 
-Test1_logic::Test1_logic() {
-    //ctor
-}
-
-Test1_logic::~Test1_logic() {
-    //dtor
-}
 void Test1_logic::SetDBContext(sqlite3* ppDb) {
     this->_Db = ppDb;
 }
@@ -37,12 +30,16 @@ std::vector<Test1> Test1_logic::GetList() {
 }
 
 std::vector<Test1> Test1_logic::GetList(int startPos, int count) {
+
+    std::vector<Test1> vectorResult;
+
     const std::string GET_DATA_TABLE = "SELECT id, name FROM test1 LIMIT "+std::to_string(startPos)+", "+std::to_string(count);
+    if(count==0) return vectorResult;
 
 // TODO (akum#1#): Убрать дублирование
 
 
-    std::vector<Test1> vectorResult;
+
     char  *pSQL2;
     sqlite3_stmt *stmt;
     int rc;
@@ -66,6 +63,7 @@ std::vector<Test1> Test1_logic::GetList(int startPos, int count) {
 
 
 bool Test1_logic::InsertList( const std::vector<Test1> listVal) {
+    if(listVal.empty()) return false;
     std::string insertDataTableSQL = "INSERT INTO test1 (id, name) VALUES ";
     std::string values;
     for(const auto& item:listVal) {
@@ -91,8 +89,7 @@ bool Test1_logic::InsertList( const std::vector<Test1> listVal) {
 }
 
 
-bool Test1_logic::Insert(Test1 value)
-{
+bool Test1_logic::Insert(Test1 value) {
     std::vector<Test1> values;
     values.push_back(value);
     return InsertList(values);

@@ -6,8 +6,8 @@
 
 class Test1_logic {
 public:
-    Test1_logic();
-    virtual ~Test1_logic();
+    Test1_logic() {};
+    virtual ~Test1_logic() {};
     void SetDBContext(sqlite3 * ppDb);
     Test1_logic(const Test1_logic&) = delete;
     std::vector<Test1> GetList();
@@ -16,9 +16,8 @@ public:
     bool Insert(Test1 value);
 protected:
 private:
-    sqlite3 *_Db  ;
-    int _Status ;
-
+    sqlite3 *_Db;
+    int _Status;
 };
 
 #endif // TEST1_LOGIC_H
