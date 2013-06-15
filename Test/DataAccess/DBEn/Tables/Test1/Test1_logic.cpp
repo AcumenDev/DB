@@ -68,8 +68,10 @@ std::vector<Test1> Test1_logic::InsertList( const std::vector<Test1> listVal) {
     std::string insertDataTableSQL = "INSERT INTO test1 (id, name) VALUES ";
     std::string values;
     for(const auto& item:listVal) {
-        values+="("+std::to_string(item.Id)+",'"+ item.Name+"')";
+
+        values+="("+std::to_string(item.Id)+",'"+ item.Name+"'),";
     }
+    values = values.substr(0,values.length()-1);
     insertDataTableSQL+=values;
     std::cout<<insertDataTableSQL<<std::endl;
     char  *pSQL2;
