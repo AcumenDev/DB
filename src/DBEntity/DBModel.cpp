@@ -1,8 +1,15 @@
 #include "DBModel.h"
 namespace DBEntity {
 
+std::string DBModel::GetDBName() const {
+    return _DBName;
+}
+
+void DBModel::SetDBName(std::string dbName) {
+    _DBName=dbName;
+}
+
 DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase) {
-    this->DBName=dbBase->GetDBName();
 
     for(auto tableName : dbBase->GetTables()) {
 

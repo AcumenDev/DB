@@ -8,11 +8,13 @@ class DBModel {
 public:
     DBModel(){};
     DBModel(std::shared_ptr<DB::DBBase> dbBase);
-    std::string DBName;
+    std::string GetDBName() const;
+    void SetDBName(std::string dbName);
     std::vector<DBTable> DBTableList;
     virtual ~DBModel(){};
 protected:
 private:
+    std::string _DBName;
 };
 }//end namespace DBEntity
 #endif // DBMODEL_H

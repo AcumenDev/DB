@@ -5,34 +5,34 @@ namespace CG {
 void CGCpp::GenerateExternalFiles () {
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/DBentity_h.tpl");
-    tmpHelper.TextInsert(Tools::TEMPLATE_DB_NAME, _dbModel.DBName);
+    tmpHelper.TextInsert(Tools::TEMPLATE_DB_NAME, _dbModel.GetDBName());
 
-    std::string include_block_content; //Ð² .h Ñ„Ð°Ð¹Ð»Ðµ ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð³Ð´Ðµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð°ÑŽÑ‚ÑÑ Ñ…ÐµÐ´ÐµÑ€Ñ‹ Ð¸Ð· /Tables/
-    std::string logic_var_block_content; //Ð² .h Ñ„Ð°Ð¹Ð»Ðµ ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð³Ð´Ðµ Ð¾Ð±ÑŠÑÐ²Ð»ÑÑŽÑ‚ÑÑ Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ñ‹Ðµ Ñ‚Ð°Ð±Ð»Ð¸Ñ‡Ð½Ð¾Ð¹ Ð»Ð¾Ð³Ð¸ÐºÐ¸
-    std::string set_dbcontext_block_content; //Ð² cpp Ñ„Ð°Ð¹Ð»Ðµ Ð³Ð´Ðµ Ð¿ÐµÑ€ÐµÐ´Ð°ÐµÑ‚ÑÑ dbcontext Ð² Ñ„Ð°Ð¹Ð»Ñ‹ Ñ‚Ð°Ð±Ð»Ð¸Ñ‡Ð½Ð¾Ð¹ Ð»Ð¾Ð³Ð¸ÐºÐ¸
+    std::string include_block_content; //â .h ôàéëå ñòðîêè ãäå ïîäêëþ÷àþòñÿ õåäåðû èç /Tables/
+    std::string logic_var_block_content; //â .h ôàéëå ñòðîêè ãäå îáúÿâëÿþòñÿ ïåðåìåííûå òàáëè÷íîé ëîãèêè
+    std::string set_dbcontext_block_content; //â cpp ôàéëå ãäå ïåðåäàåòñÿ dbcontext â ôàéëû òàáëè÷íîé ëîãèêè
 
     for(const auto& table : _dbModel.DBTableList) {
-        include_block_content+="\n#include ""Tables/"+table.TableName+"/"+table.TableName+"_logic.h";
-        logic_var_block_content+="\n"+table.TableName+"_logic "+table.TableName+";";
-        set_dbcontext_block_content+="\n"+table.TableName+".SetDBContext(_Db);";
+        include_block_content+="\n#include ""Tables/"+table.GetTableName()+"/"+table.GetTableName()+"_logic.h";
+        logic_var_block_content+="\n"+table.GetTableName()+"_logic "+table.GetTableName()+";";
+        set_dbcontext_block_content+="\n"+table.GetTableName()+".SetDBContext(_Db);";
     }
 
     tmpHelper.TextInsert("[[INCLUDE_BLOCK]]", include_block_content);
     tmpHelper.TextInsert("[[LOGIC_VAR_BLOCK]]", logic_var_block_content);
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir(), "DBEntity"+ _dbModel.DBName+".h", tmpHelper.GetText());
+    Tools::FileSystem::FileSave(_Setting->GetOutputDir(), "DBEntity"+ _dbModel.GetDBName()+".h", tmpHelper.GetText());
 
     tmpHelper.OpenTemplate("Cpp/DBentity_cpp.tpl");
-    tmpHelper.TextInsert(Tools::TEMPLATE_DB_NAME, _dbModel.DBName);
+    tmpHelper.TextInsert(Tools::TEMPLATE_DB_NAME, _dbModel.GetDBName());
 
     tmpHelper.TextInsert("[[SET_DBCONTEXT_BLOCK]]", set_dbcontext_block_content);
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir(), "DBEntity"+ _dbModel.DBName+".cpp", tmpHelper.GetText());
+    Tools::FileSystem::FileSave(_Setting->GetOutputDir(), "DBEntity"+ _dbModel.GetDBName()+".cpp", tmpHelper.GetText());
 }
 
 void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)  {
     std::string content;
     for (const auto& field : dbTable.DBTableColumnList) {
         std::string  typeField ="\t\t";
-        switch (field.ColumnType) {
+        switch (field.GetColumnDataType()) {
         case DB::DataType::Number: {
             typeField+="int";
             break;
@@ -42,31 +42,31 @@ void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)  {
             break;
         }
         }
-        content+= typeField +" "+ field.ColumnName + ";\n";
+        content+= typeField +" "+ field.GetColumnName() + ";\n";
     }
 
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/Tables/table_struct_h.tpl");
-    tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.TableName);
+    tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
     tmpHelper.TextInsert(Tools::TEMPLATE_BODY,content);
 
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.TableName+"", dbTable.TableName+".h", tmpHelper.GetText());
+    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", dbTable.GetTableName()+".h", tmpHelper.GetText());
 }
 
 void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)  {
 
-    std::string tableName = dbTable.TableName+"Logic";
+    std::string tableName = dbTable.GetTableName()+"Logic";
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/Tables/table_logic_h.tpl");
-    tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.TableName);
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.TableName+"", tableName+".h", tmpHelper.GetText());
+    tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
+    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", tableName+".h", tmpHelper.GetText());
 
     std::string tab4 = "\t\t\t\t";
     int i = 0;
     std::string  contentCpp ;
     for (const auto& field : dbTable.DBTableColumnList) {
         std::string sqlite3call;
-        switch (field.ColumnType) {
+        switch (field.GetColumnDataType()) {
         case DB::DataType::Number: {
             sqlite3call="sqlite3_column_int(stmt, "+std::to_string(i)+");\n";
             break;
@@ -77,19 +77,19 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)  {
         }
         }
         ++i;
-        contentCpp+=tab4+dbTable.TableName+"_."+field.ColumnName+" = "+sqlite3call;
+        contentCpp+=tab4+dbTable.GetTableName()+"_."+field.GetColumnName()+" = "+sqlite3call;
     }
 
     tmpHelper.OpenTemplate("Cpp/Tables/table_logic_cpp.tpl");
-    tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.TableName);
+    tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
     tmpHelper.TextInsert(Tools::TEMPLATE_BODY,contentCpp);
 
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.TableName+"", tableName+".cpp", tmpHelper.GetText());
+    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", tableName+".cpp", tmpHelper.GetText());
 }
 
 void CGCpp::GenerateTables() {
     for(const auto& table : _dbModel.DBTableList) {
-        std::string path =  Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), table.TableName);
+        std::string path =  Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), table.GetTableName());
 
         if(!path.empty()) {
             GenerateTablesStruct(table);
