@@ -62,21 +62,17 @@ std::vector<Test1> Test1_logic::GetList(int startPos, int count) {
         std::cout<<"Error: %s\n  "<<sqlite3_errmsg(_Db);
     }
     return vectorResult;
-
 }
 
-std::vector<Test1> Test1_logic::InsertList(std::vector<Test1> list) {
+std::vector<Test1> Test1_logic::InsertList( const std::vector<Test1> listVal) {
     std::string insertDataTableSQL = "INSERT INTO test1 (id, name) VALUES ";
-
-
     std::string values;
-    for(const auto& item:list) {
+    for(const auto& item:listVal) {
         values+="("+std::to_string(item.Id)+",'"+ item.Name+"')";
     }
+
     insertDataTableSQL+=values;
 
     std::cout<<insertDataTableSQL<<std::endl;
+    return listVal;
 }
-
-
-
