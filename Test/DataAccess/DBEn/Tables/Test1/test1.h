@@ -8,5 +8,4 @@ public:
     std::string Name;
 };
 
-
 #endif // TEST1_H_INCLUDED
