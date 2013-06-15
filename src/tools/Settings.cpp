@@ -21,7 +21,7 @@ void Settings::SetOutputDir(std::string name)
 
 std::string Settings::GetOutputDir() const
 {
-    return  _OutputDir;
+    return  "./"+_OutputDir;
 }
 
 void Settings::SetDBType(DB::DBType dbType)
@@ -42,5 +42,22 @@ void Settings::SetTemplateDir(std::string name)
 std::string Settings::GetTemplateDir() const
 {
     return _TemplateDir;
+}
+
+void Settings::SetOutputDirTables(std::string name)
+{
+    _OutputDirTables=name;
+}
+
+std::string Settings::GetOutputDirTables() const
+{
+    return _OutputDirTables;
+}
+
+
+
+std::string Settings::GetPathToOutputDirTables() const
+{
+    return _OutputDir+"/"+_OutputDirTables;
 }
 }//end namespace Tools

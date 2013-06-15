@@ -16,11 +16,15 @@ public:
     void SetOutputDir(std::string name);
     std::string GetOutputDir() const;
     void SetDBType(DB::DBType dbType);
+     std::string GetOutputDirTables() const;
+     void SetOutputDirTables(std::string name);
+      std::string GetPathToOutputDirTables() const;
     DB::DBType GetDBType() const;
 protected:
 private:
     DB::DBType _DBType;
     std::string _OutputDir;
+    std::string _OutputDirTables;
     std::string _TemplateDir;
     static     std::shared_ptr<Settings>  _Settings;
     Settings() {};

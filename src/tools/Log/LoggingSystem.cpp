@@ -4,6 +4,7 @@ std::shared_ptr<LoggingSystem> LoggingSystem::_LoggingSystem=nullptr;
 
 std::shared_ptr<LoggingSystem> LoggingSystem::GetLoggingSystem()
 {
+
     if(_LoggingSystem ==nullptr)
     {
         _LoggingSystem =  std::shared_ptr<LoggingSystem> (new LoggingSystem());
@@ -13,5 +14,6 @@ std::shared_ptr<LoggingSystem> LoggingSystem::GetLoggingSystem()
 
 void LoggingSystem::Write(std::string msg,  LogType type)
 {
-    _LogOutSystem->Write(msg);
+    _LogOutSystem->Write(msg, type);
 }
+

@@ -15,6 +15,7 @@ int main()
     Log->Write("Hello world!");//<<" 123";
     std::shared_ptr<Core::Settings> settings= Core::Settings::GetSettings();
     settings->SetOutputDir("OutputDB");
+    settings->SetOutputDirTables("Tables");
     settings->SetTemplateDir("Templates");
     std::shared_ptr<DB::DBBase> dbSqlLite = Connection::DBConnection::GetConnection(DB::DBType::Sqllite);
 

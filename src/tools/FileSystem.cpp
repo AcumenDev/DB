@@ -6,7 +6,23 @@ namespace Tools
 std::string FileSystem::DirCreate(std::string path, std::string name)
 {
     std::shared_ptr<LoggingSystem> _Log  =  LoggingSystem::GetLoggingSystem();
-    std::string dir = path + "/" + name;
+    std::string dir = path + "/"+name;
+    if ( mkdir(dir.c_str()))
+    {
+        _Log->Write("Create Dir : "+dir,LogType::Messages);
+        return dir;
+    }
+    else
+    {
+        _Log->Write("Error dir create  : "+dir,LogType::Error);
+    }
+    return "";
+}
+
+std::string FileSystem::RootDirCreate(std::string name)
+{
+    std::shared_ptr<LoggingSystem> _Log  =  LoggingSystem::GetLoggingSystem();
+    std::string dir = name;
     if ( mkdir(dir.c_str()))
     {
         _Log->Write("Create Dir : "+dir,LogType::Messages);
@@ -33,7 +49,7 @@ bool FileSystem::FileSave(std::string path, std::string name, std::string conten
     }
     else
     {
-        _Log->Write("Error Save file : "+path+"/"+name,LogType::Messages);
+        _Log->Write("Error Save file : "+path+"/"+name,LogType::Error);
     }
     myfile.close();
     return result;
@@ -50,7 +66,7 @@ std::string FileSystem::OpenTemplateFile(std::string path)
     }
     else
     {
-        _Log->Write("Error opening template file : "+templatePath,LogType::Messages);
+        _Log->Write("Error opening template file : "+templatePath,LogType::Error);
         return "";
     }
     std::ostringstream result;

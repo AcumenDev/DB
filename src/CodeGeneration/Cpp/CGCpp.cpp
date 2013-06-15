@@ -15,7 +15,7 @@ void CGCpp::GenerateExternalFiles ()
 
     for(const auto& table : _dbModel.DBTableList)
     {
-        include_block_content+="\n#include ""Tables/"+table.GetTableName()+"/"+table.GetTableName()+"_logic.h";
+        include_block_content+="\n#include ""\"Tables/"+table.GetTableName()+"/"+table.GetTableName()+"_logic.h\"";
         logic_var_block_content+="\n"+table.GetTableName()+"_logic "+table.GetTableName()+";";
         set_dbcontext_block_content+="\n"+table.GetTableName()+".SetDBContext(_Db);";
     }
@@ -64,7 +64,7 @@ void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)
 void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)
 {
 
-    std::string tableName = dbTable.GetTableName()+"Logic";
+    std::string tableName = dbTable.GetTableName()+"_logic";
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/Tables/table_logic_h.tpl");
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
@@ -102,9 +102,10 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)
 
 void CGCpp::GenerateTables()
 {
+    std::string pathToTables= Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), _Setting->GetOutputDirTables());
     for(const auto& table : _dbModel.DBTableList)
     {
-        std::string path =  Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), table.GetTableName());
+        std::string path =  Tools::FileSystem::DirCreate(_Setting->GetPathToOutputDirTables(), table.GetTableName());
 
         if(!path.empty())
         {
@@ -127,7 +128,7 @@ void CGCpp::GenerateStoredProcedures()
 
 void CGCpp::Generate()
 {
-    Tools::FileSystem::DirCreate(".",_Setting->GetOutputDir());
+    Tools::FileSystem::RootDirCreate(_Setting->GetOutputDir());
     CGBase::Generate();
 }
 }//end namespace CG
