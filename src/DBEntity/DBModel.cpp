@@ -14,7 +14,7 @@ void DBModel::SetDBName(std::string dbName)
 
 DBModel::DBModel(std::shared_ptr<DB::DBBase> dbBase)
 {
-
+    SetDBName(dbBase->GetDBName());
     for(auto tableName : dbBase->GetTables())
     {
 
