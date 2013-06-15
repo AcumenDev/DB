@@ -1,40 +1,51 @@
 #include "./TableInfo.h"
 
-namespace DB {
+namespace DB
+{
 
-std::string DataTypeEnumToString(DataType type) {
+std::string DataTypeEnumToString(DataType type)
+{
 
-    switch(type) {
-    case DataType::Number: {
+    switch(type)
+    {
+    case DataType::Number:
+    {
         return "Number";
         break;
     }
-    case DataType::Text: {
+    case DataType::Text:
+    {
         return "Text";
         break;
     }
-    default: {
+    default:
+    {
         return "Unknown Type";
     }
     }
 }
 
-void TableInfo::SetName(std::string name) {
+void TableInfo::SetName(std::string name)
+{
     Name = name;
 }
 
-void TableInfo::SetType(DataType type) {
+void TableInfo::SetType(DataType type)
+{
     Type = type;
 }
 
-std::string TableInfo::GetTypeStr() const {
+std::string TableInfo::GetTypeStr() const
+{
     return DataTypeEnumToString(Type);
 }
-DataType TableInfo::GetType() const {
+DataType TableInfo::GetType() const
+{
     return Type;
 }
 
-std::string TableInfo::GetName() const {
+std::string TableInfo::GetName() const
+{
     return Name;
 }
 }//end namespace DB

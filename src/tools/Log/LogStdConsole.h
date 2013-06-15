@@ -3,10 +3,10 @@
 #include "ILog.h"
 
 class LogStdConsole : public ILog
- {
+{
 public:
-    LogStdConsole(){};
-    virtual ~LogStdConsole(){};
+    LogStdConsole() {};
+    virtual ~LogStdConsole() {};
     void Write(std::string msg, LogType type = LogType::Messages)    override;
 protected:
 private:

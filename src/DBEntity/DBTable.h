@@ -3,14 +3,16 @@
 #include <vector>
 #include "DBTableColumn.h"
 
-namespace DBEntity {
-class DBTable {
+namespace DBEntity
+{
+class DBTable
+{
 public:
     DBTable(std::string tableName);
     std::string GetTableName() const;
     void SetTableName (std::string tableName);
     std::vector<DBTableColumn> DBTableColumnList;
-    virtual ~DBTable(){};
+    virtual ~DBTable() {};
 protected:
 private:
     std::string _TableName;

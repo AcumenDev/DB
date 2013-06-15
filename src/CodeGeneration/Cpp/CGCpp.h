@@ -3,8 +3,10 @@
 #include "../CGBase.h"
 #include "../../tools/FileSystem.h"
 
-namespace CG {
-class CGCpp : public  CGBase {
+namespace CG
+{
+class CGCpp : public  CGBase
+{
 public:
     CGCpp() {};
     virtual ~CGCpp() {};

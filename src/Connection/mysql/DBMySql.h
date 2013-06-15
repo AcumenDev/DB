@@ -2,11 +2,13 @@
 #define DBMYSQL_H
 #include "../DBBase.h"
 
-namespace DB {
-class DBMySql : public  DBBase {
+namespace DB
+{
+class DBMySql : public  DBBase
+{
 public:
-    DBMySql(){};
-    virtual ~DBMySql(){};
+    DBMySql() {};
+    virtual ~DBMySql() {};
     void Close() override;
     std::string GetDBName() const;
     void Connect(std::string patch, std::string login, std::string password)  override ;

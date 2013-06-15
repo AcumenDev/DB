@@ -1,8 +1,10 @@
 #include "CGCpp.h"
 
-namespace CG {
+namespace CG
+{
 
-void CGCpp::GenerateExternalFiles () {
+void CGCpp::GenerateExternalFiles ()
+{
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/DBentity_h.tpl");
     tmpHelper.TextInsert(Tools::TEMPLATE_DB_NAME, _dbModel.GetDBName());
@@ -11,7 +13,8 @@ void CGCpp::GenerateExternalFiles () {
     std::string logic_var_block_content; //в .h файле строки где объ€вл€ютс€ переменные табличной логики
     std::string set_dbcontext_block_content; //в cpp файле где передаетс€ dbcontext в файлы табличной логики
 
-    for(const auto& table : _dbModel.DBTableList) {
+    for(const auto& table : _dbModel.DBTableList)
+    {
         include_block_content+="\n#include ""Tables/"+table.GetTableName()+"/"+table.GetTableName()+"_logic.h";
         logic_var_block_content+="\n"+table.GetTableName()+"_logic "+table.GetTableName()+";";
         set_dbcontext_block_content+="\n"+table.GetTableName()+".SetDBContext(_Db);";
@@ -28,16 +31,21 @@ void CGCpp::GenerateExternalFiles () {
     Tools::FileSystem::FileSave(_Setting->GetOutputDir(), "DBEntity"+ _dbModel.GetDBName()+".cpp", tmpHelper.GetText());
 }
 
-void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)  {
+void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)
+{
     std::string content;
-    for (const auto& field : dbTable.DBTableColumnList) {
+    for (const auto& field : dbTable.DBTableColumnList)
+    {
         std::string  typeField ="\t\t";
-        switch (field.GetColumnDataType()) {
-        case DB::DataType::Number: {
+        switch (field.GetColumnDataType())
+        {
+        case DB::DataType::Number:
+        {
             typeField+="int";
             break;
         }
-        case DB::DataType::Text: {
+        case DB::DataType::Text:
+        {
             typeField+="std::string";
             break;
         }
@@ -53,7 +61,8 @@ void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable)  {
     Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", dbTable.GetTableName()+".h", tmpHelper.GetText());
 }
 
-void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)  {
+void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)
+{
 
     std::string tableName = dbTable.GetTableName()+"Logic";
     Tools::TemplateHelper tmpHelper;
@@ -64,14 +73,18 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)  {
     std::string tab4 = "\t\t\t\t";
     int i = 0;
     std::string  contentCpp ;
-    for (const auto& field : dbTable.DBTableColumnList) {
+    for (const auto& field : dbTable.DBTableColumnList)
+    {
         std::string sqlite3call;
-        switch (field.GetColumnDataType()) {
-        case DB::DataType::Number: {
+        switch (field.GetColumnDataType())
+        {
+        case DB::DataType::Number:
+        {
             sqlite3call="sqlite3_column_int(stmt, "+std::to_string(i)+");\n";
             break;
         }
-        case DB::DataType::Text: {
+        case DB::DataType::Text:
+        {
             sqlite3call="reinterpret_cast<const char*>(sqlite3_column_text(stmt, "+std::to_string(i)+"));\n";
             break;
         }
@@ -87,11 +100,14 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable)  {
     Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", tableName+".cpp", tmpHelper.GetText());
 }
 
-void CGCpp::GenerateTables() {
-    for(const auto& table : _dbModel.DBTableList) {
+void CGCpp::GenerateTables()
+{
+    for(const auto& table : _dbModel.DBTableList)
+    {
         std::string path =  Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), table.GetTableName());
 
-        if(!path.empty()) {
+        if(!path.empty())
+        {
             GenerateTablesStruct(table);
             GenerateTablesLogic(table);
         }
@@ -99,15 +115,18 @@ void CGCpp::GenerateTables() {
     GenerateExternalFiles();
 }
 
-void CGCpp::GenerateViews() {
+void CGCpp::GenerateViews()
+{
 
 }
 
-void CGCpp::GenerateStoredProcedures() {
+void CGCpp::GenerateStoredProcedures()
+{
 
 }
 
-void CGCpp::Generate() {
+void CGCpp::Generate()
+{
     Tools::FileSystem::DirCreate(".",_Setting->GetOutputDir());
     CGBase::Generate();
 }

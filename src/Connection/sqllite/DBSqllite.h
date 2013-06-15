@@ -4,10 +4,12 @@
 #include "../DBBase.h"
 #include "../../../extern_lib/sqlite3/include/sqlite3.h"
 
-namespace DB {
-class DBSqllite : public  DBBase {
+namespace DB
+{
+class DBSqllite : public  DBBase
+{
 public:
-    DBSqllite(){};
+    DBSqllite() {};
     void Close();
     void Connect(std::string patch, std::string login, std::string password) override;
     std::string GetDBName()const override;

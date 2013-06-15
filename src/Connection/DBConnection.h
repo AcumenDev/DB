@@ -5,12 +5,14 @@
 #include "./mysql/DBMySql.h"
 #include "../tools/tools.h"
 
-namespace Connection {
-class DBConnection {
+namespace Connection
+{
+class DBConnection
+{
 public:
-    DBConnection(){};
+    DBConnection() {};
     static std::shared_ptr<DB::DBBase> GetConnection(DB::DBType dbType);
-    virtual ~DBConnection(){};
+    virtual ~DBConnection() {};
 protected:
 private:
 };
