@@ -3,16 +3,18 @@
 #include <iostream>
 #include "FileSystem.h"
 
-namespace Tools {
+namespace Tools
+{
 const std::string TEMPLATE_DB_NAME = "[[DB_NAME]]";
 const std::string TEMPLATE_NAME_TABLE = "[[NAME_TABLE]]";
 const std::string TEMPLATE_BODY = "[[BODY]]";
 
 
-class TemplateHelper {
+class TemplateHelper
+{
 public:
-    TemplateHelper(){};
-    virtual ~TemplateHelper(){};
+    TemplateHelper() {};
+    virtual ~TemplateHelper() {};
     void OpenTemplate(std::string path);
     void TextInsert(std::string where,std::string text);
     std::string GetText();

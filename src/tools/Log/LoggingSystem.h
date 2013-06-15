@@ -5,7 +5,8 @@
 #include "ILog.h"
 #include "LogStdConsole.h"
 
-class LoggingSystem : public ILog {
+class LoggingSystem : public ILog
+{
 public:
     virtual ~LoggingSystem() {}
     static std::shared_ptr<LoggingSystem> GetLoggingSystem();
@@ -14,7 +15,8 @@ public:
 private:
     ILog * _LogOutSystem ;
     static     std::shared_ptr<LoggingSystem> _LoggingSystem;
-    LoggingSystem() {
+    LoggingSystem()
+    {
         //по умолчанию создаеться лог для вывода на стандартную консоль
         _LogOutSystem = new LogStdConsole();
     }

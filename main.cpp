@@ -8,8 +8,9 @@
 #include "src/CodeGeneration/Cpp/CGCpp.h"
 using namespace std;
 
-int main() {
-   std::shared_ptr<LoggingSystem> Log = LoggingSystem::GetLoggingSystem();
+int main()
+{
+    std::shared_ptr<LoggingSystem> Log = LoggingSystem::GetLoggingSystem();
 
     Log->Write("Hello world!");//<<" 123";
     std::shared_ptr<Core::Settings> settings= Core::Settings::GetSettings();

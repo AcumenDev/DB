@@ -4,8 +4,10 @@
 #include <iostream>
 #include "../Connection/DefDB.h"
 
-namespace Core {
-class Settings {
+namespace Core
+{
+class Settings
+{
 public:
     virtual ~Settings() {};
     static std::shared_ptr<Settings>  GetSettings();

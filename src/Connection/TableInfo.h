@@ -2,11 +2,13 @@
 #define TABLEINFO_H
 
 #include "./DefDB.h"
-namespace DB {
-class TableInfo {
+namespace DB
+{
+class TableInfo
+{
 public:
-    TableInfo(){};
-    virtual ~TableInfo(){};
+    TableInfo() {};
+    virtual ~TableInfo() {};
     void SetName(std::string name);
     void SetType(DataType type);
     std::string GetTypeStr() const;

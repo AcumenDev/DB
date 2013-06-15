@@ -8,11 +8,13 @@
 #include "Settings.h"
 #include "Log/LoggingSystem.h"
 
-namespace Tools {
-class FileSystem {
+namespace Tools
+{
+class FileSystem
+{
 public:
-    FileSystem(){};
-    virtual ~FileSystem(){};
+    FileSystem() {};
+    virtual ~FileSystem() {};
 
     static std::string DirCreate(std::string path,std::string  name );
     static bool FileSave(std::string path,std::string  name,std::string  content );
