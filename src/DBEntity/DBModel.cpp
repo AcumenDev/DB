@@ -5,7 +5,7 @@ void DBModel::SetDBName(std::string dbName) {
     _DBName=dbName;
 }
 
-std::string DBModel::DBModel::GetDBName() {
+std::string DBModel::GetDBName() const {
     return _DBName;
 }
 

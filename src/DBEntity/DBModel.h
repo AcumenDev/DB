@@ -8,7 +8,7 @@ class DBModel {
 public:
     DBModel(){};
     DBModel(std::shared_ptr<DB::DBBase> dbBase);
-    std::string GetDBName();
+    std::string GetDBName() const;
     void SetDBName(std::string dbName);
     std::vector<DBTable> DBTableList;
     virtual ~DBModel(){};
