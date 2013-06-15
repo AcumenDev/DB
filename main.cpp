@@ -8,10 +8,19 @@
 #include "src/CodeGeneration/Cpp/CGCpp.h"
 using namespace std;
 
-int main() {
+int main(int argc, char *argv[])
+{
     std::shared_ptr<LoggingSystem> Log = LoggingSystem::GetLoggingSystem();
 
+
+
+    char* pathToOutputFiles=argv[1];
+    char* pathToDb=argv[2];
+    char* dbType=argv[3];
+    char* langType=argv[4];
+
     Log->Write("Hello world!");//<<" 123";
+
     std::shared_ptr<Core::Settings> settings= Core::Settings::GetSettings();
     settings->SetOutputDir("OutputDB");
     settings->SetOutputDirTables("Tables");
@@ -22,19 +31,9 @@ int main() {
 
     DBEntity::DBModel dbModel =  DBEntity::DBModel(dbSqlLite);
 
-//    for(const auto& table : dbModel.DBTableList) {
-//        std::cout<<table.TableName<<" "<<std::endl;
-//
-//        for(const auto& field : table.DBTableColumnList )
-//            std::cout<<field.ColumnName<<" "<<field.ColumnType<<std::endl;
-//
-//        std::cout<<std::endl;
-//    }
     CG::CGCpp cgCpp;
     cgCpp.SetDBModel(dbModel);
     cgCpp.Generate();
-
-//    Tools::FileSystem::DirCreate("./","lal");
 
     return 0;
 }
