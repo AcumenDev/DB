@@ -71,33 +71,16 @@ std::vector<Test1> Test1_logic::InsertList( const std::vector<Test1> listVal) {
         values+="("+std::to_string(item.Id)+",'"+ item.Name+"')";
     }
     insertDataTableSQL+=values;
-
-
     std::cout<<insertDataTableSQL<<std::endl;
-
-
     char  *pSQL2;
     sqlite3_stmt *stmt;
     _Status = sqlite3_prepare_v2(_Db, insertDataTableSQL.c_str(), -1, &stmt, (const char**)&pSQL2);
-    if (_Status == SQLITE_OK) {
+    _Status = sqlite3_step(stmt);
+    if (_Status == SQLITE_OK || _Status ==SQLITE_DONE) {
         sqlite3_finalize(stmt);
         std::cout<<"OK"<<std::endl;
     } else {
-        std::cout<<"Error: %s\n  "<<sqlite3_errmsg(_Db);
+        std::cout<<"Error: "+std::string(sqlite3_errmsg(_Db))+" \n  ";
     }
-
-    std::string create_table ="create table ";
-     //char  *pSQL2;
-    sqlite3_stmt *stmt1;
-    _Status = sqlite3_prepare_v2(_Db, create_table.c_str(), -1, &stmt1, (const char**)&pSQL2);
-    if (_Status == SQLITE_OK) {
-        sqlite3_finalize(stmt);
-        std::cout<<"OK"<<std::endl;
-    } else {
-        std::cout<<"Error: %s\n  "<<sqlite3_errmsg(_Db);
-    }
-
-
-
     return listVal;
 }
