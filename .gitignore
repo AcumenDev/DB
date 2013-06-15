@@ -19,3 +19,6 @@ bin/
 db/
 OutputDB/
 *.depend
+
+
+extern_lib/boost_1_53_0

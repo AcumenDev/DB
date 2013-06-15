@@ -4,6 +4,10 @@ namespace Tools {
 
 std::string FileSystem::DirCreate(std::string path, std::string name) {
     std::shared_ptr<LoggingSystem> _Log  =  LoggingSystem::GetLoggingSystem();
+    if(path.empty()) {
+        _Log->Write("Error dir "+name+" create path is empty ",LogType::Error);
+        return "";
+    }
     std::string dir = path + "/"+name;
     if ( mkdir(dir.c_str())) {
         _Log->Write("Create Dir : "+dir,LogType::Messages);
@@ -18,10 +22,10 @@ std::string FileSystem::RootDirCreate(std::string name) {
     std::shared_ptr<LoggingSystem> _Log  =  LoggingSystem::GetLoggingSystem();
     std::string dir = name;
     if ( mkdir(dir.c_str())) {
-        _Log->Write("Create Dir : "+dir,LogType::Messages);
+        _Log->Write("Create root dir : "+dir,LogType::Messages);
         return dir;
     } else {
-        _Log->Write("Error dir create  : "+dir,LogType::Error);
+        _Log->Write("Error root dir create  : "+dir,LogType::Error);
     }
     return "";
 }

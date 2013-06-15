@@ -16,7 +16,7 @@ void Settings::SetOutputDir(std::string name) {
 }
 
 std::string Settings::GetOutputDir() const {
-    return  "./"+_OutputDir;
+    return  _OutputDir;
 }
 
 void Settings::SetDBType(DB::DBType dbType) {

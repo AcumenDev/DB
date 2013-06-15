@@ -28,7 +28,7 @@ void CGCpp::GenerateExternalFiles () {
     Tools::FileSystem::FileSave(_Setting->GetOutputDir(), "DBEntity"+ _dbModel.GetDBName()+".cpp", tmpHelper.GetText());
 }
 
-void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable) {
+void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable,std::string path) {
     std::string content;
     for (const auto& field : dbTable.DBTableColumnList) {
         std::string  typeField ="\t\t";
@@ -50,16 +50,16 @@ void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable) {
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
     tmpHelper.TextInsert(Tools::TEMPLATE_BODY,content);
 
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", dbTable.GetTableName()+".h", tmpHelper.GetText());
+    Tools::FileSystem::FileSave(path, dbTable.GetTableName()+".h", tmpHelper.GetText());
 }
 
-void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable) {
+void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable,std::string path) {
 
     std::string tableName = dbTable.GetTableName()+"_logic";
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/Tables/table_logic_h.tpl");
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", tableName+".h", tmpHelper.GetText());
+    Tools::FileSystem::FileSave(path, tableName+".h", tmpHelper.GetText());
 
     std::string tab4 = "\t\t\t\t";
     int i = 0;
@@ -84,17 +84,17 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable) {
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
     tmpHelper.TextInsert(Tools::TEMPLATE_BODY,contentCpp);
 
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", tableName+".cpp", tmpHelper.GetText());
+    Tools::FileSystem::FileSave(path, tableName+".cpp", tmpHelper.GetText());
 }
 
 void CGCpp::GenerateTables() {
     std::string pathToTables= Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), _Setting->GetOutputDirTables());
     for(const auto& table : _dbModel.DBTableList) {
-        std::string path =  Tools::FileSystem::DirCreate(_Setting->GetPathToOutputDirTables(), table.GetTableName());
+        std::string path =  Tools::FileSystem::DirCreate(pathToTables, table.GetTableName());
 
         if(!path.empty()) {
-            GenerateTablesStruct(table);
-            GenerateTablesLogic(table);
+            GenerateTablesStruct(table,path);
+            GenerateTablesLogic(table,path);
         }
     }
     GenerateExternalFiles();
