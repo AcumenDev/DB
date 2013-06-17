@@ -3,6 +3,6 @@
 	<Workspace title="Workspace">
 		<Project filename="DB.cbp" />
 		<Project filename="Test/DataAccess/DataAccess.cbp" />
-		<Project filename="Test/TestDB/TestDB.cbp" />
+		<Project filename="Test/TestCGDB/TestCGDB.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
