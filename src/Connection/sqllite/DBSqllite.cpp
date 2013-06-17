@@ -1,4 +1,4 @@
-#include "./DBSqllite.h"
+#include "DBSqllite.h"
 
 namespace DB {
 
@@ -20,6 +20,9 @@ void DBSqllite::Connect(std::string path, std::string login, std::string passwor
 
     _Log->Write(("Connect to sqllite : "+path));
     status =  sqlite3_open(path.c_str(),&ppDb);
+    if(SQLITE_OK!=status) {
+        throw  Tools::Exception::NotOpenDataBase();
+    }
 }
 
 std::vector<std::string> DBSqllite::GetTables() const {

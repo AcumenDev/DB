@@ -13,8 +13,8 @@ namespace DB {
 class DBBase {
 public:
     DBBase() ;
-    virtual  void Connect(std::string patch, std::string login, std::string password) =0;
-    virtual  void  Close()=0;
+    virtual void Connect(std::string patch, std::string login, std::string password) =0;
+    virtual void Close()=0;
     virtual std::string GetDBName() const =0;
     virtual std::vector<std::string> GetTables() const = 0;
     virtual std::vector<std::shared_ptr<TableInfo>> GetTableInfo(std::string tableName) const = 0;
