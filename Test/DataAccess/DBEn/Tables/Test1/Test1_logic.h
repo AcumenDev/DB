@@ -15,6 +15,7 @@ public:
     bool InsertList(std::vector<Test1> listVal);
     bool Insert(Test1 value);
 protected:
+    std::vector<Test1> ExecutionSelect(std::string query);
 private:
     sqlite3 *_Db;
     int _Status;
