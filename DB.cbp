@@ -77,7 +77,6 @@
 		<Unit filename="src/Connection/DBBase.h" />
 		<Unit filename="src/Connection/DBConnection.cpp" />
 		<Unit filename="src/Connection/DBConnection.h" />
-		<Unit filename="src/Connection/DefDB.h" />
 		<Unit filename="src/Connection/TableInfo.cpp" />
 		<Unit filename="src/Connection/TableInfo.h" />
 		<Unit filename="src/Connection/mysql/DBMySql.cpp" />
@@ -90,6 +89,7 @@
 		<Unit filename="src/DBEntity/DBTable.h" />
 		<Unit filename="src/DBEntity/DBTableColumn.cpp" />
 		<Unit filename="src/DBEntity/DBTableColumn.h" />
+		<Unit filename="src/tools/DefDB.h" />
 		<Unit filename="src/tools/FileSystem.cpp" />
 		<Unit filename="src/tools/FileSystem.h" />
 		<Unit filename="src/tools/Log/ILog.h" />

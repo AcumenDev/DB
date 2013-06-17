@@ -2,7 +2,7 @@
 #define DEFDB_H_INCLUDED
 #include <iostream>
 
-namespace DB {
+namespace Core {
 enum DBType {
     Sqllite,
     Mysql,

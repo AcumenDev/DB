@@ -55,12 +55,12 @@ std::vector<std::shared_ptr<TableInfo>> DBSqllite::GetTableInfo(std::string tabl
             while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
                 auto nameField = sqlite3_column_text(stmt, 1);
                 std::shared_ptr<TableInfo> rowField(new TableInfo());
-                DataType typeField = DataType::Text;
+                Core::DataType typeField = Core::DataType::Text;
                 std::string fieldTypeRaw = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
                 if("NUMERIC"==fieldTypeRaw )
-                    typeField = DataType::Number;
+                    typeField = Core::DataType::Number;
                 if("TEXT"==fieldTypeRaw)
-                    typeField = DataType::Text;
+                    typeField = Core::DataType::Text;
                 rowField->SetName(reinterpret_cast<const char*>(nameField));
                 rowField->SetType(typeField);
                 result.push_back(rowField );
