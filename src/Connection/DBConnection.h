@@ -1,6 +1,5 @@
 #ifndef DBCONNECTION_H
 #define DBCONNECTION_H
-#include "../Core/DefDB.h"
 #include "sqllite/DBSqllite.h"
 #include "mysql/DBMySql.h"
 #include "../Tools/tools.h"

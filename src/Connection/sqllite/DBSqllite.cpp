@@ -38,7 +38,6 @@ std::vector<std::string> DBSqllite::GetTables() const {
                 auto nameTable = sqlite3_column_text(stmt, 1);
                 vectorResult.push_back(reinterpret_cast<const char*>(nameTable));
             }
-            std::cout<<std::endl;
         }
         sqlite3_finalize(stmt);
     } else {

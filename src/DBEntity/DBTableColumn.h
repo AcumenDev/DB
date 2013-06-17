@@ -2,7 +2,7 @@
 #define DBTABLECOLUMN_H
 #include <iostream>
 #include "../Connection/TableInfo.h"
-#include "../Core/DefDB.h"
+#include "../Core/Defines.h"
 namespace DBEntity {
 class DBTableColumn {
 public:
