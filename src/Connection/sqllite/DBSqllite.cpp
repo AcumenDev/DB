@@ -3,10 +3,11 @@
 namespace DB {
 
 DBSqllite::~DBSqllite() {
-    Close();
 }
+
 void DBSqllite::Close() {
-    sqlite3_close(ppDb);
+    if(nullptr!= ppDb)
+        sqlite3_close_v2(ppDb);
 }
 std::string DBSqllite::GetDBName() const {
     return _NameDB;
