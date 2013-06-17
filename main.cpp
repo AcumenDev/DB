@@ -5,17 +5,15 @@
 #include "src/Tools/FileSystem.h"
 #include "src/Tools/TemplateHelper.h"
 #include "src/Core/Settings.h"
+#include "src/Core/Parameters.h"
 #include "src/CodeGeneration/Cpp/CGCpp.h"
 using namespace std;
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
     std::shared_ptr<Tools::LoggingSystem> Log = Tools::LoggingSystem::GetLoggingSystem();
 
-    char* pathToOutputFiles=argv[1];
-    char* pathToDb=argv[2];
-    char* dbType=argv[3];
-    char* langType=argv[4];
+    Core::Parameters parameters(argc, argv);
 
     Log->Write("Hello world!");//<<" 123";
 

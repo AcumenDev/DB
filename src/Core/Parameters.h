@@ -2,27 +2,37 @@
 #define PARAMETERS_H
 #include <iostream>
 #include "Defines.h"
-namespace Parameters
+
+namespace Core
 {
+// TODO (grey#1#): должно быть в Defines.h, но отсюда там не видит ...
+//
+
+    enum Language {
+    Cpp,
+    Java
+};
 class Parameters
 {
     public:
-        Parameters();
+        Parameters() {};
+        Parameters(int argc, char *argv[]);
         std::string GetPathToDB() const;
         std::string GetOutputDirPath() const;
-        Core::DBType GetDBType() const;
-        Core::Language GetLanguage() const;
+        DBType GetDBType() const;
+        Language GetLanguage() const;
         void SetPathToDB(std::string path);
         void SetOutputPath(std::string path);
-        void SetDBType(Core::DBType type);
-        void SetLanguage(Core::Language type);
+        void SetDBType(DBType type);
+        void SetLanguage(Language type);
         virtual ~Parameters();
     protected:
     private:
         std::string _PathToDB;
         std::string _OutputDirPath;
-        Core::DBType _DBType;
-        Core::Language _Language;
+        DBType _DBType;
+        Language _Language;
 };
-} //end Namespace Parameters
+} //end Namespace Core
 #endif // PARAMETERS_H
+

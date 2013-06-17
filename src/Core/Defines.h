@@ -9,15 +9,13 @@ enum DBType {
     Postgres
 };
 
+
+
 enum DataType {
     Number,
     Text
 };
 
-enum Language {
-    Cpp,
-    Java
-};
 
 } //end namespace DB
 #endif // DEFDB_H_INCLUDED

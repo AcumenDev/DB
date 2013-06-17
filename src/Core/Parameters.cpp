@@ -1,10 +1,22 @@
 #include "Parameters.h"
 
-namespace Parameters
-{
-Parameters::Parameters()
+namespace Core
 {
 
+Parameters::Parameters(int argc, char *argv[])
+{
+    for (int x=1; x<argc; x++)
+    {
+        std::cout<<argv[x];
+
+    }
+
+
+//
+//    char* pathToOutputFiles=argv[1];
+//    char* pathToDb=argv[2];
+//    char* dbType=argv[3];
+//    char* langType=argv[4];
 }
 
 std::string Parameters::GetPathToDB() const
@@ -22,7 +34,7 @@ Core::DBType Parameters::GetDBType() const
 return _DBType;
 }
 
-Core::Language Parameters::GetLanguage() const
+Language Parameters::GetLanguage() const
 {
 return _Language;
 }
