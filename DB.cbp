@@ -83,7 +83,7 @@
 		<Unit filename="src/Connection/mysql/DBMySql.h" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.cpp" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.h" />
-		<Unit filename="src/Core/DefDB.h" />
+		<Unit filename="src/Core/Defines.h" />
 		<Unit filename="src/Core/Parameters.cpp" />
 		<Unit filename="src/Core/Parameters.h" />
 		<Unit filename="src/Core/Settings.cpp" />
