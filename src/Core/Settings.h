@@ -2,7 +2,7 @@
 #define SETTINGS_H
 #include <memory>
 #include <iostream>
-#include "../Core/DefDB.h"
+#include "../Core/Defines.h"
 
 namespace Core {
 class Settings {

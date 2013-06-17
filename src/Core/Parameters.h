@@ -5,13 +5,6 @@
 
 namespace Core
 {
-// TODO (grey#1#): должно быть в Defines.h, но отсюда там не видит ...
-//
-
-    enum Language {
-    Cpp,
-    Java
-};
 class Parameters
 {
     public:

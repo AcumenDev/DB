@@ -1,7 +1,8 @@
 #ifndef TABLEINFO_H
 #define TABLEINFO_H
 
-#include "../Core/DefDB.h"
+#include "../Core/Defines.h"
+
 namespace DB {
 class TableInfo {
 public:
