@@ -16,14 +16,14 @@ void Settings::SetOutputDir(std::string name) {
 }
 
 std::string Settings::GetOutputDir() const {
-    return  "./"+_OutputDir;
+    return  _OutputDir;
 }
 
-void Settings::SetDBType(DB::DBType dbType) {
+void Settings::SetDBType(Core::DBType dbType) {
     _DBType = dbType;
 }
 
-DB::DBType Settings::GetDBType() const {
+Core::DBType Settings::GetDBType() const {
     return _DBType;
 }
 

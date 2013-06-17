@@ -4,8 +4,8 @@
 #include <vector>
 #include <memory>
 #include "./TableInfo.h"
-#include "../tools/Log/LoggingSystem.h"
-#include "../tools/tools.h"
+#include "../Tools/Log/LoggingSystem.h"
+#include "../Tools/tools.h"
 
 namespace DB {
 

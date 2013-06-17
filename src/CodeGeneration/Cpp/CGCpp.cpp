@@ -12,8 +12,8 @@ void CGCpp::GenerateExternalFiles () {
     std::string set_dbcontext_block_content; //в cpp файле где передается dbcontext в файлы табличной логики
 
     for(const auto& table : _dbModel.DBTableList) {
-        include_block_content+="\n#include ""\"Tables/"+table.GetTableName()+"/"+table.GetTableName()+"_logic.h\"";
-        logic_var_block_content+="\n"+table.GetTableName()+"_logic "+table.GetTableName()+";";
+        include_block_content+="\n#include ""\"Tables/"+table.GetTableName()+"/"+table.GetTableName()+"Logic.h\"";
+        logic_var_block_content+="\n"+table.GetTableName()+"Logic "+table.GetTableName()+";";
         set_dbcontext_block_content+="\n"+table.GetTableName()+".SetDBContext(_Db);";
     }
 
@@ -28,16 +28,16 @@ void CGCpp::GenerateExternalFiles () {
     Tools::FileSystem::FileSave(_Setting->GetOutputDir(), "DBEntity"+ _dbModel.GetDBName()+".cpp", tmpHelper.GetText());
 }
 
-void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable) {
+void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable,std::string path) {
     std::string content;
     for (const auto& field : dbTable.DBTableColumnList) {
         std::string  typeField ="\t\t";
         switch (field.GetColumnDataType()) {
-        case DB::DataType::Number: {
+        case Core::DataType::Number: {
             typeField+="int";
             break;
         }
-        case DB::DataType::Text: {
+        case Core::DataType::Text: {
             typeField+="std::string";
             break;
         }
@@ -50,16 +50,16 @@ void CGCpp::GenerateTablesStruct( const DBEntity::DBTable& dbTable) {
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
     tmpHelper.TextInsert(Tools::TEMPLATE_BODY,content);
 
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", dbTable.GetTableName()+".h", tmpHelper.GetText());
+    Tools::FileSystem::FileSave(path, dbTable.GetTableName()+".h", tmpHelper.GetText());
 }
 
-void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable) {
+void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable,std::string path) {
 
-    std::string tableName = dbTable.GetTableName()+"_logic";
+    std::string tableName = dbTable.GetTableName()+"Logic";
     Tools::TemplateHelper tmpHelper;
     tmpHelper.OpenTemplate("Cpp/Tables/table_logic_h.tpl");
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", tableName+".h", tmpHelper.GetText());
+    Tools::FileSystem::FileSave(path, tableName+".h", tmpHelper.GetText());
 
     std::string tab4 = "\t\t\t\t";
     int i = 0;
@@ -67,11 +67,11 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable) {
     for (const auto& field : dbTable.DBTableColumnList) {
         std::string sqlite3call;
         switch (field.GetColumnDataType()) {
-        case DB::DataType::Number: {
+        case Core::DataType::Number: {
             sqlite3call="sqlite3_column_int(stmt, "+std::to_string(i)+");\n";
             break;
         }
-        case DB::DataType::Text: {
+        case Core::DataType::Text: {
             sqlite3call="reinterpret_cast<const char*>(sqlite3_column_text(stmt, "+std::to_string(i)+"));\n";
             break;
         }
@@ -84,17 +84,17 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable) {
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
     tmpHelper.TextInsert(Tools::TEMPLATE_BODY,contentCpp);
 
-    Tools::FileSystem::FileSave(_Setting->GetOutputDir()+"/"+dbTable.GetTableName()+"", tableName+".cpp", tmpHelper.GetText());
+    Tools::FileSystem::FileSave(path, tableName+".cpp", tmpHelper.GetText());
 }
 
 void CGCpp::GenerateTables() {
     std::string pathToTables= Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), _Setting->GetOutputDirTables());
     for(const auto& table : _dbModel.DBTableList) {
-        std::string path =  Tools::FileSystem::DirCreate(_Setting->GetPathToOutputDirTables(), table.GetTableName());
+        std::string path =  Tools::FileSystem::DirCreate(pathToTables, table.GetTableName());
 
         if(!path.empty()) {
-            GenerateTablesStruct(table);
-            GenerateTablesLogic(table);
+            GenerateTablesStruct(table,path);
+            GenerateTablesLogic(table,path);
         }
     }
     GenerateExternalFiles();
@@ -110,6 +110,13 @@ void CGCpp::GenerateStoredProcedures() {
 
 void CGCpp::Generate() {
     Tools::FileSystem::RootDirCreate(_Setting->GetOutputDir());
+    CopyLib();
     CGBase::Generate();
 }
+void CGCpp::CopyLib() {
+    std::string dirOutput =  Tools::FileSystem::DirCreate(_Setting->GetOutputDir(), "external_lib");
+    Tools::FileSystem::FileCopy(_Setting->GetTemplateDir()+"/external_lib/sqlite3/include/sqlite3.h",dirOutput+"/sqlite3.h");
+    Tools::FileSystem::FileCopy(_Setting->GetTemplateDir()+"/external_lib/sqlite3/include/sqlite3ext.h",dirOutput+"/sqlite3ext.h");
+}
+
 }//end namespace CG

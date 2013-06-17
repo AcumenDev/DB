@@ -5,8 +5,10 @@
 #include <sstream>
 #include <direct.h>
 #include <memory>
-#include "Settings.h"
+#include "../Core/Settings.h"
 #include "Log/LoggingSystem.h"
+#include <iostream>
+#include <boost/filesystem.hpp>
 
 namespace Tools {
 class FileSystem {
@@ -18,6 +20,7 @@ public:
     static std::string RootDirCreate(std::string name);
     static bool FileSave(std::string path,std::string  name,std::string  content );
     static std::string OpenTemplateFile(std::string path);
+    static bool FileCopy(std::string from,std::string to);
 protected:
 private:
 };

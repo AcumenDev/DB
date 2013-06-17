@@ -1,10 +1,10 @@
 #include <iostream>
 #include "src/Connection/DBConnection.h"
-#include "src/tools/Log/LoggingSystem.h"
+#include "src/Tools/Log/LoggingSystem.h"
 #include "src/DBEntity/DBModel.h"
-#include "src/tools/FileSystem.h"
-#include "src/tools/TemplateHelper.h"
-#include "src/tools/Settings.h"
+#include "src/Tools/FileSystem.h"
+#include "src/Tools/TemplateHelper.h"
+#include "src/Core/Settings.h"
 #include "src/CodeGeneration/Cpp/CGCpp.h"
 using namespace std;
 
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     settings->SetOutputDir("OutputDB");
     settings->SetOutputDirTables("Tables");
     settings->SetTemplateDir("Templates");
-    std::shared_ptr<DB::DBBase> dbSqlLite = Connection::DBConnection::GetConnection(DB::DBType::Sqllite);
+    std::shared_ptr<DB::DBBase> dbSqlLite = Connection::DBConnection::GetConnection(Core::DBType::Sqllite);
 
     dbSqlLite->Connect("TestDB.db","","");
 

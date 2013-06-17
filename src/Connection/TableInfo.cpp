@@ -2,14 +2,14 @@
 
 namespace DB {
 
-std::string DataTypeEnumToString(DataType type) {
+std::string DataTypeEnumToString(Core::DataType type) {
 
     switch(type) {
-    case DataType::Number: {
+    case Core::DataType::Number: {
         return "Number";
         break;
     }
-    case DataType::Text: {
+    case Core::DataType::Text: {
         return "Text";
         break;
     }
@@ -23,14 +23,14 @@ void TableInfo::SetName(std::string name) {
     Name = name;
 }
 
-void TableInfo::SetType(DataType type) {
+void TableInfo::SetType(Core::DataType type) {
     Type = type;
 }
 
 std::string TableInfo::GetTypeStr() const {
     return DataTypeEnumToString(Type);
 }
-DataType TableInfo::GetType() const {
+Core::DataType TableInfo::GetType() const {
     return Type;
 }
 

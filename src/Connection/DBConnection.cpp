@@ -1,20 +1,21 @@
 #include "./DBConnection.h"
 
 namespace Connection {
-std::shared_ptr<DB::DBBase> DBConnection::GetConnection(DB::DBType dbType) {
-    using namespace DB;
-    std::shared_ptr<DBBase> result = nullptr;
+std::shared_ptr<DB::DBBase> DBConnection::GetConnection(Core::DBType dbType) {
+
+    std::shared_ptr<DB::DBBase> result = nullptr;
 
     switch (dbType) {
-    case DBType::Sqllite : {
-        result = std::shared_ptr<DBBase> (new DBSqllite());
+
+    case Core::DBType::Sqllite : {
+        result = std::shared_ptr<DB::DBBase> (new DB::DBSqllite());
         break;
     }
-    case DBType::Mysql : {
-        result = std::shared_ptr<DBBase> (new DBMySql());
+    case Core::DBType::Mysql : {
+        result = std::shared_ptr<DB::DBBase> (new DB::DBMySql());
         break;
     }
-    case DBType::Postgres : {
+    case Core::DBType::Postgres : {
         throw  Tools::Exception::NotImplementedException();
         break;
     }

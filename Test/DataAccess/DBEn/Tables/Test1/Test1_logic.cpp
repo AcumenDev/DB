@@ -4,14 +4,12 @@ void Test1_logic::SetDBContext(sqlite3* ppDb) {
     this->_Db = ppDb;
 }
 
-std::vector<Test1> Test1_logic::GetList() {
-    const std::string GET_DATA_TABLE = "select id, name from test1";
-
+std::vector<Test1> Test1_logic::ExecutionSelect(std::string query) {
     std::vector<Test1> vectorResult;
     char  *pSQL2;
     sqlite3_stmt *stmt;
     int rc;
-    rc = sqlite3_prepare_v2(_Db, GET_DATA_TABLE.c_str(), -1, &stmt, (const char**)&pSQL2);
+    rc = sqlite3_prepare_v2(_Db, query.c_str(), -1, &stmt, (const char**)&pSQL2);
     if (rc == SQLITE_OK) {
         if (sqlite3_column_count(stmt)) {
             while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
@@ -29,36 +27,17 @@ std::vector<Test1> Test1_logic::GetList() {
     return vectorResult;
 }
 
+
+std::vector<Test1> Test1_logic::GetList() {
+    const std::string GET_DATA_TABLE = "select id, name from test1";
+    return ExecutionSelect(GET_DATA_TABLE);
+}
+
 std::vector<Test1> Test1_logic::GetList(int startPos, int count) {
-
     std::vector<Test1> vectorResult;
-
     const std::string GET_DATA_TABLE = "SELECT id, name FROM test1 LIMIT "+std::to_string(startPos)+", "+std::to_string(count);
     if(count==0) return vectorResult;
-
-// TODO (akum#1#): Убрать дублирование
-
-
-
-    char  *pSQL2;
-    sqlite3_stmt *stmt;
-    int rc;
-    rc = sqlite3_prepare_v2(_Db, GET_DATA_TABLE.c_str(), -1, &stmt, (const char**)&pSQL2);
-    if (rc == SQLITE_OK) {
-        if (sqlite3_column_count(stmt)) {
-            while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
-                Test1 test1;
-                test1.Id =   sqlite3_column_int(stmt, 0);
-                test1.Name = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-                vectorResult.push_back(test1);
-            }
-            std::cout<<std::endl;
-        }
-        sqlite3_finalize(stmt);
-    } else {
-        std::cout<<"Error: %s\n  "<<sqlite3_errmsg(_Db);
-    }
-    return vectorResult;
+    return ExecutionSelect(GET_DATA_TABLE);
 }
 
 
