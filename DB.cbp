@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="&apos;aaaaaaaa&apos;" />
+				<Option parameters="123" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -54,10 +54,14 @@
 			<Add option="-ansi" />
 			<Add option="-fexceptions" />
 			<Add directory="../../extern_lib/sqlite3/include" />
+			<Add directory="extern_lib/boost_1_53_0" />
 		</Compiler>
 		<Linker>
 			<Add option="-lsqlite3" />
+			<Add option="-lboost_system-mgw47-mt-1_53" />
+			<Add option="-lboost_filesystem-mgw47-mt-1_53" />
 			<Add directory="extern_lib/sqlite3/lib" />
+			<Add directory="extern_lib/boost_1_53_0/stage/lib" />
 		</Linker>
 		<Unit filename="Templates/Cpp/DBentity_cpp.tpl" />
 		<Unit filename="Templates/Cpp/DBentity_h.tpl" />
@@ -73,13 +77,15 @@
 		<Unit filename="src/Connection/DBBase.h" />
 		<Unit filename="src/Connection/DBConnection.cpp" />
 		<Unit filename="src/Connection/DBConnection.h" />
-		<Unit filename="src/Connection/DefDB.h" />
 		<Unit filename="src/Connection/TableInfo.cpp" />
 		<Unit filename="src/Connection/TableInfo.h" />
 		<Unit filename="src/Connection/mysql/DBMySql.cpp" />
 		<Unit filename="src/Connection/mysql/DBMySql.h" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.cpp" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.h" />
+		<Unit filename="src/Core/DefDB.h" />
+		<Unit filename="src/Core/Settings.cpp" />
+		<Unit filename="src/Core/Settings.h" />
 		<Unit filename="src/DBEntity/DBModel.cpp" />
 		<Unit filename="src/DBEntity/DBModel.h" />
 		<Unit filename="src/DBEntity/DBTable.cpp" />
@@ -93,10 +99,6 @@
 		<Unit filename="src/tools/Log/LogStdConsole.h" />
 		<Unit filename="src/tools/Log/LoggingSystem.cpp" />
 		<Unit filename="src/tools/Log/LoggingSystem.h" />
-		<Unit filename="src/tools/Parameters.cpp" />
-		<Unit filename="src/tools/Parameters.h" />
-		<Unit filename="src/tools/Settings.cpp" />
-		<Unit filename="src/tools/Settings.h" />
 		<Unit filename="src/tools/TemplateHelper.cpp" />
 		<Unit filename="src/tools/TemplateHelper.h" />
 		<Unit filename="src/tools/tools.h" />
