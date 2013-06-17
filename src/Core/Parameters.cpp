@@ -3,55 +3,71 @@
 namespace Core
 {
 
-Parameters::Parameters(int argc, char *argv[])
+Parameters::Parameters(int argc, char *argv[], std::shared_ptr<Core::Settings> settings)
 {
+    SetDBType(Core::Sqllite);
+    SetLanguage(Core::Cpp);
+    SetPathToDB(std::string(argv[1]));
+    SetPathToOutputDir(std::string(argv[2]));
 
-std::string dbType;
-std::string pathToDB;
-std::string langType;
-std::string pathToOutputFiles;
+    settings->SetOutputDir(GetPathToOutputDir());
+    settings->SetDBType(GetDBType());
+    settings->SetPathToDB(GetPathToDB());
+//    settings->SetLanguage(GetLanguage());
+//    bool parseOkay=true;
+//    for (int i=0; i<argc; i++)
+//    {
+//        std::string val(argv[i]);
+//        if (i+1>=argc)
+//        {
+//            parseError=false;
+//            break;
+//        }
+//        std::string nextOption=std::string(argv[i+1]);
+//        if (val=="-dbType")
+//        {
+//            dbType=nextOption;
+//        }
+//        else if (val=="-pathToDb")
+//        {
+//            pathToDB=nextOption;
+//        }
+//        else if (val=="-langType")
+//        {
+//            langType=nextOption;
+//        }
+//        else if (val=="-pathToOutputFiles")
+//        {
+//            pathToOutputFiles=nextOption;
+//        }
+//    }
+//    SetPathToDB(pathToDB);
+//    SetOutputPath(pathToOutputFiles);
+//
+//    if (dbType=="")
+//    {
+//
+//    }
+//    else
+//    {
+//
+//    }
+//    if (langType=="")
+//    {
+//        SetLanguage(Core::Cpp);
+//    }
 
-    for (int x=1; x<argc; x++)
-    {
-        std::string val(argv[x]);
-
-        if (val=="-dbType")
-        {
-
-        }
-
-        if (val=="-pathToDb")
-        {
-
-        }
-
-        if (val=="-langType")
-        {
-
-
-        }
-
-        if (val=="-pathToOutputFiles")
-        {
-
-
-        }
-
-        std::cout<<"a";
-    }
 }
 
-
-}
 
 std::string Parameters::GetPathToDB() const
 {
     return _PathToDB;
 }
 
-std::string Parameters::GetOutputDirPath() const
+std::string Parameters::GetPathToOutputDir() const
 {
-    return _OutputDirPath;
+    return _PathToOutputDir;
 }
 
 Core::DBType Parameters::GetDBType() const
@@ -69,9 +85,9 @@ void Parameters::SetPathToDB(std::string path)
     _PathToDB=path;
 }
 
-void Parameters::SetOutputPath(std::string path)
+void Parameters::SetPathToOutputDir(std::string path)
 {
-    _OutputDirPath=path;
+    _PathToOutputDir=path;
 }
 
 void Parameters::SetDBType(Core::DBType type)
