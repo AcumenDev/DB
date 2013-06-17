@@ -1,9 +1,9 @@
 #ifndef DBCONNECTION_H
 #define DBCONNECTION_H
-#include "../tools/DefDB.h"
+#include "../Core/DefDB.h"
 #include "./sqllite/DBSqllite.h"
 #include "./mysql/DBMySql.h"
-#include "../tools/tools.h"
+#include "../Tools/tools.h"
 
 namespace Connection {
 class DBConnection {

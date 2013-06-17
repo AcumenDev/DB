@@ -3,8 +3,8 @@
 #include <regex>
 #include <iterator>
 #include "../DBEntity/DBModel.h"
-#include "../tools/Settings.h"
-#include "../tools/TemplateHelper.h"
+#include "../Core/Settings.h"
+#include "../Tools/TemplateHelper.h"
 
 namespace CG {
 class CGBase {

@@ -5,7 +5,7 @@
 #include <sstream>
 #include <direct.h>
 #include <memory>
-#include "Settings.h"
+#include "../Core/Settings.h"
 #include "Log/LoggingSystem.h"
 #include <iostream>
 #include <boost/filesystem.hpp>

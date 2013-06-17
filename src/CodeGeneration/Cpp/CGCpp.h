@@ -1,7 +1,7 @@
 #ifndef CGCPP_H
 #define CGCPP_H
 #include "../CGBase.h"
-#include "../../tools/FileSystem.h"
+#include "../../Tools/FileSystem.h"
 
 namespace CG {
 class CGCpp : public  CGBase {

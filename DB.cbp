@@ -83,13 +83,15 @@
 		<Unit filename="src/Connection/mysql/DBMySql.h" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.cpp" />
 		<Unit filename="src/Connection/sqllite/DBSqllite.h" />
+		<Unit filename="src/Core/DefDB.h" />
+		<Unit filename="src/Core/Settings.cpp" />
+		<Unit filename="src/Core/Settings.h" />
 		<Unit filename="src/DBEntity/DBModel.cpp" />
 		<Unit filename="src/DBEntity/DBModel.h" />
 		<Unit filename="src/DBEntity/DBTable.cpp" />
 		<Unit filename="src/DBEntity/DBTable.h" />
 		<Unit filename="src/DBEntity/DBTableColumn.cpp" />
 		<Unit filename="src/DBEntity/DBTableColumn.h" />
-		<Unit filename="src/tools/DefDB.h" />
 		<Unit filename="src/tools/FileSystem.cpp" />
 		<Unit filename="src/tools/FileSystem.h" />
 		<Unit filename="src/tools/Log/ILog.h" />
@@ -97,8 +99,6 @@
 		<Unit filename="src/tools/Log/LogStdConsole.h" />
 		<Unit filename="src/tools/Log/LoggingSystem.cpp" />
 		<Unit filename="src/tools/Log/LoggingSystem.h" />
-		<Unit filename="src/tools/Settings.cpp" />
-		<Unit filename="src/tools/Settings.h" />
 		<Unit filename="src/tools/TemplateHelper.cpp" />
 		<Unit filename="src/tools/TemplateHelper.h" />
 		<Unit filename="src/tools/tools.h" />
