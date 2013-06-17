@@ -81,6 +81,8 @@
 		<Unit filename="../../src/Tools/TemplateHelper.cpp" />
 		<Unit filename="../../src/Tools/TemplateHelper.h" />
 		<Unit filename="../../src/Tools/tools.h" />
+		<Unit filename="CGTest.cpp" />
+		<Unit filename="DBConTest.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

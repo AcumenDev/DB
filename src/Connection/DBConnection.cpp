@@ -1,4 +1,4 @@
-#include "./DBConnection.h"
+#include "DBConnection.h"
 
 namespace Connection {
 std::shared_ptr<DB::DBBase> DBConnection::GetConnection(Core::DBType dbType) {
