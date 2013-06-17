@@ -18,14 +18,14 @@ std::string Settings::GetPathToDB ()
 {
     return _PathToDB;
 }
-//void Settings::SetLanguage (std::string name)
-//{
-//     _Language=name;
-//}
-//Core::Language Settings::GetLanguage()
-//{
-//    return _Language;
-//}
+void Settings::SetLanguage (Core::Language language)
+{
+     _Language=language;
+}
+Core::Language Settings::GetLanguage()
+{
+    return _Language;
+}
 void Settings::SetOutputDir(std::string name) {
     _OutputDir=name;
 }

@@ -19,8 +19,8 @@ public:
     std::string GetPathToOutputDirTables() const;
     void SetPathToDB(std::string path);
     std::string GetPathToDB();
-    void SetLanguage(std::string name);
-//    Core::Language GetLanguage();
+    void SetLanguage(Core::Language language);
+    Core::Language GetLanguage();
     Core::DBType GetDBType() const;
 protected:
 private:
@@ -29,7 +29,7 @@ private:
     std::string _OutputDirTables;
     std::string _TemplateDir;
     std::string _PathToDB;
-  //  Core::Language _Language;
+    Core::Language _Language;
     static     std::shared_ptr<Settings>  _Settings;
     Settings() {};
 };

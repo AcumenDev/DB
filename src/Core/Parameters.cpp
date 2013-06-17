@@ -13,7 +13,8 @@ Parameters::Parameters(int argc, char *argv[], std::shared_ptr<Core::Settings> s
     settings->SetOutputDir(GetPathToOutputDir());
     settings->SetDBType(GetDBType());
     settings->SetPathToDB(GetPathToDB());
-//    settings->SetLanguage(GetLanguage());
+    settings->SetLanguage(GetLanguage());
+
 //    bool parseOkay=true;
 //    for (int i=0; i<argc; i++)
 //    {
