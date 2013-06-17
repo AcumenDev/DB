@@ -93,6 +93,8 @@
 		<Unit filename="src/tools/Log/LogStdConsole.h" />
 		<Unit filename="src/tools/Log/LoggingSystem.cpp" />
 		<Unit filename="src/tools/Log/LoggingSystem.h" />
+		<Unit filename="src/tools/Parameters.cpp" />
+		<Unit filename="src/tools/Parameters.h" />
 		<Unit filename="src/tools/Settings.cpp" />
 		<Unit filename="src/tools/Settings.h" />
 		<Unit filename="src/tools/TemplateHelper.cpp" />

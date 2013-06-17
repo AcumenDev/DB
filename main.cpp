@@ -12,8 +12,6 @@ int main(int argc, char *argv[])
 {
     std::shared_ptr<LoggingSystem> Log = LoggingSystem::GetLoggingSystem();
 
-
-
     char* pathToOutputFiles=argv[1];
     char* pathToDb=argv[2];
     char* dbType=argv[3];
