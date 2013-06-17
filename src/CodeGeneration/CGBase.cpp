@@ -7,7 +7,7 @@ void CGBase::SetDBModel(DBEntity::DBModel dbModel) {
 
 CGBase::CGBase() {
     this->_Setting=Core::Settings::GetSettings();
-    this->_Log =  LoggingSystem::GetLoggingSystem();
+    this->_Log =  Tools::LoggingSystem::GetLoggingSystem();
 }
 
 void CGBase::Generate() {

@@ -1,7 +1,7 @@
 #ifndef ILOG_H
 #define ILOG_H
 #include <iostream>
-
+namespace Tools {
 enum LogType {
     Debug,
     Messages ,
@@ -18,4 +18,5 @@ public:
 protected:
 private:
 };
+}//end namespace Tools
 #endif // ILOG_H

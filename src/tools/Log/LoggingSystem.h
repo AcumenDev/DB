@@ -4,7 +4,7 @@
 #include <memory>
 #include "ILog.h"
 #include "LogStdConsole.h"
-
+namespace Tools {
 class LoggingSystem : public ILog {
 public:
     virtual ~LoggingSystem() {}
@@ -19,4 +19,5 @@ private:
         _LogOutSystem = new LogStdConsole();
     }
 };
+}//end namespace Tools
 #endif // LOGGINGSYSTEM_H

@@ -2,6 +2,7 @@
 #define LOGSTDCONSOLE_H
 #include "ILog.h"
 
+namespace Tools {
 class LogStdConsole : public ILog {
 public:
     LogStdConsole() {};
@@ -10,4 +11,5 @@ public:
 protected:
 private:
 };
+}//end namespace Tools
 #endif // LOGSTDCONSOLE_H

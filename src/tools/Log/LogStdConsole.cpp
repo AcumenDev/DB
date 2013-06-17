@@ -1,5 +1,6 @@
 #include "LogStdConsole.h"
 
+namespace Tools {
 void LogStdConsole::Write(std::string msg, LogType type) {
 
     switch (type) {
@@ -21,3 +22,4 @@ void LogStdConsole::Write(std::string msg, LogType type) {
     }
     }
 }
+}//end namespace Tools
