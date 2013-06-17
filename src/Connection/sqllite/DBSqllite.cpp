@@ -1,12 +1,13 @@
-#include "./DBSqllite.h"
+#include "DBSqllite.h"
 
 namespace DB {
 
 DBSqllite::~DBSqllite() {
-    Close();
 }
+
 void DBSqllite::Close() {
-    sqlite3_close(ppDb);
+    if(nullptr!= ppDb)
+        sqlite3_close_v2(ppDb);
 }
 std::string DBSqllite::GetDBName() const {
     return _NameDB;
@@ -20,6 +21,9 @@ void DBSqllite::Connect(std::string path, std::string login, std::string passwor
 
     _Log->Write(("Connect to sqllite : "+path));
     status =  sqlite3_open(path.c_str(),&ppDb);
+    if(SQLITE_OK!=status) {
+        throw  Tools::Exception::NotOpenDataBase();
+    }
 }
 
 std::vector<std::string> DBSqllite::GetTables() const {
