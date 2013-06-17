@@ -20,7 +20,7 @@ public:
     virtual std::vector<std::shared_ptr<TableInfo>> GetTableInfo(std::string tableName) const = 0;
     virtual ~DBBase() {};
 protected:
-    std::shared_ptr<LoggingSystem> _Log;
+    std::shared_ptr<Tools::LoggingSystem> _Log;
 private:
 };
 }//end namespace DB

@@ -20,7 +20,7 @@ public:
 protected:
     DBEntity::DBModel _dbModel;
     std::shared_ptr<Core::Settings> _Setting;
-    std::shared_ptr<LoggingSystem> _Log;
+    std::shared_ptr<Tools::LoggingSystem> _Log;
 private:
 };
 }//end namespace CG

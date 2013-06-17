@@ -11,7 +11,7 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    std::shared_ptr<LoggingSystem> Log = LoggingSystem::GetLoggingSystem();
+    std::shared_ptr<Tools::LoggingSystem> Log = Tools::LoggingSystem::GetLoggingSystem();
 
     Core::Parameters parameters(argc, argv);
 
