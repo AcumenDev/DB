@@ -7,6 +7,7 @@
 #include "src/Core/Settings.h"
 #include "src/Core/Parameters.h"
 #include "src/CodeGeneration/Cpp/CGCpp.h"
+
 using namespace std;
 
 int main(int argc, char **argv)
@@ -14,8 +15,6 @@ int main(int argc, char **argv)
     std::shared_ptr<Tools::LoggingSystem> Log = Tools::LoggingSystem::GetLoggingSystem();
 
     Core::Parameters parameters(argc, argv);
-
-    Log->Write("Hello world!");//<<" 123";
 
     std::shared_ptr<Core::Settings> settings= Core::Settings::GetSettings();
     settings->SetOutputDir("OutputDB");
