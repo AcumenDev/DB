@@ -14,15 +14,13 @@ int main(int argc, char **argv)
 {
     std::shared_ptr<Tools::LoggingSystem> Log = Tools::LoggingSystem::GetLoggingSystem();
 
-    Core::Parameters parameters(argc, argv);
-
     std::shared_ptr<Core::Settings> settings= Core::Settings::GetSettings();
-    settings->SetOutputDir("OutputDB");
+    Core::Parameters parameters(argc, argv, settings);
     settings->SetOutputDirTables("Tables");
     settings->SetTemplateDir("Templates");
     std::shared_ptr<DB::DBBase> dbSqlLite = Connection::DBConnection::GetConnection(Core::DBType::Sqllite);
 
-    dbSqlLite->Connect("TestDB.db","","");
+    dbSqlLite->Connect(settings->GetPathToDB(),"","");
 
     DBEntity::DBModel dbModel =  DBEntity::DBModel(dbSqlLite);
 

@@ -10,7 +10,22 @@ std::shared_ptr<Settings>  Settings::GetSettings() {
     }
     return _Settings;
 }
-
+void Settings::SetPathToDB (std::string path)
+{
+     _PathToDB=path;
+}
+std::string Settings::GetPathToDB ()
+{
+    return _PathToDB;
+}
+void Settings::SetLanguage (Core::Language language)
+{
+     _Language=language;
+}
+Core::Language Settings::GetLanguage()
+{
+    return _Language;
+}
 void Settings::SetOutputDir(std::string name) {
     _OutputDir=name;
 }

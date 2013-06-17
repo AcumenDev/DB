@@ -1,28 +1,29 @@
 #ifndef PARAMETERS_H
 #define PARAMETERS_H
 #include <iostream>
+#include <memory>
 #include "Defines.h"
-
+#include "Settings.h"
 namespace Core
 {
 class Parameters
 {
     public:
         Parameters() {};
-        Parameters(int argc, char *argv[]);
+        Parameters(int argc, char *argv[], std::shared_ptr<Settings> settings);
         std::string GetPathToDB() const;
-        std::string GetOutputDirPath() const;
+        std::string GetPathToOutputDir() const;
         DBType GetDBType() const;
         Language GetLanguage() const;
         void SetPathToDB(std::string path);
-        void SetOutputPath(std::string path);
+        void SetPathToOutputDir(std::string path);
         void SetDBType(DBType type);
         void SetLanguage(Language type);
         virtual ~Parameters();
     protected:
     private:
         std::string _PathToDB;
-        std::string _OutputDirPath;
+        std::string _PathToOutputDir;
         DBType _DBType;
         Language _Language;
 };
