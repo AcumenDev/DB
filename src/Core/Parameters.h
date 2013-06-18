@@ -2,8 +2,11 @@
 #define PARAMETERS_H
 #include <iostream>
 #include <memory>
+#include <unistd.h>
 #include "Defines.h"
 #include "Settings.h"
+#include "../Tools/Log/LoggingSystem.h"
+#include "../Tools/tools.h"
 namespace Core
 {
 class Parameters
@@ -26,6 +29,7 @@ class Parameters
         std::string _PathToOutputDir;
         DBType _DBType;
         Language _Language;
+        std::shared_ptr<Tools::LoggingSystem> _Log;
 };
 } //end Namespace Core
 #endif // PARAMETERS_H
