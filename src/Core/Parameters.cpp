@@ -16,18 +16,18 @@ Parameters::Parameters(int argc, char *argv[], std::shared_ptr<Core::Settings> s
         {
         case 'h':
         {
-            _Log->Write(" -p Path to DB \n -o Path to output folder \n -l Language \n -d Type of DB");
+            _Log->Write("/n -p Path to DB \n -o Path to output folder \n -l Language \n -d Type of DB");
             break;
         }
         case 'p':
         {
-//            _Log->Write("Argument -p is found : "+ optarg);
+            _Log->Write("Argument -p is found : " + std::string(optarg));
             SetPathToDB(optarg);
             break;
         }
         case 'o':
         {
-//              _Log->Write("Argument -o is found : "+ optarg);
+              _Log->Write("Argument -o is found : " + std::string(optarg));
             SetPathToOutputDir(optarg);
             break;
         }
@@ -45,7 +45,7 @@ Parameters::Parameters(int argc, char *argv[], std::shared_ptr<Core::Settings> s
         }
         case '?':
         {
-            printf("Error found bla bla!\n");
+            printf("Error found, invalid argument!\n");
             break;
         }
         };
