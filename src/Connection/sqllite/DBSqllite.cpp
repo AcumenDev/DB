@@ -30,7 +30,7 @@ std::vector<std::string> DBSqllite::GetTables() const {
     std::vector<std::string> vectorResult;
     char  *pSQL2;
     sqlite3_stmt *stmt;
-    int rc;
+    sqlite_int64 rc;
     rc = sqlite3_prepare_v2(ppDb, GET_TABLES_QUERY.c_str(), -1, &stmt, (const char**)&pSQL2);
     if (SQLITE_OK==rc) {
         if (sqlite3_column_count(stmt)) {
@@ -51,7 +51,7 @@ std::vector<std::shared_ptr<TableInfo>> DBSqllite::GetTableInfo(std::string tabl
     std::vector<std::shared_ptr<TableInfo>> result;
     char  *pSQL2;
     sqlite3_stmt *stmt;
-    int rc;
+    sqlite_int64 rc;
     rc = sqlite3_prepare_v2(ppDb, getTableInfoQuery.c_str(), -1, &stmt, (const char**)&pSQL2);
     if (SQLITE_OK==rc ) {
         if (sqlite3_column_count(stmt)) {

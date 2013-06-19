@@ -13,6 +13,6 @@ public:
 	std::vector<[[NAME_TABLE]]> GetList();
 private:
 	sqlite3 *_Db;
-	int _Status ;
+	sqlite_int64 _Status ;
 };
 #endif

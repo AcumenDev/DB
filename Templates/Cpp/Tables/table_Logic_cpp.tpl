@@ -17,7 +17,7 @@ std::vector<[[NAME_TABLE]]> [[NAME_TABLE]]Logic::GetList() {
 	std::vector<[[NAME_TABLE]]> vectorResult;
 	char  *pSQL2;
 	sqlite3_stmt *stmt;
-	int rc;
+	sqlite_int64 rc;
 	rc = sqlite3_prepare_v2(_Db, GET_DATA_TABLE.c_str(), -1, &stmt, (const char**)&pSQL2);
 	if (rc == SQLITE_OK) {
 		if (sqlite3_column_count(stmt)) {
