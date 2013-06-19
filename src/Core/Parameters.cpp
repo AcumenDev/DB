@@ -21,13 +21,13 @@ Parameters::Parameters(int argc, char *argv[], std::shared_ptr<Core::Settings> s
         }
         case 'p':
         {
-            _Log->Write("Argument -p is found : "+ optarg);
+//            _Log->Write("Argument -p is found : "+ optarg);
             SetPathToDB(optarg);
             break;
         }
         case 'o':
         {
-              _Log->Write("Argument -o is found : "optarg);
+//              _Log->Write("Argument -o is found : "+ optarg);
             SetPathToOutputDir(optarg);
             break;
         }
