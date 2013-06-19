@@ -30,11 +30,11 @@ std::vector<std::string> DBSqllite::GetTables() const {
     std::vector<std::string> vectorResult;
     char  *pSQL2;
     sqlite3_stmt *stmt;
-    int rc;
+    sqlite_int64 rc;
     rc = sqlite3_prepare_v2(ppDb, GET_TABLES_QUERY.c_str(), -1, &stmt, (const char**)&pSQL2);
-    if (rc == SQLITE_OK) {
+    if (SQLITE_OK==rc) {
         if (sqlite3_column_count(stmt)) {
-            while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
+            while (sqlite3_step(stmt) == SQLITE_ROW) {
                 auto nameTable = sqlite3_column_text(stmt, 1);
                 vectorResult.push_back(reinterpret_cast<const char*>(nameTable));
             }
@@ -51,11 +51,11 @@ std::vector<std::shared_ptr<TableInfo>> DBSqllite::GetTableInfo(std::string tabl
     std::vector<std::shared_ptr<TableInfo>> result;
     char  *pSQL2;
     sqlite3_stmt *stmt;
-    int rc;
+    sqlite_int64 rc;
     rc = sqlite3_prepare_v2(ppDb, getTableInfoQuery.c_str(), -1, &stmt, (const char**)&pSQL2);
-    if (rc == SQLITE_OK) {
+    if (SQLITE_OK==rc ) {
         if (sqlite3_column_count(stmt)) {
-            while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
+            while (sqlite3_step(stmt) == SQLITE_ROW) {
                 auto nameField = sqlite3_column_text(stmt, 1);
                 std::shared_ptr<TableInfo> rowField(new TableInfo());
                 Core::DataType typeField = Core::DataType::Text;

@@ -5,10 +5,9 @@ void CGBase::SetDBModel(DBEntity::DBModel dbModel) {
     this->_dbModel = dbModel;
 }
 
-CGBase::CGBase() {
-    this->_Setting=Core::Settings::GetSettings();
-    this->_Log =  Tools::LoggingSystem::GetLoggingSystem();
-}
+CGBase::CGBase():
+    _Setting(Core::Settings::GetSettings()),
+    _Log(Tools::LoggingSystem::GetLoggingSystem()) {}
 
 void CGBase::Generate() {
     GenerateTables();

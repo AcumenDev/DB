@@ -15,7 +15,7 @@ public:
     virtual ~TemplateHelper() {};
     void OpenTemplate(std::string path);
     void TextInsert(std::string where,std::string text);
-    std::string GetText();
+    std::string GetText()const;
 protected:
     std::string TextRepalace(std::string&  text, std::string  toReplace, std::string  replaceWith);
 private:

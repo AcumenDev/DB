@@ -18,9 +18,9 @@ public:
     void SetOutputDirTables(std::string name);
     std::string GetPathToOutputDirTables() const;
     void SetPathToDB(std::string path);
-    std::string GetPathToDB();
+    std::string GetPathToDB()const;
     void SetLanguage(Core::Language language);
-    Core::Language GetLanguage();
+    Core::Language GetLanguage()const;
     Core::DBType GetDBType() const;
 protected:
 private:

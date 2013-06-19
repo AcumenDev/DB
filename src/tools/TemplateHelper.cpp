@@ -19,7 +19,7 @@ void TemplateHelper::TextInsert(std::string where, std::string text) {
     TextRepalace(_Text,where,text);
 }
 
-std::string TemplateHelper::GetText() {
+std::string TemplateHelper::GetText()const {
     return _Text;
 }
 }//end namespace Tools

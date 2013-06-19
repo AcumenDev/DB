@@ -14,7 +14,7 @@ public:
 protected:
 private:
     sqlite3*  _Db;
-    int status;
+    sqlite_int64 status;
 };
 
 #endif // DBENTITY[[DB_NAME]]_H

@@ -14,7 +14,7 @@ void Settings::SetPathToDB (std::string path)
 {
      _PathToDB=path;
 }
-std::string Settings::GetPathToDB ()
+std::string Settings::GetPathToDB () const
 {
     return _PathToDB;
 }
@@ -22,7 +22,7 @@ void Settings::SetLanguage (Core::Language language)
 {
      _Language=language;
 }
-Core::Language Settings::GetLanguage()
+Core::Language Settings::GetLanguage()const
 {
     return _Language;
 }

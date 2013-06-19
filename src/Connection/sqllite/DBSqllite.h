@@ -17,7 +17,7 @@ public:
 protected:
 private:
     sqlite3 *ppDb  ;
-    int status ;
+    sqlite_int64 status ;
     std::string _NameDB;
     const std::string GET_TABLES_QUERY = "select * from sqlite_master";
 };
