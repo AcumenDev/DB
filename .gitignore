@@ -20,6 +20,7 @@ db/
 OutputDB/
 *.depend
 
-
+*.out
+*.db
 extern_lib/boost_1_53_0
 #extern_lib/gtest-1.6.0

@@ -84,6 +84,48 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable,std::string pa
     tmpHelper.TextInsert(Tools::TEMPLATE_NAME_TABLE,dbTable.GetTableName());
     tmpHelper.TextInsert(Tools::TEMPLATE_BODY,contentCpp);
 
+
+
+        std::string columns;
+        std::string bodyInsertList;
+
+        for (int i=0; i<dbTable.DBTableColumnList.size(); i++ ) {
+            columns+=dbTable.DBTableColumnList.at(i).GetColumnName();
+            if(i!=dbTable.DBTableColumnList.size()-1) {
+                columns+=",";
+            }
+
+
+
+
+        }
+        tmpHelper.TextInsert("[[COLUMNS_TABLE]]",columns);
+
+//        for (int i=0; i<dbTable.DBTableColumnList.size(); i++ ) {
+//            columns+=dbTable.DBTableColumnList.at(i).GetColumnName();
+//
+//
+//             bodyInsertList
+//
+//
+//            if(i!=dbTable.DBTableColumnList.size()-1) {
+//                columns+=",";
+//            }
+//
+//
+//
+//
+//        }
+//
+//
+//
+//  values+="("+std::to_string(item.id)+",'"+ item.name+"'),";
+//
+//        [[BODY_INSERT_LIST]]
+
+
+
+
     Tools::FileSystem::FileSave(path, tableName+".cpp", tmpHelper.GetText());
 }
 

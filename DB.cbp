@@ -13,8 +13,14 @@
 				<Option compiler="gcc" />
 				<Option parameters="-p TestDB.db -o OutputDB" />
 				<Compiler>
+					<Add option="-pg" />
 					<Add option="-g" />
+					<Add option="-fprofile-arcs -ftest-coverage" />
 				</Compiler>
+				<Linker>
+					<Add option="-pg -lgmon" />
+					<Add option="-lgcov" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/DB" prefix_auto="1" extension_auto="1" />
@@ -94,16 +100,16 @@
 		<Unit filename="src/DBEntity/DBTable.h" />
 		<Unit filename="src/DBEntity/DBTableColumn.cpp" />
 		<Unit filename="src/DBEntity/DBTableColumn.h" />
-		<Unit filename="src/tools/FileSystem.cpp" />
-		<Unit filename="src/tools/FileSystem.h" />
-		<Unit filename="src/tools/Log/ILog.h" />
-		<Unit filename="src/tools/Log/LogStdConsole.cpp" />
-		<Unit filename="src/tools/Log/LogStdConsole.h" />
-		<Unit filename="src/tools/Log/LoggingSystem.cpp" />
-		<Unit filename="src/tools/Log/LoggingSystem.h" />
-		<Unit filename="src/tools/TemplateHelper.cpp" />
-		<Unit filename="src/tools/TemplateHelper.h" />
-		<Unit filename="src/tools/tools.h" />
+		<Unit filename="src/Tools/FileSystem.cpp" />
+		<Unit filename="src/Tools/FileSystem.h" />
+		<Unit filename="src/Tools/Log/ILog.h" />
+		<Unit filename="src/Tools/Log/LogStdConsole.cpp" />
+		<Unit filename="src/Tools/Log/LogStdConsole.h" />
+		<Unit filename="src/Tools/Log/LoggingSystem.cpp" />
+		<Unit filename="src/Tools/Log/LoggingSystem.h" />
+		<Unit filename="src/Tools/TemplateHelper.cpp" />
+		<Unit filename="src/Tools/TemplateHelper.h" />
+		<Unit filename="src/Tools/tools.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

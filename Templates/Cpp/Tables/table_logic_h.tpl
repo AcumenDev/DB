@@ -11,6 +11,11 @@ public:
     [[NAME_TABLE]]Logic(const [[NAME_TABLE]]Logic&) = delete;
 	void SetDBContext(sqlite3 * ppDb);
 	std::vector<[[NAME_TABLE]]> GetList();
+    std::vector<[[NAME_TABLE]]> GetList(int startPos, int count);
+    bool InsertList(std::vector<[[NAME_TABLE]]> listVal);
+    bool Insert([[NAME_TABLE]] value);
+protected:
+    std::vector<[[NAME_TABLE]]> ExecutionSelect(std::string query);
 private:
 	sqlite3 *_Db;
 	sqlite_int64 _Status ;

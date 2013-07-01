@@ -12,24 +12,78 @@ void [[NAME_TABLE]]Logic::SetDBContext(sqlite3* ppDb) {
 	this->_Db = ppDb;
 }
 
+
 std::vector<[[NAME_TABLE]]> [[NAME_TABLE]]Logic::GetList() {
-	const std::string GET_DATA_TABLE = "select id, name from [[NAME_TABLE]]";
-	std::vector<[[NAME_TABLE]]> vectorResult;
-	char  *pSQL2;
-	sqlite3_stmt *stmt;
-	sqlite_int64 rc;
-	rc = sqlite3_prepare_v2(_Db, GET_DATA_TABLE.c_str(), -1, &stmt, (const char**)&pSQL2);
-	if (SQLITE_OK == rc ) {
-		if (sqlite3_column_count(stmt)) {
-			while (sqlite3_step(stmt) == SQLITE_ROW) {
-				[[NAME_TABLE]] [[NAME_TABLE]]_;
+    const std::string GET_DATA_TABLE = "select id, name from test1";
+    return ExecutionSelect(GET_DATA_TABLE);
+}
+
+std::vector<[[NAME_TABLE]]> [[NAME_TABLE]]Logic::GetList(int startPos, int count) {
+    std::vector<[[NAME_TABLE]]> vectorResult;
+    const std::string GET_DATA_TABLE = "SELECT id, name FROM [[NAME_TABLE]] LIMIT "+std::to_string(startPos)+", "+std::to_string(count);
+    if(count==0) return vectorResult;
+    return ExecutionSelect(GET_DATA_TABLE);
+}
+
+
+std::vector<[[NAME_TABLE]]> [[NAME_TABLE]]Logic::ExecutionSelect(std::string query) {
+    std::vector<[[NAME_TABLE]]> vectorResult;
+    char  *pSQL2;
+    sqlite3_stmt *stmt;
+    int rc;
+    rc = sqlite3_prepare_v2(_Db, query.c_str(), -1, &stmt, (const char**)&pSQL2);
+    if (rc == SQLITE_OK) {
+        if (sqlite3_column_count(stmt)) {
+            while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
+               [[NAME_TABLE]] [[NAME_TABLE]]_;
 [[BODY]]
 				vectorResult.push_back([[NAME_TABLE]]_);
-			}
-		}
-	sqlite3_finalize(stmt);
-	} else {
-	std::cout<<"Error: %s\n  "<<sqlite3_errmsg(_Db);
-	}
-return vectorResult;
+            }
+            std::cout<<std::endl;
+        }
+        sqlite3_finalize(stmt);
+    } else {
+        std::cout<<"Error: %s\n  "<<sqlite3_errmsg(_Db);
+    }
+    return vectorResult;
 }
+
+
+
+
+bool [[NAME_TABLE]]Logic::InsertList( const std::vector<[[NAME_TABLE]]> listVal) {
+    if(listVal.empty()) return false;
+    std::string insertDataTableSQL = "INSERT INTO [[NAME_TABLE]] ([[COLUMNS_TABLE]]) VALUES ";
+    std::string values;
+    for(const auto& item:listVal) {
+        values+="("+std::to_string(item.id)+",'"+ item.name+"'),";
+
+        [[BODY_INSERT_LIST]]
+
+    }
+
+    values = values.substr(0,values.length()-1);
+
+    insertDataTableSQL+=values;
+    std::cout<<insertDataTableSQL<<std::endl;
+    char  *pSQL2;
+    sqlite3_stmt *stmt;
+    _Status = sqlite3_prepare_v2(_Db, insertDataTableSQL.c_str(), -1, &stmt, (const char**)&pSQL2);
+    _Status = sqlite3_step(stmt);
+    if (_Status == SQLITE_OK || _Status ==SQLITE_DONE) {
+        sqlite3_finalize(stmt);
+        std::cout<<"OK"<<std::endl;
+    } else {
+        std::cout<<"Error: "+std::string(sqlite3_errmsg(_Db))+" \n  ";
+        return false;
+    }
+    return true;
+}
+
+
+bool [[NAME_TABLE]]Logic::Insert([[NAME_TABLE]] value) {
+    std::vector<[[NAME_TABLE]]> values;
+    values.push_back(value);
+    return InsertList(values);
+}
+

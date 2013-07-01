@@ -12,8 +12,6 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-
-
     std::shared_ptr<Tools::LoggingSystem> Log = Tools::LoggingSystem::GetLoggingSystem();
 
     std::shared_ptr<Core::Settings> settings= Core::Settings::GetSettings();
