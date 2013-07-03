@@ -88,7 +88,7 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable,std::string pa
 
     std::string columns;
 
-    for (int i=0; i<dbTable.DBTableColumnList.size(); i++ ) {
+    for (unsigned int i=0; i<dbTable.DBTableColumnList.size(); i++ ) {
         columns+=dbTable.DBTableColumnList.at(i).GetColumnName();
         if(i!=dbTable.DBTableColumnList.size()-1) {
             columns+=",";
@@ -124,7 +124,7 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable,std::string pa
         }
     }
     bodyInsertList+=tableNameInsert;
-    tmpHelper.TextInsert("[[BODY_INSERT_LIST]]",bodyInsertList);
+    tmpHelper.TextInsert("[[BODY_INSERT_LIST]]",""); ///убрать заглушку
 
 //
 //  values+="("+std::to_string(item.id)+",'"+ item.name+"'),";
