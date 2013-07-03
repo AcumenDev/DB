@@ -86,38 +86,46 @@ void CGCpp::GenerateTablesLogic( const DBEntity::DBTable& dbTable,std::string pa
 
 
 
-        std::string columns;
-        std::string bodyInsertList;
+    std::string columns;
 
-        for (int i=0; i<dbTable.DBTableColumnList.size(); i++ ) {
-            columns+=dbTable.DBTableColumnList.at(i).GetColumnName();
-            if(i!=dbTable.DBTableColumnList.size()-1) {
-                columns+=",";
-            }
-
-
-
-
+    for (int i=0; i<dbTable.DBTableColumnList.size(); i++ ) {
+        columns+=dbTable.DBTableColumnList.at(i).GetColumnName();
+        if(i!=dbTable.DBTableColumnList.size()-1) {
+            columns+=",";
         }
-        tmpHelper.TextInsert("[[COLUMNS_TABLE]]",columns);
 
-//        for (int i=0; i<dbTable.DBTableColumnList.size(); i++ ) {
-//            columns+=dbTable.DBTableColumnList.at(i).GetColumnName();
-//
-//
-//             bodyInsertList
-//
-//
-//            if(i!=dbTable.DBTableColumnList.size()-1) {
-//                columns+=",";
-//            }
-//
-//
-//
-//
-//        }
-//
-//
+
+
+
+    }
+    tmpHelper.TextInsert("[[COLUMNS_TABLE]]",columns);
+
+
+///values+="("+std::to_string(item.id)+",'"+ item.name+"'),";
+///values+="("+std::to_string(item.+std::to_string(item.id),+std::to_string(item.name),
+    std::string bodyInsertList="values+=\"(\"+";
+
+    std::string tableNameInsert ="";
+    for (int i=0; i<dbTable.DBTableColumnList.size(); i++ ) {
+       // bodyInsertList+="+";
+        if(dbTable.DBTableColumnList.at(i).GetColumnDataType() == Core::DataType::Number) {
+            tableNameInsert+="std::to_string(item."+dbTable.DBTableColumnList.at(i).GetColumnName()+")";
+        } else if(dbTable.DBTableColumnList.at(i).GetColumnDataType() == Core::DataType::Text) {
+            tableNameInsert+="\"'\"+item."+dbTable.DBTableColumnList.at(i).GetColumnName()+"+\"'\"+";
+        }
+// TODO (akum#1#): Использовать подстановки из SqlLite3
+
+        /// std::to_string(item.id) или item.id
+        tableNameInsert+=",";
+
+
+        if(i==dbTable.DBTableColumnList.size()-1) {
+            tableNameInsert+=tableNameInsert.substr(0,tableNameInsert.length()-4)+ "\"'),\";";
+        }
+    }
+    bodyInsertList+=tableNameInsert;
+    tmpHelper.TextInsert("[[BODY_INSERT_LIST]]",bodyInsertList);
+
 //
 //  values+="("+std::to_string(item.id)+",'"+ item.name+"'),";
 //

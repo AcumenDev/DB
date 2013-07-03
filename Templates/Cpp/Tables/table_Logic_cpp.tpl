@@ -56,7 +56,7 @@ bool [[NAME_TABLE]]Logic::InsertList( const std::vector<[[NAME_TABLE]]> listVal)
     std::string insertDataTableSQL = "INSERT INTO [[NAME_TABLE]] ([[COLUMNS_TABLE]]) VALUES ";
     std::string values;
     for(const auto& item:listVal) {
-        values+="("+std::to_string(item.id)+",'"+ item.name+"'),";
+       // values+="("+std::to_string(item.id)+",'"+ item.name+"'),";
 
         [[BODY_INSERT_LIST]]
 
