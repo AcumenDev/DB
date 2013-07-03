@@ -13,14 +13,8 @@
 				<Option compiler="gcc" />
 				<Option parameters="-p TestDB.db -o OutputDB" />
 				<Compiler>
-					<Add option="-pg" />
 					<Add option="-g" />
-					<Add option="-fprofile-arcs -ftest-coverage" />
 				</Compiler>
-				<Linker>
-					<Add option="-pg -lgmon" />
-					<Add option="-lgcov" />
-				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/DB" prefix_auto="1" extension_auto="1" />
